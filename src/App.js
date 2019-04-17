@@ -18,7 +18,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         {this.state.loggedIn ? <Home /> : 
         <Landing 
         handler={this.landingHandler}/>}
