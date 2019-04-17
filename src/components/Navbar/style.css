@@ -1,24 +1,4 @@
-.sideNav{
-    background-color:#4e4e4e
+.sideNav {
+    background-color:#4e4e4e;
+    height:100vh;
 }
-
-ul {
-    list-style-type: none;
-}
-
-li {
-    font-size: 20px
-}
-
-a {
-    color: #0060B6;
-    text-decoration: none;
-}
-
-a:hover 
-{
-     color:#00A0C6; 
-     text-decoration:none; 
-     cursor:pointer;  
-}
-
