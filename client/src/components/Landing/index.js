@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 class Landing extends React.Component {
 
@@ -21,12 +22,41 @@ class Landing extends React.Component {
 
       handleLoginSubmit = event => {
         event.preventDefault();
-        console.log(this.state.email, this.state.password)
-        this.props.handler(1, true)
+        let email = this.state.email
+        let password = this.state.password
+        axios.post("/api/users/login", {
+            email: email,
+            password: password
+        }).then(response => {
+            if (response.status === 200) {
+                this.props.handler(response.data.id, true)
+            }
+            else if (response.status === 205) {
+                alert("Incorrect Username and/or Password")
+            }
+            else {
+                alert("Unknown Error")
+            }
+        })
       }
     
       handleRegisterSubmit = (event) => {
         event.preventDefault();
+        let firstName = this.state.firstName
+        let lastName = this.state.lastName
+        let email = this.state.email
+        let password = this.state.password
+        axios.post("/api/users/register", {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password
+        }).then(response => {
+            if (response.status === 200){
+            this.props.handler(response.data.id, true)
+            }
+            else {alert("Unknown Error")}
+        })
     }
 
     render() {
