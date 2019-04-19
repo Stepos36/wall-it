@@ -4,6 +4,7 @@ import '../../App.css';
 import Navbar from "./../Navbar";
 import Header from "./../Header";
 import Footer from "./../Footer";
+import Stocks from "./../Stocks";
 
 class Home extends Component {
   render() {
@@ -14,7 +15,8 @@ class Home extends Component {
           <div className='col-md-2'>
             <Navbar />
           </div>
-          <div className='col-md-7'></div>
+          <div className='col-md-7'>
+          </div>
           <div className='col-md-3'>
             <ForexTicker />
           </div>
