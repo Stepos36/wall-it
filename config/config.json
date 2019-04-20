@@ -2,6 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
+    "port": 8889,
     "database": "wall-it_db",
     "host": "localhost",
     "dialect": "mysql"
