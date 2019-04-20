@@ -12,7 +12,7 @@ export class Stocks extends Component {
           <TradingViewWidget
             symbol="NASDAQ:AAPL"
             theme={Themes.DARK}
-            locale="fr"
+            locale="us"
             width='autosize'
             height='520'
           />
