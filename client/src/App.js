@@ -19,7 +19,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.loggedIn ? <Content /> : 
+        {this.state.loggedIn ? <Content 
+        userId={this.state.userId}/> : 
         <Landing 
         handler={this.landingHandler}/>}
       </div>
