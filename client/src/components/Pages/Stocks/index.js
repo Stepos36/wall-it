@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import StockPage from './../../StockPage'
 
 export class Stocks extends Component {
   render() {
     return (
       <div>
-        <h1>Stocks</h1>
+        <StockPage />
       </div>
     )
   }

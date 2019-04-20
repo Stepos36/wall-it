@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import "./style.css";
 
-class Stocks extends React.Component {
+class StockPage extends React.Component {
     state = {
         dowPercent: "",
         dowTotal: "",
@@ -81,4 +81,4 @@ class Stocks extends React.Component {
     }
 }
 
-export default Stocks;
+export default StockPage;
