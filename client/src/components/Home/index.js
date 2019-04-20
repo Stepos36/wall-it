@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import ForexTicker from './../ForexTicker';
+import Main from "./../Main"
+import Article from "./../Article"
+import Watchlist from "./../Watchlist"
 import '../../App.css';
 import Navbar from "./../Navbar";
 import Header from "./../Header";
@@ -14,10 +17,18 @@ class Home extends Component {
           <div className='col-md-2'>
             <Navbar />
           </div>
-          <div className='col-md-7'></div>
-          <div className='col-md-3'>
-            <ForexTicker />
+          <div className='col-md-7'>
+            <Main />
           </div>
+          <div className='col-md-3' id='div1'>
+            <Article />
+          <div className='row'>
+          <div className='col-12' id='div2'>
+            <Watchlist />
+          </div>
+          </div></div>
+            <ForexTicker />
+          
         </div>
         <Footer />
       </div>
