@@ -14,7 +14,7 @@ export class Header extends Component {
               <div className="date">
                 <Moment></Moment>
               </div>
-              <div className="text-center wallit"><h3>Wallit</h3></div>
+              <div className="text-center wallit"><h3>Wall-IT</h3></div>
             </div>
             <div className="login">
                   

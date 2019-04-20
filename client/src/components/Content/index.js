@@ -3,6 +3,8 @@ import '../../App.css';
 import Navbar from "../Navbar";
 import Header from "../Header";
 import Footer from "../Footer";
+import Article from "../Article";
+import Watchlist from "../Watchlist";
 import Home from "../Pages/Home"
 import Profile from "../Pages/Profile"
 import BudgetCalc from "../Pages/BudgetCalc"
@@ -30,7 +32,13 @@ class Content extends Component {
               <Route exact path="/bills" component={Bills} />
             </Switch>
           </div>
-          <div className='col-md-3'></div>
+          <div className='col-md-3'>
+            <div className='col-md-12'>
+            <Article /></div>
+            <div className='col-md-12'>
+            <Watchlist /></div>
+
+          </div>
         </div>
           </Router>
         <Footer />
