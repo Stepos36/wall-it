@@ -1,20 +1,73 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./style.css";
 
-const Navbar = () => (
-    <div className="sideNav">
-        <div className="row">
-            <div className="col-12">
-                <div className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a className="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                    <a className="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                    <a className="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Buget Calc</a>
-                    <a className="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Stocks</a>
-                    <a className="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Bills</a>
+
+function Navbar() {
+    return (
+        <div className="sideNav">
+            <div className="row">
+                <div className="col-12">
+                    <nav className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div>
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                            <NavLink
+                                exact={true}
+                                to="/home"
+                                className={'nav-link'}
+                                activeClassName='active'
+                            >
+                                Home
+                            </NavLink>
+                            </li>
+                            <li className="nav-item">
+                            <NavLink
+                                exact={true}
+                                to="/profile"
+                                className={'nav-link'}
+                                activeClassName='active'
+                            >
+                                Profile
+                            </NavLink>
+                            </li>
+                            <li className="nav-item">
+                            <NavLink
+                                exact={true}
+                                to="/budget-calc"
+                                className={'nav-link'}
+                                activeClassName='active'
+                            >
+                                Budget Calc
+                            </NavLink>
+                            </li>
+                            <li className="nav-item">
+                            <NavLink
+                                exact={true}
+                                to="/stocks"
+                                className={'nav-link'}
+                                activeClassName='active'
+                            >
+                                Stocks
+                            </NavLink>
+                            </li>
+                            <li className="nav-item">
+                            <NavLink
+                                exact={true}
+                                to="/bills"
+                                className={'nav-link'}
+                                activeClassName='active'
+                            >
+                                Bills
+                            </NavLink>
+                            </li>
+                        </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
-    </div>
-)
+    );
+  }
 
 export default Navbar;
