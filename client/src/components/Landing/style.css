@@ -1,0 +1,33 @@
+.login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    width:300px;
+    width:50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.forms {
+    text-align: center;
+    padding: 5px;
+    margin: 10px
+}
+
+.buttons {
+    size: 10px;
+    margin: 10px;
+    width: 150px;
+    max-width: 100%;
+}
+.login-info {
+    padding: 10px;
+}
+
+.user-info{
+    padding:5px;
+    margin:10px
+}
