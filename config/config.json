@@ -4,6 +4,7 @@
     "password": "root",
     "database": "wall-it_db",
     "host": "localhost",
+    "port": 8889,
     "dialect": "mysql"
   },
   "test": {

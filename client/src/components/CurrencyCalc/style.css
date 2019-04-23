@@ -1,0 +1,50 @@
+.Converter {
+    width: 100%;
+    padding: 0 15%;
+    box-sizing: border-box; 
+    text-align: center;
+    background: rgb(135,135,135);
+    border-radius: 5px;
+    border: solid 2px rgb(45,45,45);
+    margin: 5px
+}
+
+.Form {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.Form input{
+    width: 100%;
+    padding: 3px;
+    margin: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(119, 119, 119, 0.5);
+}
+
+.Form select {
+    width: 35%;
+    padding: 3px;
+    margin: 3px 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(119, 119, 119, 0.5);
+}
+
+.Form button {
+    padding: 2px 6px;
+    margin: 3px 5px;
+    border-radius: 5px;
+    background: rgb(125, 168, 138);
+    color: white;
+    border: none;
+}
+
+.Converter h4 {
+    background-color: #ccc;
+    border-radius: 10px;
+    padding: 15px;
+}
