@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {underscored: true});
   User.associate = function(models) {
     // associations can be defined here
-    User.hasMany(models.Stock_buy, {as: "Buys"})
-    User.hasMany(models.Stock_sell, {as: "Sells"})
+    User.hasMany(models.Stock_buy)
+    User.hasMany(models.Stock_sell)
   };
   return User;
 };
