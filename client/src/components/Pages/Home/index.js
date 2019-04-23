@@ -1,10 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import CurrencyCalc from './../../CurrencyCalc'
 
 export class Home extends Component {
   render() {
     return (
-      <div>
-        <h1>Home</h1>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-6'>
+            <CurrencyCalc />
+          </div>
+        </div>
       </div>
     )
   }
