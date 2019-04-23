@@ -1,6 +1,6 @@
 .Converter {
     width: 100%;
-    padding: 0 15%;
+    padding: 5% 10%;
     box-sizing: border-box; 
     text-align: center;
     background: rgb(135,135,135);
@@ -23,11 +23,13 @@
     padding: 3px;
     margin: 3px 5px;
     border-radius: 5px;
-    border: 1px solid rgba(119, 119, 119, 0.5);
+    border: 1px solid rgba(100, 100, 100, 0.5);
+    height: 7%
 }
 
 .Form select {
-    width: 35%;
+    width: 30%;
+    font-size: 12px;
     padding: 3px;
     margin: 3px 5px;
     border-radius: 5px;
@@ -35,7 +37,7 @@
 }
 
 .Form button {
-    padding: 2px 6px;
+    padding: 0 6px;
     margin: 3px 5px;
     border-radius: 5px;
     background: rgb(125, 168, 138);
@@ -47,4 +49,5 @@
     background-color: #ccc;
     border-radius: 10px;
     padding: 15px;
+    overflow: hidden;
 }
