@@ -13,6 +13,10 @@ import Bills from "../Pages/Bills"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class Content extends Component {
+  componentDidMount() {
+    console.log(this.props.userId)
+  }
+
   render() {
     return (
       <div className="App">
@@ -24,12 +28,24 @@ class Content extends Component {
           </div>
           <div className='col-md-7'>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/budget-calc" component={BudgetCalc} />
-              <Route exact path="/stocks" component={Stocks} />
-              <Route exact path="/bills" component={Bills} />
+              <Route exact path="/" render={(routeProps) => (
+                <Home userId={this.props.userId} />
+              )} />
+              <Route exact path="/home" render={(routeProps) => (
+                <Home userId={this.props.userId} />
+              )} />
+              <Route exact path="/profile" render={(routeProps) => (
+                <Profile userId={this.props.userId} />                
+              )} />
+              <Route exact path="/budget-calc" render={(routeProps) => (
+                <BudgetCalc userId={this.props.userId} />                
+              )} />
+              <Route exact path="/stocks" render={(routeProps) => (
+                <Stocks userId={this.props.userId} />                
+              )} />
+              <Route exact path="/bills" render={(routeProps) => (
+                <Bills userId={this.props.userId} />                
+              )} />
             </Switch>
           </div>
           <div className='col-md-3'>
