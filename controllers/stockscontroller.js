@@ -15,7 +15,8 @@ module.exports = {
             quantity: quantity,
             user_id: id,
             stock_symbol: symbol,
-            price: price
-        })
+            price: price,
+            stock_holding_id: ""
+        }).then(data => {res.json(data)})
     }
 }
