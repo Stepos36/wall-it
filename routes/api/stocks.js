@@ -3,7 +3,8 @@ const stocksController = require("../../controllers/stocksController");
 
 router.route("/:id")
     .get(stocksController.getHoldings)
-    .post(stocksController.addHolding);
+    .post(stocksController.addHolding)
+    .put(stocksController.sellHolding);
     
 // Exporting
 module.exports = router;
