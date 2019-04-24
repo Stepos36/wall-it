@@ -2,3 +2,39 @@
     display: block !important;
     padding-left: 1rem
 }
+.calendar {
+    margin-top: 5px;
+    margin-left: -10px;
+    border-radius: 5px;
+    border: solid 2px rgb(45,45,45);
+}
+.react-calendar {
+    width: 100%;
+    border: none
+}
+.map {
+    margin-top: 5px;
+    margin-left: 7px;
+    border-radius: 5px;
+    border: solid 2px rgb(45,45,45);
+    padding: 0
+}
+.react-calendar__navigation button {
+    min-width: 0;   
+}
+.contents, .contents2 {
+    margin: 5px 0
+}
+
+.youtube {
+    width: 100% !; 
+    margin-top: 5px;
+    padding: 0;
+    text-align: center
+}
+
+@media only screen and (max-width: 992px) {
+    .calendar {
+        margin-left: 5px;
+    }
+}
