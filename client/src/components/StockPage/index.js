@@ -4,51 +4,88 @@ import "./style.css";
 
 class StockPage extends React.Component {
     state = {
-        dowPercent: "",
-        dowTotal: "",
-        dowDiff: "",
-        nasPercent: "",
-        nasTotal: "",
-        nasDiff: "",
-        spPercent: "",
-        spTotal: "",
-        spDiff: ""
+        zeroPercent: "",
+        zeroTotal: "",
+        zeroDiff: "",
+        zeroName: "",
+        onePercent: "",
+        oneTotal: "",
+        oneDiff: "",
+        oneName: "",
+        twoPercent: "",
+        twoTotal: "",
+        twoDiff: "",
+        twoName: "",
+        threePercent: "",
+        threeTotal: "",
+        threeDiff: "",
+        threeName: "",
+        fourPercent: "",
+        fourTotal: "",
+        fourDiff: "",
+        fourName: ""
     }
 
     componentDidMount() {
-        axios.get("https://www.worldtradingdata.com/api/v1/stock?symbol=^DJI,^IXIC,^INX&api_token=Dvk9Bf1Qefk0H0z2th3l0Gge2ZafA8FvHjc1MRDhEmJSiffj3Lk0M85AihJ8")
+        axios.get("https://www.worldtradingdata.com/api/v1/stock?symbol=^DJI,^IXIC,^INX,^UKX,^NI225&api_token=Dvk9Bf1Qefk0H0z2th3l0Gge2ZafA8FvHjc1MRDhEmJSiffj3Lk0M85AihJ8")
         .then(result => {
-            let dowDiv = document.getElementById('dow');
-            let nasDiv = document.getElementById('nasdaq');
-            let spDiv = document.getElementById('sp')
+            console.log(result)
+            let zeroDiv = document.getElementById('zero');
+            let oneDiv = document.getElementById('one');
+            let twoDiv = document.getElementById('two');
+            let threeDiv = document.getElementById('three');
+            let fourDiv = document.getElementById('four');
             if (result.data.data[0].day_change > 0) {
-                dowDiv.style.color = 'green'
+                zeroDiv.style.color = 'green'
             }
             if (result.data.data[0].day_change < 0) {
-                dowDiv.style.color = 'red'
+                zeroDiv.style.color = 'red'
             }
             if (result.data.data[1].day_change > 0) {
-                nasDiv.style.color = 'green'
+                oneDiv.style.color = 'green'
             }
             if (result.data.data[1].day_change < 0) {
-                nasDiv.style.color = 'red'
+                oneDiv.style.color = 'red'
             }
             if (result.data.data[2].day_change > 0) {
-                spDiv.style.color = 'green'
+                twoDiv.style.color = 'green'
             }
             if (result.data.data[2].day_change < 0) {
-                spDiv.style.color = 'red'
+                twoDiv.style.color = 'red'
+            }
+            if (result.data.data[3].day_change > 0) {
+                threeDiv.style.color = 'green'
+            }
+            if (result.data.data[3].day_change < 0) {
+                threeDiv.style.color = 'red'
+            }
+            if (result.data.data[4].day_change > 0) {
+                fourDiv.style.color = 'green'
+            }
+            if (result.data.data[4].day_change < 0) {
+                fourDiv.style.color = 'red'
             }
             this.setState({
-                dowPercent: result.data.data[0].change_pct,
-                dowTotal: result.data.data[0].price,
-                dowDiff: result.data.data[0].day_change,
-                nasPercent: result.data.data[1].change_pct,
-                nasTotal: result.data.data[1].price,
-                nasDiff: result.data.data[1].day_change,
-                spPercent: result.data.data[2].change_pct,
-                spTotal: result.data.data[2].price,
-                spDiff: result.data.data[2].day_change
+                zeroPercent: result.data.data[0].change_pct,
+                zeroTotal: result.data.data[0].price,
+                zeroDiff: result.data.data[0].day_change,
+                zeroName: result.data.data[0].name,
+                onePercent: result.data.data[1].change_pct,
+                oneTotal: result.data.data[1].price,
+                oneDiff: result.data.data[1].day_change,
+                oneName: result.data.data[1].name,
+                twoPercent: result.data.data[2].change_pct,
+                twoTotal: result.data.data[2].price,
+                twoDiff: result.data.data[2].day_change,
+                twoName: result.data.data[2].name,
+                threePercent: result.data.data[3].change_pct,
+                threeTotal: result.data.data[3].price,
+                threeDiff: result.data.data[3].day_change,
+                threeName: result.data.data[3].name,
+                fourPercent: result.data.data[4].change_pct,
+                fourTotal: result.data.data[4].price,
+                fourDiff: result.data.data[4].day_change,
+                fourName: result.data.data[4].name
             })
         })
     }
@@ -57,22 +94,34 @@ class StockPage extends React.Component {
         return (
             <div className="jumbotron">
                 <div className="row">
-                    <div className="col-4">
-                        <div id="dow">
-                        Dow {this.state.dowDiff > 0 ? "+" : "-"}{this.state.dowPercent}%<br />
-                        {this.state.dowTotal} / {this.state.dowDiff}
+                    <div className="col-2">
+                        <div id="zero">
+                        {this.state.zeroName} {this.state.zeroDiff > 0 ? "+" : ""}{this.state.zeroPercent}%<br />
+                        {this.state.zeroTotal} / {this.state.zeroDiff}
                         </div>
                     </div>
-                    <div className="col-4">
-                        <div id="nasdaq">
-                        Nasdaq {this.state.nasDiff > 0 ? "+" : "-"}{this.state.nasPercent}%<br />
-                        {this.state.nasTotal} / {this.state.nasDiff}
+                    <div className="col-2">
+                        <div id="one">
+                        {this.state.oneName} {this.state.oneDiff > 0 ? "+" : ""}{this.state.onePercent}%<br />
+                        {this.state.oneTotal} / {this.state.oneDiff}
                         </div>
                     </div>
-                    <div className="col-4">
-                        <div id="sp">
-                        S+P500 {this.state.spDiff > 0 ? "+" : "-"}{this.state.spPercent}%<br />
-                        {this.state.spTotal} / {this.state.spDiff}
+                    <div className="col-2">
+                        <div id="two">
+                        {this.state.twoName} {this.state.twoDiff > 0 ? "+" : ""}{this.state.twoPercent}%<br />
+                        {this.state.twoTotal} / {this.state.twoDiff}
+                        </div>
+                    </div>
+                    <div className="col-2">
+                        <div id="three">
+                        {this.state.threeName} {this.state.threeDiff > 0 ? "+" : ""}{this.state.threePercent}%<br />
+                        {this.state.threeTotal} / {this.state.threeDiff}
+                        </div>
+                    </div>
+                    <div className="col-2">
+                        <div id="four">
+                        {this.state.fourName} {this.state.fourDiff > 0 ? "+" : ""}{this.state.fourPercent}%<br />
+                        {this.state.fourTotal} / {this.state.fourDiff}
                         </div>
                     </div>
                 </div>
