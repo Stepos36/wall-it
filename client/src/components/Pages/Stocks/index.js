@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import StockPage from './../../StockPage';
-import TableAddButton from "./../../utils/TableAddButton";
-import TableReduceButton from "./../../utils/TableReduceButton";
+import TableRow from "./../../utils/TableRow";
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 import Modal from 'react-modal';
 import axios from "axios";
@@ -29,7 +28,8 @@ export class Stocks extends Component {
       symbol: "AAPL",
       modalIsOpen: false,
       transactionType: "",
-      holdingId: ""
+      holdingId: "",
+      stocks: []
     };
  
     this.openModal = this.openModal.bind(this);
@@ -61,20 +61,7 @@ export class Stocks extends Component {
     console.log(this.props.userId)
     axios.get("/api/stocks/" + this.props.userId).then((response) => {
       console.log(response)
-      for (let i = 0; i < response.data.length; i++) {
-        let row = $("<tr>")
-        let symbolCol = $("<th scope='row'>")
-        let quantityCol = $("<td>")
-        let cashflowCol = $("<td>")
-        let addButtonCol = $("<td>")
-        let reduceButtonCol = $("<td>")
-        symbolCol.append(response.data[i].symbol)
-        quantityCol.append(response.data[i].quantity)
-        cashflowCol.append(response.data[i].cashflow)
-        addButtonCol.append(<TableAddButton onClick={() => this.openModal("add," + response.data[i].id)} />)        
-        reduceButtonCol.append(<TableReduceButton onClick={() => this.openModal("reduce," + response.data[i].id)} />)
-        $("#holdingTable").append(row).append(symbolCol).append(quantityCol).append(cashflowCol).append(addButtonCol).append(reduceButtonCol)
-      }
+      this.setState({stocks: response.data})
     })
   }
 
@@ -123,6 +110,16 @@ export class Stocks extends Component {
                     <th scope="col">Reduce</th>
                   </tr>
                 </thead>
+                {this.state.stocks.map(stock => (
+                  <TableRow 
+                  symbol={stock.symbol}
+                  quantity={stock.quantity}
+                  cashflow={stock.cashflow}
+                  id={stock.id}
+                  addStock={this.openModal}
+                  reduceStock={this.openModal}
+                  />
+                ))}
               </table>
             </div>
           </div>
