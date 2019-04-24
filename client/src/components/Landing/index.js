@@ -144,8 +144,6 @@ class Landing extends React.Component {
                                 placeholder="Password"
                             />
                         </div>
-
-
                         <div>
                         <button className="subBtn buttons btn-primary btn-lg" onClick={this.handleRegisterSubmit}>Submit</button>
                         </div>
