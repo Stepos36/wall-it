@@ -16,6 +16,7 @@
   "dependencies": {
     "@culturehq/charts": "^1.2.0",
     "axios": "^0.18.0",
+    "google-news-rss": "^0.4.1",
     "jquery": "^3.4.0",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
