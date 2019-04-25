@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ForexTicker from './../ForexTicker';
 import Main from "./../Main"
 import Article from "./../Article"
 import Watchlist from "./../Watchlist"
@@ -22,13 +21,11 @@ class Home extends Component {
           </div>
           <div className='col-md-3' id='div1'>
             <Article />
-          <div className='row'>
-          <div className='col-12' id='div2'>
-            <Watchlist />
-          </div>
-          </div></div>
-            <ForexTicker />
-          
+            <div className='row'>
+              <div className='col-12' id='div2'>
+                <Watchlist />
+              </div>
+            </div></div>
         </div>
         <Footer />
       </div>
