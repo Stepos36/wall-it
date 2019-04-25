@@ -68,7 +68,7 @@ class Landing extends React.Component {
                     <div className="row">
                         <div className="col-md-12 forms card-body">
                             <div>
-                                <button className="loginBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "login" })}>Log In</button>
+                                <button className="loginBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "login" })}>Log In </button>
                             </div>
                             <div>
                                 <button className="regBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "register" })}>Register</button>
