@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class AddStock extends Component {
   state = {
-    symbol: "",
+    symbol: this.props.symbol || "",
     quantity: "",
     price: ""
   }
@@ -32,7 +32,13 @@ class AddStock extends Component {
         <button onClick={this.submitAdd}>Submit</button>
       </form>
       :
-      <input></input>}
+      <form>
+      <input type="text" name="symbol" readOnly value={this.props.symbol}></input>
+      <input type="number" name="quantity" value={this.state.quantity} onChange={this.handleInputChange} placeholder="Quantity"></input>
+      <input type="number" name="price" value={this.state.price} onChange={this.handleInputChange} placeholder="Price"></input>
+      <button onClick={this.submitAdd}>Submit</button>
+      </form>
+      }
       </div>
     );
 }

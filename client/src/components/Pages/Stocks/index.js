@@ -30,6 +30,8 @@ export class Stocks extends Component {
       modalIsOpen: false,
       transactionType: "",
       holdingId: "",
+      quantity: "",
+      selectedSymbol: "",
       stocks: []
     };
  
@@ -38,23 +40,42 @@ export class Stocks extends Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleReduce = this.handleReduce.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.rerenderTable = this.rerenderTable.bind(this);
   }
 
-  openModal(type, id) {
+  openModal(type, id, quantity, symbol) {
     this.setState({
       modalIsOpen: true,
       transactionType: type,
-      holdingId: id
+      holdingId: id,
+      quantity: quantity,
+      selectedSymbol: symbol
     });
+    console.log(symbol)
   }
 
   handleAdd(symbol, quantity, price) {
     console.log(symbol, quantity, price)
-    this.setState({modalIsOpen: false})
+    axios.post("/api/stocks/" + this.props.userId, {
+      symbol: symbol,
+      quantity: quantity,
+      price: price
+    }).then(response => {
+      this.setState({modalIsOpen: false});
+      this.rerenderTable();
+    })
   }
 
   handleReduce(symbol, quantity, price) {
     console.log(symbol, quantity, price)
+    axios.put("/api/stocks/" + this.props.userId, {
+      symbol: symbol,
+      quantity: quantity,
+      price: price
+    }).then(response => {
+      this.setState({modalIsOpen: false});
+      this.rerenderTable();
+    })
   }
 
   closeModal() {
@@ -69,6 +90,13 @@ export class Stocks extends Component {
         [name]: value
     });
 };
+
+  rerenderTable() {
+    axios.get("/api/stocks/" + this.props.userId).then((response) => {
+      this.setState({stocks: response.data})
+      console.log(response)
+    })
+  }
 
   componentDidMount() {
     console.log(this.state.symbol)
@@ -146,12 +174,11 @@ export class Stocks extends Component {
         onRequestClose={this.closeModal}
         style={customStyles}
         >
-        This is the transaction modal<br />
-        {this.state.transactionType} {this.state.holdingId}
+        Log your transaction details here<br />
         {this.state.transactionType == "add" ? 
-        <AddStock holdingId={this.state.holdingId} handler={this.handleAdd} />
+        <AddStock holdingId={this.state.holdingId} handler={this.handleAdd} quantity={this.state.quantity} symbol={this.state.selectedSymbol} />
         :
-        <ReduceStock holdingId={this.state.holdingId} handler={this.handleReduce} />}
+        <ReduceStock holdingId={this.state.holdingId} handler={this.handleReduce} quantity={this.state.quantity} symbol={this.state.selectedSymbol}/>}
         <button onClick={this.closeModal}>close</button>
         </Modal>
       </div>
