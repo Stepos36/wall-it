@@ -10,6 +10,7 @@ import Profile from "../Pages/Profile"
 import BudgetCalc from "../Pages/BudgetCalc"
 import Stocks from "../Pages/Stocks"
 import Bills from "../Pages/Bills"
+import Rates from "../Pages/Rates"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class Content extends Component {
@@ -45,6 +46,9 @@ class Content extends Component {
               )} />
               <Route exact path="/bills" render={(routeProps) => (
                 <Bills userId={this.props.userId} />                
+              )} />
+              <Route exact path="/mortgage" render={(routeProps) => (
+                <Rates userId={this.props.userId} />                
               )} />
             </Switch>
           </div>

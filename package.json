@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt": "^3.0.6",
+    "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
+    "google-news-rss": "^0.4.1",
     "moment": "^2.24.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
     "sequelize": "^5.7.0",
-    "sequelize-cli": "^5.4.0"
+    "sequelize-cli": "^5.4.0",
+    "xml2js": "^0.4.19"
   },
   "eslintConfig": {
     "extends": "react-app"
