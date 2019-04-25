@@ -61,6 +61,16 @@ function Navbar() {
                                 Bills
                             </NavLink>
                             </li>
+                            <li className="nav-item">
+                            <NavLink
+                                exact={true}
+                                to="/mortgage"
+                                className={'nav-link'}
+                                activeClassName='active'
+                            >
+                                Mortgage Rates
+                            </NavLink>
+                            </li>
                         </ul>
                         </div>
                     </nav>
