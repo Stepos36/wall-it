@@ -1,0 +1,7 @@
+.rightSideNav1 {
+    background-color: #eee;
+    width: 441px;
+    height: 494px;
+    border: 1px dotted black;
+    overflow: scroll;
+}
