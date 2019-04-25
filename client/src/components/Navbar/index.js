@@ -5,7 +5,6 @@ import "./style.css";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { homedir } from "os";
 
-
 export default props => {
     return (
         <Menu>
