@@ -9,6 +9,7 @@ import MapWidget from "./../../MapWidget"
 import YVideo from "./../../YouTube"
 import '@culturehq/charts/dist/style.css';
 import './style.css';
+
 const getRandomDatum = () => Math.floor(Math.random() * 100);
 
 //random mock data - will be replaced by personalized stock data  pulled from database
@@ -108,7 +109,7 @@ export class Home extends Component {
               </div>
             </div>
 
-            <div className='container comtents'>
+            <div className='container contents'>
               <div className='row contents'>
                 <div className='col-lg-4 col-md-6 col-sm-12 youtube'>
                   <YVideo />
