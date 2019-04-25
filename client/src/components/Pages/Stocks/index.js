@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import StockPage from './../../StockPage';
 import TableRow from "./../../utils/TableRow";
+import AddStock from "./../../utils/AddStock";
+import ReduceStock from "./../../utils/ReduceStock";
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 import Modal from 'react-modal';
 import axios from "axios";
-import $ from 'jquery';
 import './style.css'
 
 const customStyles = {
@@ -34,6 +35,7 @@ export class Stocks extends Component {
  
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   openModal(type, id) {
@@ -48,7 +50,7 @@ export class Stocks extends Component {
     this.setState({modalIsOpen: false})
   }
 
-  handleInputChange = event => {
+  handleInputChange(event) {
     let value = event.target.value;
     const name = event.target.name;
 
@@ -58,9 +60,7 @@ export class Stocks extends Component {
 };
 
   componentDidMount() {
-    console.log(this.props.userId)
     axios.get("/api/stocks/" + this.props.userId).then((response) => {
-      console.log(response)
       this.setState({stocks: response.data})
     })
   }
@@ -72,9 +72,9 @@ export class Stocks extends Component {
           <div className="container">
             <form>
             <div className="form-group row">
-              <label htmlFor="stockLookup" className="col-sm-2 col-form-label">Stock Lookup</label>
+              <label htmlFor="symbol" className="col-sm-2 col-form-label">Stock Lookup</label>
               <div className="col-sm-10">
-                <input type="text" className="form-control" name="stockLookup" value={this.state.symbol} onChange={this.handleInputChange}></input>
+                <input type="text" className="form-control" name="symbol" value={this.state.symbol} onChange={this.handleInputChange}></input>
               </div>
             </div>
             </form>
@@ -110,16 +110,19 @@ export class Stocks extends Component {
                     <th scope="col">Reduce</th>
                   </tr>
                 </thead>
+                <tbody>
                 {this.state.stocks.map(stock => (
                   <TableRow 
                   symbol={stock.symbol}
                   quantity={stock.quantity}
                   cashflow={stock.cashflow}
                   id={stock.id}
+                  key={stock.id}
                   addStock={this.openModal}
                   reduceStock={this.openModal}
                   />
                 ))}
+                </tbody>
               </table>
             </div>
           </div>
@@ -130,8 +133,9 @@ export class Stocks extends Component {
         onRequestClose={this.closeModal}
         style={customStyles}
         >
-        This is the transaction modal<br></br>
+        This is the transaction modal<br />
         {this.state.transactionType} {this.state.holdingId}
+        {this.state.transactionType == "add" ? <AddStock holdingId={this.state.holdingId} /> : <ReduceStock holdingId={this.state.holdingId} />}
         <button onClick={this.closeModal}>close</button>
         </Modal>
       </div>
