@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 import StockArticle from "./../StockArticle";
 import axios from "axios";
+import './style.css'
 
 class StockPanel extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
   this.state = {
     symbol: "AAPL",
     stockExpand: false,
+    expandedSymbol: "",
     expandedName: "",
     expandedStories: []
     }
@@ -17,6 +19,7 @@ class StockPanel extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.moreInfo = this.moreInfo.bind(this);
     this.hideInfo = this.hideInfo.bind(this);
+    this.addWatchlist = this.addWatchlist.bind(this);
   }
 
   handleInputChange(event) {
@@ -35,6 +38,7 @@ class StockPanel extends Component {
     .then(info => {
       console.log(info)
       infoObj.name = info.data.data[0].name
+      infoObj.symbol = info.data.data[0].symbol
     })
     let newsPromise = axios.get("https://stocknewsapi.com/api/v1?tickers=" + this.state.symbol + "&items=5&fallback=true&token=8mh1wqbeonbi6qxwwhvhpaibaji5grdrtbwe7rxu")
     .then(response => {
@@ -44,6 +48,7 @@ class StockPanel extends Component {
     Promise.all([namePromise, newsPromise]).then(() => {
       this.setState({
         stockExpand: true,
+        expandedSymbol: infoObj.symbol,
         expandedName: infoObj.name,
         expandedStories: infoObj.stories
       })
@@ -54,6 +59,15 @@ class StockPanel extends Component {
   hideInfo(event) {
     event.preventDefault();
     this.setState({stockExpand: false})
+  }
+
+  addWatchlist(event) {
+    event.preventDefault();
+    console.log(this.props.userId)
+    axios.post("/api/watchlist/" + this.props.userId, {symbol: this.state.expandedSymbol})
+    .then(response => {
+      console.log(response)
+    })
   }
 
   render() {
@@ -77,28 +91,25 @@ class StockPanel extends Component {
                   <div className="container">
                     <div className={this.state.stockExpand ? "" : "d-none"}>
                       <div className="jumbotron text-center">
-                        <h3>{this.state.expandedName}</h3>
+                        <h3 id="expandName">{this.state.expandedName}</h3>
+                        <button onClick={this.addWatchlist} id="watchBtn" className="float-right">Add to Watchlist</button>
                         <ul className="list-group">
                         {this.state.expandedStories.map(story => (
                           <StockArticle url={story.news_url} text={story.text} key={story.text}/>
                         ))}
                         </ul>
                       </div>
+                      <div className='widget'>
+                        <TradingViewWidget
+                          allow_symbol_change="true"
+                          symbol={this.state.symbol}
+                          theme={Themes.DARK}
+                          locale="us"
+                          width='autosize'
+                          height='520'
+                        />
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-12">
-                  <div className='widget'>
-                    <TradingViewWidget
-                      allow_symbol_change="true"
-                      symbol={this.state.symbol}
-                      theme={Themes.DARK}
-                      locale="us"
-                      width='autosize'
-                      height='520'
-                    />
                   </div>
                 </div>
               </div>
