@@ -35,6 +35,8 @@ export class Stocks extends Component {
  
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleReduce = this.handleReduce.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -44,6 +46,15 @@ export class Stocks extends Component {
       transactionType: type,
       holdingId: id
     });
+  }
+
+  handleAdd(symbol, quantity, price) {
+    console.log(symbol, quantity, price)
+    this.setState({modalIsOpen: false})
+  }
+
+  handleReduce(symbol, quantity, price) {
+    console.log(symbol, quantity, price)
   }
 
   closeModal() {
@@ -60,8 +71,10 @@ export class Stocks extends Component {
 };
 
   componentDidMount() {
+    console.log(this.state.symbol)
     axios.get("/api/stocks/" + this.props.userId).then((response) => {
       this.setState({stocks: response.data})
+      console.log(response)
     })
   }
 
@@ -135,7 +148,10 @@ export class Stocks extends Component {
         >
         This is the transaction modal<br />
         {this.state.transactionType} {this.state.holdingId}
-        {this.state.transactionType == "add" ? <AddStock holdingId={this.state.holdingId} /> : <ReduceStock holdingId={this.state.holdingId} />}
+        {this.state.transactionType == "add" ? 
+        <AddStock holdingId={this.state.holdingId} handler={this.handleAdd} />
+        :
+        <ReduceStock holdingId={this.state.holdingId} handler={this.handleReduce} />}
         <button onClick={this.closeModal}>close</button>
         </Modal>
       </div>
