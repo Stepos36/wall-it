@@ -80,7 +80,7 @@ class StockPanel extends Component {
                         <h3>{this.state.expandedName}</h3>
                         <ul className="list-group">
                         {this.state.expandedStories.map(story => (
-                          <StockArticle url={story.news_url} text={story.text} />
+                          <StockArticle url={story.news_url} text={story.text} key={story.text}/>
                         ))}
                         </ul>
                       </div>
