@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Stock_buy = sequelize.define('Stock_buy', {
     quantity: DataTypes.INTEGER,
     stock_symbol: DataTypes.STRING,
-    price: DataTypes.DECIMAL,
+    price: DataTypes.DECIMAL(10,2),
     date: DataTypes.DATE,
     user_id: DataTypes.INTEGER,
     stock_holding_id: DataTypes.INTEGER
