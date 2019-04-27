@@ -37,7 +37,7 @@ export default props => {
                         className={'nav-link'}
                         activeClassName='active'
                     >
-                    Rates
+                    Mortgage Rates
                     </NavLink>
                 </li>
                 <li className="menu-item">

@@ -47,7 +47,7 @@ class Content extends Component {
               <Route exact path="/bills" render={(routeProps) => (
                 <Bills userId={this.props.userId} />                
               )} />
-              <Route exact path="/mortgage" render={(routeProps) => (
+              <Route exact path="/rates" render={(routeProps) => (
                 <Rates userId={this.props.userId} />                
               )} />
             </Switch>
