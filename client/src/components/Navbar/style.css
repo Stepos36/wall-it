@@ -12,7 +12,12 @@
     border-style:none;
     border:none;
   }
-  
+
+  .bm-item:focus{
+    outline:none;
+
+  }
+ 
   .bm-item:hover {
     color: white;
   }
@@ -26,7 +31,7 @@
   }
   
   .bm-burger-bars {
-    background: #373a47;
+    background: #d3d3d3;
   }
   
   .bm-cross-button {
@@ -39,7 +44,7 @@
   }
   
   .bm-menu {
-    background: #373a47;
+    background: #d3d3d3;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }
@@ -62,14 +67,18 @@
   }
 
   .nav-link {
-      color:White
+      color:black;
+      font-weight: bold;
+      font-size: 24px;
+      font-family: 'Oswald', sans-serif;
   }
 
   .nav-link:hover {
-      color:rgb(88, 189, 236)
+      color:rgb(0, 72, 105)
   }
   
   .nav-link:active {
-      color:rgb(3, 116, 168)
+      color:rgb(3, 116, 168);
+      border: solid 1px;
   }
 

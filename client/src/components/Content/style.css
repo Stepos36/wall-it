@@ -1,0 +1,12 @@
+.rightSideNav {
+    position: fixed;
+    right:0;
+    top:12.5%;
+    width:20%;
+    height:90vh;
+    overflow:auto;
+}
+
+.app {
+    background-color:#d1d1d1
+}

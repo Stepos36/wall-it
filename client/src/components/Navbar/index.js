@@ -5,7 +5,6 @@ import "./style.css";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { homedir } from "os";
 
-
 export default props => {
     return (
         <Menu>
@@ -37,7 +36,17 @@ export default props => {
                         className={'nav-link'}
                         activeClassName='active'
                     >
-                    Rates
+                    Mortgage Rates
+                    </NavLink>
+                </li>
+                <li className="menu-item">
+                    <NavLink
+                        exact={true}
+                        to="/bills"
+                        className={'nav-link'}
+                        activeClassName='active'
+                    >
+                    Bills
                     </NavLink>
                 </li>
                 <li className="menu-item">
@@ -47,11 +56,10 @@ export default props => {
                         className={'nav-link'}
                         activeClassName='active'
                     >
-                    Buget Tracker
+                    Budget Tracker
                     </NavLink>
                 </li>
             </ul>
         </Menu>
-
     );
 };

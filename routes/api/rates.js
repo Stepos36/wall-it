@@ -5,9 +5,7 @@ var cheerio = require("cheerio");
 
 router.route("/")
     .get((req, res) => {
-        console.log('first console log');
         axios.get("https://www.wellsfargo.com/mortgage/rates/").then(function (response) {
-            console.log('hello');
             var $ = cheerio.load(response.data);
             var wellsFargoArray = [];
             $("tr").each(function (i, element) {
@@ -18,7 +16,7 @@ router.route("/")
                 wellsFargoResult.apr = $(this)
                     .children("td:nth-of-type(2)")
                     .text();
-                if (wellsFargoResult.interestRate && wellsFargoArray.length < 6) {
+                if (wellsFargoResult.interestRate && wellsFargoResult.apr && wellsFargoArray.length < 6) {
                     wellsFargoArray.push(wellsFargoResult);
                 };
             });
