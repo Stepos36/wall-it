@@ -5,6 +5,8 @@ const watchlistRoutes = require("./watchlist");
 const rates = require("./rates");
 const newsRoutes = require("./news")
 
+
+
 // Item routes
 router.use("/users", userRoutes);
 router.use("/stocks", stockRoutes);
