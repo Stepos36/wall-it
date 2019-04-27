@@ -8,7 +8,7 @@ import Article from "../Article";
 import Watchlist from "../Watchlist";
 import Home from "../Pages/Home"
 import Profile from "../Pages/Profile"
-import BudgetCalc from "../Pages/BudgetCalc"
+import BudgetCalcPage from "../Pages/BudgetCalcPage"
 import Stocks from "../Pages/Stocks"
 import Bills from "../Pages/Bills"
 import Rates from "../Pages/Rates"
@@ -40,7 +40,7 @@ class Content extends Component {
                 <Profile userId={this.props.userId} />                
               )} />
               <Route exact path="/budget-calc" render={(routeProps) => (
-                <BudgetCalc userId={this.props.userId} />                
+                <BudgetCalcPage userId={this.props.userId} />                
               )} />
               <Route exact path="/stocks" render={(routeProps) => (
                 <Stocks userId={this.props.userId} />                
