@@ -3,13 +3,15 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-    max-width: 100%;
-    overflow: hidden;
-    margin: 5px;
-    border-radius: 5px;
-    border: solid 2px rgb(45,45,45);
-    padding: 0 0.9rem
+  max-width: 100%;
+  overflow: hidden;
+  margin: 5px;
+  border-radius: 5px;
+  border: solid 2px rgb(45, 45, 45);
+  padding: 0 0.9rem;
+  background-color: #fff;
 }
+
 .react-calculator .result-panel {
   display: flex;
   padding-top: 1rem;
@@ -20,6 +22,7 @@
   line-height: 3rem;
   overflow: visible;
 }
+
 .react-calculator .result-panel .last-row {
   flex: 1;
   color: #969ba3;
@@ -29,6 +32,7 @@
   justify-content: flex-end;
   overflow: auto;
 }
+
 .react-calculator .result-panel .cur-row {
   flex: 1;
   color: #46494d;
@@ -37,9 +41,11 @@
   max-width: 100%;
   padding-bottom: 3px
 }
+
 .react-calculator .button-panel {
   flex: 5;
 }
+
 .react-calculator .button-panel .button {
   cursor: pointer;
   position: relative;
@@ -54,6 +60,7 @@
   color: #979ca4;
   overflow: hidden;
 }
+
 .react-calculator .button-panel .button:before {
   content: "";
   position: absolute;
@@ -68,16 +75,20 @@
   background: #aaa;
   opacity: 0;
 }
+
 .react-calculator .button-panel .button.clicked:before {
   animation: react-calculator-click 0.5s ease-out 0s 1 alternate forwards;
 }
+
 .react-calculator .button-panel .button.button-equal {
   color: #fff;
   background-color: #fa722e;
 }
+
 .react-calculator .button-panel .button:focus {
   outline: none;
 }
+
 @keyframes react-calculator-click {
   0% {
     transform: scale(1);
@@ -88,6 +99,5 @@
     opacity: 0;
   }
 }
-.s3 {
-  
-}
+
+.s3 {}

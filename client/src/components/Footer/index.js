@@ -3,7 +3,7 @@ import './style.css';
 
 const Footer = () => (
     <footer className="footer text-center">
-    <span>Wall-IT || Copyright 2019 </span>
+    <span>Wall-IT || © 2019 </span>
     </footer>
 )
 

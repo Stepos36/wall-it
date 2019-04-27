@@ -23,44 +23,44 @@ class Content extends Component {
     return (
       <div className="app">
         <Header />
-          <Router>
-        <div className='row'>
-          <div className='col-md-1'>
+        <Router>
+          <div className='row'>
             <Navbar />
+            <div className='col-md-1'>
+            </div>
+            <div className='col-md-8'>
+              <Switch>
+                <Route exact path="/" render={(routeProps) => (
+                  <Home userId={this.props.userId} />
+                )} />
+                <Route exact path="/home" render={(routeProps) => (
+                  <Home userId={this.props.userId} />
+                )} />
+                <Route exact path="/profile" render={(routeProps) => (
+                  <Profile userId={this.props.userId} />
+                )} />
+                <Route exact path="/budget-calc" render={(routeProps) => (
+                  <BudgetCalc userId={this.props.userId} />
+                )} />
+                <Route exact path="/stocks" render={(routeProps) => (
+                  <Stocks userId={this.props.userId} />
+                )} />
+                <Route exact path="/bills" render={(routeProps) => (
+                  <Bills userId={this.props.userId} />
+                )} />
+                <Route exact path="/rates" render={(routeProps) => (
+                  <Rates userId={this.props.userId} />
+                )} />
+              </Switch>
+            </div>
+            <div className='col-md-3 rightSideNav'>
+              <div className='col-md-12'>
+                <Article /></div>
+              <div className='col-md-12'>
+                <Watchlist userId={this.props.userId}/></div>
+            </div>
           </div>
-          <div className='col-md-8'>
-            <Switch>
-              <Route exact path="/" render={(routeProps) => (
-                <Home userId={this.props.userId} />
-              )} />
-              <Route exact path="/home" render={(routeProps) => (
-                <Home userId={this.props.userId} />
-              )} />
-              <Route exact path="/profile" render={(routeProps) => (
-                <Profile userId={this.props.userId} />                
-              )} />
-              <Route exact path="/budget-calc" render={(routeProps) => (
-                <BudgetCalcPage userId={this.props.userId} />                
-              )} />
-              <Route exact path="/stocks" render={(routeProps) => (
-                <Stocks userId={this.props.userId} />                
-              )} />
-              <Route exact path="/bills" render={(routeProps) => (
-                <Bills userId={this.props.userId} />                
-              )} />
-              <Route exact path="/rates" render={(routeProps) => (
-                <Rates userId={this.props.userId} />                
-              )} />
-            </Switch>
-          </div>
-          <div className='col-md-3 rightSideNav'>
-            <div className='col-md-12'>
-            <Article /></div>
-            <div className='col-md-12'>
-            <Watchlist /></div>
-          </div>
-        </div>
-          </Router>
+        </Router>
         <Footer />
       </div>
     );
