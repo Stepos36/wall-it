@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.6",
     "cheerio": "^1.0.0-rc.3",
@@ -14,6 +11,10 @@
     "moment": "^2.24.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.5",
+    "rc-table": "^6.5.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8",
     "sequelize": "^5.7.0",
     "sequelize-cli": "^5.4.0",
     "xml2js": "^0.4.19"
