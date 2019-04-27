@@ -1,3 +1,14 @@
+.background {
+    background-image: url(https://cdn-images-1.medium.com/max/2600/1*ibYKQtnJcLT6XBgYKQH5gQ.jpeg);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+    opacity: 1;
+}
+
 .login-container {
     position: fixed;
     top: 50%;
@@ -6,8 +17,8 @@
 }
 
 .card {
-    width:300px;
-    width:50%;
+    background-color: #a1a1a1;
+    width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -27,26 +38,38 @@ input [type="text"] {
     box-sizing: border-box;
     transition: 0.3s;
 }
+
+h2, h3 {
+    -webkit-text-stroke: rgb(141, 141, 141) .1px
+}
+
+input {
+    background-color:rgb(231, 231, 231)
+}
+
 input[type="text"]:focus {
     border-color: dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
-  }
+}
+
 input[type="password"]:focus {
     border-color: dodgerBlue;
     box-shadow: 0 0 8px 0 dodgerBlue;
-  }
+}
 
 .buttons {
     size: 10px;
     margin: 10px;
     width: 150px;
     max-width: 100%;
+    background-color: #0b304b
 }
+
 .login-info {
     padding: 10px;
 }
 
-.user-info{
-    padding:5px;
-    margin:10px
+.user-info {
+    padding: 5px;
+    margin: 10px
 }

@@ -63,15 +63,17 @@ class Landing extends React.Component {
     render() {
         if (this.state.page == "") {
             return (
-                <div className="container login-container text-center card card-header">
-                    <h3>Welcome to Wall-IT. Please, login or register to begin</h3>
-                    <div className="row">
-                        <div className="col-md-12 forms card-body">
-                            <div>
-                                <button className="loginBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "login" })}>Log In </button>
-                            </div>
-                            <div>
-                                <button className="regBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "register" })}>Register</button>
+                <div className="background">
+                    <div className="container login-container text-center card card-header">
+                        <h2>Welcome to Wall-IT!</h2> <br></br> <h3>Please login or register to begin</h3>
+                        <div className="row">
+                            <div className="col-md-12 forms card-body">
+                                <div>
+                                    <button className="loginBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "login" })}>Log In </button>
+                                </div>
+                                <div>
+                                    <button className="regBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "register" })}>Register</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -80,74 +82,78 @@ class Landing extends React.Component {
         }
         else if (this.state.page == "login") {
             return (
-                <div className="container login-container text-center card card-header">
-                    <div><h3>Please login to your account to continue</h3></div>
-                    <form className="form">
-                        <div className="login-info">
-                            <input
-                                value={this.state.email}
-                                name="email"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="E-Mail"
-                            />
-                        </div>
-                        <div className="login-info">
-                            <input
-                                value={this.state.password}
-                                name="password"
-                                onChange={this.handleInputChange}
-                                type="password"
-                                placeholder="Password"
-                            />
-                        </div>
-                        <button className="subBtn buttons btn-primary btn-lg" onClick={this.handleLoginSubmit}>Submit</button>
-                    </form>
+                <div className="background">
+                    <div className="container login-container text-center card card-header">
+                        <div><h3>Please login to your account to continue</h3></div>
+                        <form className="form">
+                            <div className="login-info">
+                                <input
+                                    value={this.state.email}
+                                    name="email"
+                                    onChange={this.handleInputChange}
+                                    type="text"
+                                    placeholder="E-Mail"
+                                />
+                            </div>
+                            <div className="login-info">
+                                <input
+                                    value={this.state.password}
+                                    name="password"
+                                    onChange={this.handleInputChange}
+                                    type="password"
+                                    placeholder="Password"
+                                />
+                            </div>
+                            <button className="subBtn buttons btn-primary btn-lg" onClick={this.handleLoginSubmit}>Submit</button>
+                        </form>
+                    </div>
                 </div>
             );
         }
         else if (this.state.page == "register") {
             return (
-                <div className="container login-container text-center card card-header">
-                <div><h3>Please fill out all fields to register to Wall-IT</h3></div>
-                    <form className="form">
-                        <div>
-                            <input className="user-info" 
-                                value={this.state.firstName}
-                                name="firstName"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="First Name"
-                            />
-                            <input className="user-info"
-                                value={this.state.lastName}
-                                name="lastName"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Last Name"
-                            />
-                        </div>
+                <div className="background">
+                    <div className="container login-container text-center card card-header">
+                        <div><h3>Please fill out all fields to register to Wall-IT</h3></div>
+                        <form className="form">
+                            <div>
+                                <input className="user-info"
+                                    value={this.state.firstName}
+                                    name="firstName"
+                                    onChange={this.handleInputChange}
+                                    type="text"
+                                    placeholder="First Name"
+                                />
+                                <input className="user-info"
+                                    value={this.state.lastName}
+                                    name="lastName"
+                                    onChange={this.handleInputChange}
+                                    type="text"
+                                    placeholder="Last Name"
+                                />
+                            </div>
 
-                        <div>
-                            <input className="user-info"
-                                value={this.state.email}
-                                name="email"
-                                onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="E-Mail"
-                            />
-                            <input className="user-info"
-                                value={this.state.password}
-                                name="password"
-                                onChange={this.handleInputChange}
-                                type="password"
-                                placeholder="Password"
-                            />
-                        </div>
-                        <div>
-                        <button className="subBtn buttons btn-primary btn-lg" onClick={this.handleRegisterSubmit}>Submit</button>
-                        </div>
-                    </form>
+                            <div>
+                                <input className="user-info"
+                                    value={this.state.email}
+                                    name="email"
+                                    onChange={this.handleInputChange}
+                                    type="text"
+                                    placeholder="E-Mail"
+                                />
+                                <input className="user-info"
+                                    value={this.state.password}
+                                    name="password"
+                                    onChange={this.handleInputChange}
+                                    type="password"
+                                    placeholder="Password"
+                                />
+                            </div>
+                            <div>
+                                <button className="subBtn buttons btn-primary btn-lg" onClick={this.handleRegisterSubmit}>Submit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             )
         }
