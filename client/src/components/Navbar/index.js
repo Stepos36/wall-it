@@ -1,73 +1,57 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { slide as Menu } from 'react-burger-menu';
 import "./style.css";
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import { homedir } from "os";
 
 
-function Navbar() {
+export default props => {
     return (
-        <div className="sideNav">
-            <div className="row">
-                <div className="col-12">
-                    <nav className="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <div>
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                            <NavLink
-                                exact={true}
-                                to="/home"
-                                className={'nav-link'}
-                                activeClassName='active'
-                            >
-                                Home
-                            </NavLink>
-                            </li>
-                            <li className="nav-item">
-                            <NavLink
-                                exact={true}
-                                to="/profile"
-                                className={'nav-link'}
-                                activeClassName='active'
-                            >
-                                Profile
-                            </NavLink>
-                            </li>
-                            <li className="nav-item">
-                            <NavLink
-                                exact={true}
-                                to="/budget-calc"
-                                className={'nav-link'}
-                                activeClassName='active'
-                            >
-                                Budget Calc
-                            </NavLink>
-                            </li>
-                            <li className="nav-item">
-                            <NavLink
-                                exact={true}
-                                to="/stocks"
-                                className={'nav-link'}
-                                activeClassName='active'
-                            >
-                                Stocks
-                            </NavLink>
-                            </li>
-                            <li className="nav-item">
-                            <NavLink
-                                exact={true}
-                                to="/bills"
-                                className={'nav-link'}
-                                activeClassName='active'
-                            >
-                                Bills
-                            </NavLink>
-                            </li>
-                        </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    );
-  }
+        <Menu>
+            <ul>
+                <li className="menu-item">
+                    <NavLink
+                        exact={true}
+                        to="/home"
+                        className={'nav-link'}
+                        activeClassName='active'
+                    >
+                    Home
+                    </NavLink>
+                </li>
+                <li className="menu-item">
+                    <NavLink
+                        exact={true}
+                        to="/stocks"
+                        className={'nav-link'}
+                        activeClassName='active'
+                    >
+                    Stocks
+                    </NavLink>
+                </li>
+                <li className="menu-item">
+                    <NavLink
+                        exact={true}
+                        to="/rates"
+                        className={'nav-link'}
+                        activeClassName='active'
+                    >
+                    Rates
+                    </NavLink>
+                </li>
+                <li className="menu-item">
+                    <NavLink
+                        exact={true}
+                        to="/buget-calc"
+                        className={'nav-link'}
+                        activeClassName='active'
+                    >
+                    Buget Tracker
+                    </NavLink>
+                </li>
+            </ul>
+        </Menu>
 
-export default Navbar;
+    );
+};

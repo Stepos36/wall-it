@@ -1,0 +1,11 @@
+.widget {
+    max-width: 100%;
+}
+
+#expandName {
+    display: inline;
+}
+
+#watchBtn {
+    display: inline;
+}

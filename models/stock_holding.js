@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Stock_holding = sequelize.define('Stock_holding', {
     symbol: DataTypes.STRING,
     quantity: DataTypes.INTEGER,
-    cashflow: DataTypes.DECIMAL,
+    cashflow: DataTypes.DECIMAL(10,2),
     user_id: DataTypes.INTEGER
   }, {underscored: true});
   Stock_holding.associate = function(models) {
