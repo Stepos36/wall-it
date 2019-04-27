@@ -8,6 +8,15 @@
     border-radius: 5px;
     border: solid 2px rgb(45,45,45);
 }
+.calendar button {
+    color: black
+}
+.calendar .react-calendar__month-view__days__day--weekend {
+    color: red
+}
+.calendar .react-calendar__month-view__days__day--neighboringMonth {
+    color: gray
+}
 .react-calendar {
     width: 100%;
     border: none
