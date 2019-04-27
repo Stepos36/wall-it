@@ -2,3 +2,7 @@
     display:inline-block;
     align-content: center;
 }
+
+.react-clock__face {
+    background-color: beige;
+}
