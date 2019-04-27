@@ -56,7 +56,7 @@ class Content extends Component {
             <div className='col-md-12'>
             <Article /></div>
             <div className='col-md-12'>
-            <Watchlist /></div>
+            <Watchlist userId={this.props.userId}/></div>
 
           </div>
         </div>
