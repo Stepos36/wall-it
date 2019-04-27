@@ -40,7 +40,7 @@ class Content extends Component {
                   <Profile userId={this.props.userId} />
                 )} />
                 <Route exact path="/budget-calc" render={(routeProps) => (
-                  <BudgetCalc userId={this.props.userId} />
+                  <BudgetCalcPage userId={this.props.userId} />
                 )} />
                 <Route exact path="/stocks" render={(routeProps) => (
                   <Stocks userId={this.props.userId} />
