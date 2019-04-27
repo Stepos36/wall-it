@@ -2,6 +2,9 @@ const db = require("../models");
 
 module.exports = {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 560ff9b36589cedd82776fb0702e8fd2a1b30cd9
     getItems: function(req, res) {
 
     },
@@ -10,6 +13,7 @@ module.exports = {
     },
     updateItems: function(req, res) {
         
+<<<<<<< HEAD
 =======
 	expense: function(req, res) {
         let id = req.params.id;
@@ -50,5 +54,7 @@ module.exports = {
             stock_holding_id: ""
         }).then(data => {res.json(data)})
 >>>>>>> ea712d78d8512e449b467cb41b86273e1259ee2b
+=======
+>>>>>>> 560ff9b36589cedd82776fb0702e8fd2a1b30cd9
     }
 }
