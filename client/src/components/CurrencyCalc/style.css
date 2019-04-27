@@ -6,7 +6,8 @@
     background: rgb(135,135,135);
     border-radius: 5px;
     border: solid 2px rgb(45,45,45);
-    margin: 5px
+    margin: 5px;
+    background-color:white
 }
 
 .Form {
