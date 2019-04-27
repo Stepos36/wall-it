@@ -8,7 +8,7 @@ import Article from "../Article";
 import Watchlist from "../Watchlist";
 import Home from "../Pages/Home"
 import Profile from "../Pages/Profile"
-import BudgetCalc from "../Pages/BudgetCalc"
+import BudgetCalcPage from "../Pages/BudgetCalcPage"
 import Stocks from "../Pages/Stocks"
 import Bills from "../Pages/Bills"
 import Rates from "../Pages/Rates"

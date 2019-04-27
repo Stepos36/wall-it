@@ -2,8 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { slide as Menu } from 'react-burger-menu';
 import "./style.css";
-import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import { homedir } from "os";
 
 export default props => {
     return (
@@ -52,7 +50,7 @@ export default props => {
                 <li className="menu-item">
                     <NavLink
                         exact={true}
-                        to="/buget-calc"
+                        to="/budget-calc"
                         className={'nav-link'}
                         activeClassName='active'
                     >
