@@ -21,7 +21,7 @@ class Content extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Header />
           <Router>
         <div className='row'>
