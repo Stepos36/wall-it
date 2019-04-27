@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       cashflow: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
       },
       createdAt: {
         allowNull: false,
