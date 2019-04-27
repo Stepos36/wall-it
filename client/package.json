@@ -15,7 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "@culturehq/charts": "^1.2.0",
-    "@trendmicro/react-sidenav": "^0.4.5",
     "axios": "^0.18.0",
     "google-news-rss": "^0.4.1",
     "jquery": "^3.4.0",

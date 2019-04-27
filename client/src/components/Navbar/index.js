@@ -42,11 +42,21 @@ export default props => {
                 <li className="menu-item">
                     <NavLink
                         exact={true}
+                        to="/bills"
+                        className={'nav-link'}
+                        activeClassName='active'
+                    >
+                    Bills
+                    </NavLink>
+                </li>
+                <li className="menu-item">
+                    <NavLink
+                        exact={true}
                         to="/buget-calc"
                         className={'nav-link'}
                         activeClassName='active'
                     >
-                    Buget Tracker
+                    Budget Tracker
                     </NavLink>
                 </li>
             </ul>

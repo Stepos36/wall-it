@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.6",
     "cheerio": "^1.0.0-rc.3",
@@ -14,6 +17,12 @@
     "sequelize": "^5.7.0",
     "sequelize-cli": "^5.4.0",
     "xml2js": "^0.4.19"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
