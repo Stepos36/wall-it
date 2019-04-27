@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './style.css';
 import '../../App.css';
 import Navbar from "../Navbar";
 import Header from "../Header";
@@ -24,10 +25,10 @@ class Content extends Component {
         <Header />
           <Router>
         <div className='row'>
-          <div className='col-md-2'>
+          <div className='col-md-1'>
             <Navbar />
           </div>
-          <div className='col-md-7'>
+          <div className='col-md-8'>
             <Switch>
               <Route exact path="/" render={(routeProps) => (
                 <Home userId={this.props.userId} />
@@ -52,12 +53,11 @@ class Content extends Component {
               )} />
             </Switch>
           </div>
-          <div className='col-md-3'>
+          <div className='col-md-3 rightSideNav'>
             <div className='col-md-12'>
             <Article /></div>
             <div className='col-md-12'>
             <Watchlist /></div>
-
           </div>
         </div>
           </Router>

@@ -1,0 +1,8 @@
+.rightSideNav {
+    position: fixed;
+    right:0;
+    top:16%;
+    width:20%;
+    height:90vh;
+    overflow:auto;
+}

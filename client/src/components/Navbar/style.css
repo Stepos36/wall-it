@@ -12,7 +12,12 @@
     border-style:none;
     border:none;
   }
-  
+
+  .bm-item:focus{
+    outline:none;
+
+  }
+ 
   .bm-item:hover {
     color: white;
   }
