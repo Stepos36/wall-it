@@ -8,6 +8,6 @@ module.exports = {
 
     },
     updateItems: function(req, res) {
-        
+
     }
 }

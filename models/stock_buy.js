@@ -36,7 +36,6 @@ module.exports = (sequelize, DataTypes) => {
               }
             }).then(data => {
               buy.stock_holding_id = data.id
-              console.log(buy)
               resolve(buy)
             })
           })

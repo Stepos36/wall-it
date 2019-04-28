@@ -12,7 +12,6 @@ module.exports = {
     },
     addHolding: function(req, res) {
         let id = req.params.id;
-        console.log(id)
         let symbol = req.body.symbol
         let quantity = req.body.quantity
         let price = req.body.price
