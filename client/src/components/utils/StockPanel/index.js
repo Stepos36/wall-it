@@ -34,15 +34,13 @@ class StockPanel extends Component {
   moreInfo(event) {
     event.preventDefault();
     let infoObj = {}
-    let namePromise = axios.get("https://www.worldtradingdata.com/api/v1/stock?symbol=" + this.state.symbol + "&api_token=Dvk9Bf1Qefk0H0z2th3l0Gge2ZafA8FvHjc1MRDhEmJSiffj3Lk0M85AihJ8")
+    let namePromise = axios.post("/tradingdata", {symbols: this.state.symbol})
     .then(info => {
-      console.log(info)
       infoObj.name = info.data.data[0].name
       infoObj.symbol = info.data.data[0].symbol
     })
     let newsPromise = axios.get("https://stocknewsapi.com/api/v1?tickers=" + this.state.symbol + "&items=5&fallback=true&token=8mh1wqbeonbi6qxwwhvhpaibaji5grdrtbwe7rxu")
     .then(response => {
-        console.log(response)
         infoObj.stories = response.data.data
     })
     Promise.all([namePromise, newsPromise]).then(() => {
@@ -52,7 +50,6 @@ class StockPanel extends Component {
         expandedName: infoObj.name,
         expandedStories: infoObj.stories
       })
-      console.log(this.state)
     })
   }
 

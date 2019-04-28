@@ -20,7 +20,6 @@ const googleNews = new GoogleNewsRss();
     router.route("/")
     .get( (req,res) => {
         googleNews.search('business').then((response) => {
-            console.log(response)
             res.json(response)
         }) 
     })

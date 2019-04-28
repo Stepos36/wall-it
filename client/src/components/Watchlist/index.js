@@ -23,10 +23,14 @@ export class Watchlist extends Component {
     
       componentDidMount() {
         axios.get("/api/watchlist/" + this.props.userId).then((response) => {
+          console.log(response)
+          if (response.status === 204) {console.log("204")}
+          else {
           this.setState({watchlist: response.data})
           console.log(response)
           this.getMarketData()
           setInterval(() => this.getMarketData(), 60000)
+          }
         })
       }
     
@@ -36,14 +40,10 @@ export class Watchlist extends Component {
               symbols.push(item.symbol)
           })
           let querySymbols = symbols.join()
-          let query = 'https://www.worldtradingdata.com/api/v1/stock?symbol='+querySymbols+
-          '&api_token=Dvk9Bf1Qefk0H0z2th3l0Gge2ZafA8FvHjc1MRDhEmJSiffj3Lk0M85AihJ8'
-        axios.get(query)
-        .then(result => {
-            console.log(result)
-            this.setState({stockChanges: result.data.data})
-            console.log(this.state.stockChanges)
-        })
+          axios.post("/tradingdata", {symbols: querySymbols})
+            .then(response => {
+              this.setState({stockChanges: response.data.data})
+            })
         }
 
       render() {
