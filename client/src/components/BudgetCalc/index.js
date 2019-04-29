@@ -9,7 +9,8 @@ class BudgetCalc extends Component {
         super();
 
         this.state = {
-        rows: ['row1']
+        incomeRows: [1],
+        expenseRows: [1]
         };
     };
 
@@ -19,18 +20,19 @@ class BudgetCalc extends Component {
 
         addIncomeRow(event) {
             event.preventDefault();
-            console.log(this)
-            var rowsIncome = [...this.state.rows]
-            rowsIncome.push('newRow')
-            this.setState({rows: rowsIncome})
+            this.state.incomeKey += 1
+            var rowsIncome = [...this.state.incomeRows]
+            rowsIncome.push(this.state.incomeKey)
+            this.setState({incomeRows: rowsIncome})
         }
 
         addExpenseRow(event) {
             event.preventDefault();
-            console.log(this)
-            var rowsExpense = [...this.state.rows]
-            rowsExpense.push('newRow2')
-            this.setState({rows: rowsExpense})
+            this.state.expenseKey += 1
+            var rowsExpense = [...this.state.expenseRows]
+            rowsExpense.push(this.state.expenseKey)
+            this.setState({expenseRows: rowsExpense})
+            console.log(this.state)
         }
         
         pushRows(event) {
@@ -43,20 +45,24 @@ class BudgetCalc extends Component {
             
         }
 
+        updateIncomeValues(key, value) {
+            console.log(key, value)
+        }
+
         render() {
             return (
                 <div className="contaianer">
                     <div className="row text-center">
                         <div className='col-12'>
                             <form>
-                                {this.state.rows.map(row => <FormIncome/>)}
+                                {this.state.incomeRows.map((row, index) => <FormIncome valueHandler={this.updateIncomeValues} number={index}/>)}
                                 <button id="submit" onClick={this.pushRows}>Submit</button>  
                                 <button id="addBtn" onClick={(event) => this.addIncomeRow(event)}>Add another income source</button>
                             </form>
                         </div>
                         <div className='col-12'>
                             <form>
-                                {this.state.rows.map(row => <FormGroup/>)}
+                                {this.state.expenseRows.map((row, index) => <FormGroup valueHandler={this.updateExpenseValues} number={index}/>)}
                                 <button id="submit2" onClick={this.pushRows}>Submit</button>  
                                 <button id="addBtn2" onClick={(event) => this.addExpenseRow(event)}>Add another bill</button>
                             </form>                            
