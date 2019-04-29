@@ -1,25 +1,49 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import './style.css';
 
-function FormGroup() {
+class FormGroup extends Component {
+    constructor() { 
+        super();
+
+        this.state = {
+            type: "Salary",
+            value: "2000",
+            paydate: "25"
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+    };
+
+    handleInputChange(event) {
+        let value = event.target.value;
+        const name = event.target.name;
+    
+        this.setState({[name]: value}, () => {
+            this.props.valueHandler(this.props.number, this.state)
+        })
+    };
+    
+
+    render() {
     return(
         <div>
-            <div class="row">
-            <div class="col">
-                <label for="expenseType">Monthly Bill</label>
-                <input type="description" class="form-control" id="description" placeholder="Chase Visa Credit Card Bill"></input>
+            <div className="row">
+            <div className="col">
+                <label htmlFor="expenseType">Monthly Bill</label>
+                <input name="type" className="form-control" value={this.state.type} onChange={this.handleInputChange}></input>
             </div>
-            <div class="col">
-                <label for="expenseAmt">Monthly Amount</label>
-                <input type="amount" class="form-control" id="amount" placeholder="100"></input>
+            <div className="col">
+                <label htmlFor="expenseAmt">Monthly Amount</label>
+                <input name="value" className="form-control" value={this.state.value} onChange={this.handleInputChange}></input>
             </div>
-            <div class="col">
-                <label for="expensePayDate">Monthly Pay Date</label>
-                <input type="paydate" class="form-control" id="paydate" placeholder="25"></input>
+            <div className="col">
+                <label htmlFor="expensePayDate">Monthly Pay Date</label>
+                <input name="paydate" className="form-control" value={this.state.paydate} onChange={this.handleInputChange}></input>
             </div>
             </div>
         </div>
     )
+    }
 } 
 
 export default FormGroup;
