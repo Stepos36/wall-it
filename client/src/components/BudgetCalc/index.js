@@ -7,8 +7,8 @@ import update from "immutability-helper";
 import axios from "axios";
 
 class BudgetCalc extends Component {
-    constructor(props) { 
-        super(props);
+    constructor() { 
+        super();
 
         this.state = {
         incomeRows: [{"type": "", "value": ""}],
