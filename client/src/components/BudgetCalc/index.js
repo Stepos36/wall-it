@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './style.css';
+import './style.css';
 import FormGroup from '../BudgetFormGroup';
 import '../../App.css';
 
@@ -31,6 +31,7 @@ class BudgetCalc extends Component {
 
         render() {
             return (
+            <div>
                 <div className="contaianer">
                     <div className="row text-center">
                         <div className='col-12'>
@@ -38,11 +39,11 @@ class BudgetCalc extends Component {
                                 {this.state.rows.map(row => <FormGroup/>)}
                                 <button id="submit" onClick={this.pushRows}>Submit</button>  
                                 <button id="addBtn" onClick={(event) => this.addRow(event)}>Add another bill</button>
-                            </form>
-                            
+                            </form>                           
                         </div>
                     </div>
                 </div>  
+            </div>
             )
         }
         
