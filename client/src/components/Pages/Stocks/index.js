@@ -143,13 +143,14 @@ export class Stocks extends Component {
         contentLabel="Transaction Modal"
         onRequestClose={this.closeModal}
         style={customStyles}
-        >
-        Log your transaction details here<br />
+        ><div className="modalBackground">
+        <p>Log your transaction details here</p><br />
         {this.state.transactionType === "add" ? 
         <AddStock holdingId={this.state.holdingId} handler={this.handleAdd} quantity={this.state.quantity} symbol={this.state.selectedSymbol} />
         :
         <ReduceStock holdingId={this.state.holdingId} handler={this.handleReduce} quantity={this.state.quantity} symbol={this.state.selectedSymbol}/>}
-        <button onClick={this.closeModal}>close</button>
+        <button className="closeBtn" onClick={this.closeModal}>close</button>
+        </div>
         </Modal>
       </div>
     )

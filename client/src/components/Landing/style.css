@@ -40,7 +40,8 @@ input [type="text"] {
 }
 
 h2, h3 {
-    -webkit-text-stroke: rgb(141, 141, 141) .1px
+    -webkit-text-stroke: rgb(141, 141, 141) .1px;
+    font-family: 'Roboto', sans-serif;
 }
 
 input {

@@ -9,3 +9,18 @@
 #watchBtn {
     display: inline;
 }
+
+.col-form-label{
+    color:black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.infoBtn{
+    width:40%;
+    text-align: center;
+    margin: 3px;
+    text-align: center;
+    align-content: center;
+    align-self: center;
+    padding: 6px;
+}
