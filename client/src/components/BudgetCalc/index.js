@@ -20,17 +20,17 @@ class BudgetCalc extends Component {
         addIncomeRow(event) {
             event.preventDefault();
             console.log(this)
-            var rows = [...this.state.rows]
-            rows.push('newRow')
-            this.setState({rows: rows})
+            var rowsIncome = [...this.state.rows]
+            rowsIncome.push('newRow')
+            this.setState({rows: rowsIncome})
         }
 
         addExpenseRow(event) {
             event.preventDefault();
             console.log(this)
-            var rows = [...this.state.rows]
-            rows.push('newRow2')
-            this.setState({rows: rows})
+            var rowsExpense = [...this.state.rows]
+            rowsExpense.push('newRow2')
+            this.setState({rows: rowsExpense})
         }
         
         pushRows(event) {
