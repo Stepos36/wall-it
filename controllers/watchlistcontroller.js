@@ -7,11 +7,11 @@ module.exports = {
                 user_id: req.params.id
             }
         }).then(listData => {
-            if (listData[0].dataValues) {
+            console.log(listData)
+            if (listData[0]) {
                 res.json(listData)
             }
             else res.status(204).json({message: "No watchlist"})
-
         })
     },
     addListItem: function(req, res) {
