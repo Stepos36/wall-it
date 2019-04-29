@@ -1,21 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import './style.css';
 
-function FormIncome() {
+class FormIncome extends Component {
+    constructor() { 
+        super();
+
+        this.state = {
+            type: "Salary",
+            value: "2000"
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+    };
+
+    handleInputChange(event) {
+        let value = event.target.value;
+        const name = event.target.name;
+    
+        this.setState({[name]: value}, () => {
+            this.props.valueHandler(this.props.number, this.state)
+        })
+    };
+    
+
+    render() {
     return(
         <div>
             <div class="row">
             <div class="col">
                 <label for="incomeType">Income Type</label>
-                <input type="incomeDesc" class="form-control" id="incomeDescription" placeholder="Salary"></input>
+                <input type="incomeDesc" className="form-control" name="type" value={this.state.type} onChange={this.handleInputChange}></input>
             </div>
             <div class="col">
                 <label for="incomeAmt">Monthly Net Amount</label>
-                <input type="netIncAmount" class="form-control" id="incomeAmount" placeholder="2000"></input>
+                <input type="netIncAmount" className="form-control" name="value" value={this.state.value} onChange={this.handleInputChange}></input>
             </div>
             </div>
         </div>
     )
+    }
 } 
 
 export default FormIncome;
