@@ -29,7 +29,7 @@ export class Watchlist extends Component {
           this.setState({watchlist: response.data})
           console.log(response)
           this.getMarketData()
-          setInterval(() => this.getMarketData(), 60000)
+          // setInterval(() => this.getMarketData(), 60000)
           }
         })
       }
@@ -42,6 +42,7 @@ export class Watchlist extends Component {
           let querySymbols = symbols.join()
           axios.post("/tradingdata", {symbols: querySymbols})
             .then(response => {
+              console.log(response)
               this.setState({stockChanges: response.data.data})
             })
         }

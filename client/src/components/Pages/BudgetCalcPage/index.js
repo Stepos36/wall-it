@@ -21,7 +21,7 @@ class BudgetCalcPage extends Component {
         </div>
         <div className='col-md-12'>
           <ul>
-            <BudgetCalc />
+            <BudgetCalc userId={this.props.userId}/>
           </ul>
         </div>
       </div>
