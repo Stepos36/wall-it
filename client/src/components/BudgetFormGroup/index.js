@@ -15,7 +15,7 @@ function FormGroup() {
             </div>
             <div class="col">
                 <label for="expensePayDate">Monthly Pay Date</label>
-                <input type="paydarte" class="form-control" id="paydate" placeholder="25"></input>
+                <input type="paydate" class="form-control" id="paydate" placeholder="25"></input>
             </div>
             </div>
         </div>
