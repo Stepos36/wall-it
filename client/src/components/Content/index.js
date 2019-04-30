@@ -7,12 +7,11 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Article from "../Article";
 import Watchlist from "../Watchlist";
-import Home from "../Pages/Home"
-import Profile from "../Pages/Profile"
-import BudgetCalcPage from "../Pages/BudgetCalcPage"
-import Stocks from "../Pages/Stocks"
-import Bills from "../Pages/Bills"
-import Rates from "../Pages/Rates"
+import Home from "../Pages/Home";
+import Profile from "../Pages/Profile";
+import BudgetCalcPage from "../Pages/BudgetCalcPage";
+import Stocks from "../Pages/Stocks";
+import Rates from "../Pages/Rates";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class Content extends Component {
@@ -47,9 +46,6 @@ class Content extends Component {
                         )} />
                         <Route exact path="/stocks" render={(routeProps) => (
                           <Stocks userId={this.props.userId} />
-                        )} />
-                        <Route exact path="/bills" render={(routeProps) => (
-                          <Bills userId={this.props.userId} />
                         )} />
                         <Route exact path="/rates" render={(routeProps) => (
                           <Rates userId={this.props.userId} />
@@ -93,9 +89,6 @@ class Content extends Component {
                       )} />
                       <Route exact path="/stocks" render={(routeProps) => (
                         <Stocks userId={this.props.userId} />
-                      )} />
-                      <Route exact path="/bills" render={(routeProps) => (
-                        <Bills userId={this.props.userId} />
                       )} />
                       <Route exact path="/rates" render={(routeProps) => (
                         <Rates userId={this.props.userId} />

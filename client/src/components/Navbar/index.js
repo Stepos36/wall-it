@@ -40,16 +40,6 @@ export default props => {
                 <li className="menu-item">
                     <NavLink
                         exact={true}
-                        to="/bills"
-                        className={'nav-link'}
-                        activeClassName='active'
-                    >
-                    Bills
-                    </NavLink>
-                </li>
-                <li className="menu-item">
-                    <NavLink
-                        exact={true}
                         to="/budget-calc"
                         className={'nav-link'}
                         activeClassName='active'
