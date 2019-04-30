@@ -5,8 +5,10 @@ export class WatchListTableHeader extends Component {
     return (
       <thead>
         <tr>
-          <th>Stock Name</th>
-          <th>Changes</th>
+          <th>Stock Symbol</th>
+          <th>Current price</th>
+          <th>Today’s Change</th>
+          <th><button onClick={this.props.render}>⟲</button></th>
         </tr>
       </thead>
     )
