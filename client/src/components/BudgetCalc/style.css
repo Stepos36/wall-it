@@ -1,0 +1,14 @@
+button {
+    padding:5px;
+    margin:10px;
+    border-radius: 8px;
+}
+
+#submit, #addBtn{
+    background-color:#0b304b;
+    font-family: 'Roboto', sans-serif;
+}
+
+button:focus {
+    outline:none
+}

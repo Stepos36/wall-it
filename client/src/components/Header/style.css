@@ -1,11 +1,14 @@
-.navbar{
-  height:75px;
-  background-color: #0b304b
+.navbar {
+  height: 75px;
+  background-color: #0b304b;
+  color:white;
+  font-family: 'Staatliches', cursive;
+  font-size:44px;
 }
 
 .navbar-brand {
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-
-  }
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  font-size:44px;
+}

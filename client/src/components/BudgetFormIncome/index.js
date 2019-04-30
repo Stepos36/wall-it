@@ -26,13 +26,13 @@ class FormIncome extends Component {
     render() {
     return(
         <div>
-            <div class="row">
-            <div class="col">
-                <label for="incomeType">Income Type</label>
+            <div className="row">
+            <div className="col">
+                <label htmlFor="incomeType">Income Type</label>
                 <input type="incomeDesc" className="form-control" name="type" value={this.state.type} onChange={this.handleInputChange}></input>
             </div>
-            <div class="col">
-                <label for="incomeAmt">Monthly Net Amount</label>
+            <div className="col">
+                <label htmlFor="incomeAmt">Monthly Net Amount</label>
                 <input type="netIncAmount" className="form-control" name="value" value={this.state.value} onChange={this.handleInputChange}></input>
             </div>
             </div>

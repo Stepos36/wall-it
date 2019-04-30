@@ -27,7 +27,7 @@ class StockPage extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("https://www.worldtradingdata.com/api/v1/stock?symbol=^DJI,^IXIC,^INX,^UKX,^NI225&api_token=Uq7VIpL1tmDL99KrHyxVfMf1RzevUQkY07MPdYP7iVwFmStWwmKLyegAnQoM")
+        axios.get("https://www.worldtradingdata.com/api/v1/stock?symbol=^DJI,^IXIC,^INX,^UKX,^NI225&api_token=7j9FnMBpalVytmiowz2gdPdq6lYk2PDNtJUvLTQjxBUqWxnp6Sp5Az3gS9g5")
         .then(result => {
             console.log(result)
             let zeroDiv = document.getElementById('zero');

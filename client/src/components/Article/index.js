@@ -25,9 +25,9 @@ class Article extends Component {
             <div className="rightSideNav1">
                 {this.state.news.map(news => (
                     <div>
-                        <a href={news.link} target="_blank"><h6>{news.title}</h6> </a>
+                        <h6 className="articleDate">{news.pubDate}</h6>
+                        <a href={news.link} target="_blank"><h6 className="newsTitle">{news.title}</h6> </a>
                         {/* <h6>{news.link}</h6> */}
-                        <h6>{news.pubDate}</h6>
                     </div>
                 ))}
             </div>
