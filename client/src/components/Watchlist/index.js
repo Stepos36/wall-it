@@ -14,14 +14,16 @@ export class Watchlist extends Component {
           watchlist: [],
           stockChanges: []
         };
+        this.removeListItem=this.removeListItem.bind(this);
+        this.renderWatchList=this.renderWatchList.bind(this)
       }
       renderList() {
         axios.get("/api/watchlist/" + this.props.userId).then((response) => {
           this.setState({watchlist: response.data})
         })
       }
-    
-      componentDidMount() {
+      
+      renderWatchList() {
         axios.get("/api/watchlist/" + this.props.userId).then((response) => {
           console.log(response)
           if (response.status === 204) {console.log("204")}
@@ -29,9 +31,12 @@ export class Watchlist extends Component {
           this.setState({watchlist: response.data})
           console.log(response)
           this.getMarketData()
-          // setInterval(() => this.getMarketData(), 60000)
           }
         })
+      }
+
+      componentDidMount() {
+        this.renderWatchList()
       }
     
       getMarketData() {
@@ -46,15 +51,24 @@ export class Watchlist extends Component {
               this.setState({stockChanges: response.data.data})
             })
         }
+      
+      
+
+      removeListItem(symbol) {
+        axios.put('/api/watchlist/'+this.props.userId, {symbol: symbol})
+        .then(response => {
+          this.renderWatchList()
+        })
+      }
 
       render() {
         return (
             <div className="row">
             <WatchListTableWrapper>
-                <WatchListTableHeader />
+                <WatchListTableHeader render={this.renderWatchList}/>
                 <WatchListTableBodyWrapper>
                     {this.state.stockChanges.map(watchitem => (
-                        <WatchListTable data={watchitem} />
+                        <WatchListTable remove={this.removeListItem} data={watchitem} />
                     ))}
                 </WatchListTableBodyWrapper>
             </WatchListTableWrapper>

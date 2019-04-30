@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './style.css'
 
 function WatchListTable(props) {
     return (
@@ -7,7 +8,13 @@ function WatchListTable(props) {
           {props.data.symbol}
           </td>
           <td>
-          {props.data.day_change}
+          ${props.data.price}
+          </td>
+          <td>
+          {props.data.change_pct}%
+          </td>
+          <td>
+          <button onClick={() => props.remove(props.data.symbol)}>-</button>
           </td>
       </tr>
     )
