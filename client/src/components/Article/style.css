@@ -3,8 +3,9 @@
     width: 100%;
     height: 50vh;
     border: 3px #0b304b solid ;
-    overflow: scroll;
     border-radius:3px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .newsTitle {

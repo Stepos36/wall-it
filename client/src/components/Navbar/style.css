@@ -7,7 +7,7 @@
     display: inline-block;
     text-decoration: none;
     margin-bottom: 10px;
-    color: #d1d1d1;
+    color: #d3d3d3;
     transition: color 0.2s;
     border-style:none;
     border:none;
@@ -30,13 +30,17 @@
   }
   
   .bm-burger-bars {
-    background: #464646;
-    border: .1px solid #fff;
-    border-radius: 0px 4px 0px 4px 
+    background: #000000;
+    /* border: .1px solid #fff;
+    border-radius: 0px 4px 0px 4px  */
   }
 
   .bm-burger-bars:focus {
-    outline:none
+    outline:none;
+  }
+
+  .bm-burger-bars:hover {
+    background:#fff
   }
   
   .bm-cross-button {
@@ -64,6 +68,7 @@
   
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+    height:100vh;
   }
 
   ul {
