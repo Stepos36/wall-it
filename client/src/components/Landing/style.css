@@ -72,5 +72,6 @@ input[type="password"]:focus {
 
 .user-info {
     padding: 5px;
-    margin: 10px
+    margin: 10px;
+    width:95%
 }

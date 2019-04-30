@@ -12,6 +12,8 @@ class Landing extends React.Component {
         password: ""
     }
 
+    pageReload = () => {}
+
     handleInputChange = event => {
         let value = event.target.value;
         const name = event.target.name;
@@ -150,6 +152,7 @@ class Landing extends React.Component {
                                 />
                             </div>
                             <div>
+                                <button className="subBtn buttons btn-primary btn-lg" onClick={this.pageReload}>Back</button>
                                 <button className="subBtn buttons btn-primary btn-lg" onClick={this.handleRegisterSubmit}>Submit</button>
                             </div>
                         </form>
