@@ -25,7 +25,7 @@ class Content extends Component {
         <Header />
         <Router>
             <Navbar />
-          <div className='row' id="BudgetCalcPage">
+          <div className='row'>
             <div className='col-md-1 content'>
             </div>
             <div className='col-md-8 content'>
