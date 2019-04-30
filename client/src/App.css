@@ -1,12 +1,30 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    background-color:#d1d1d1
 }
 
-p, h1, h2, h3, h4, h5, h6, th, td{
+p, h1, h2, h3, h4, h5, h6, th, td {
     font-family: 'Roboto', sans-serif;
 }
 
-button{ 
+button {
     font-family: 'Roboto', sans-serif;
+}
+
+.bottomNav {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.shadow {
+        -webkit-filter: drop-shadow(5px 5px 5px #222);
+        filter: drop-shadow(5px 5px 5px #222);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+        filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+}
+@media screen and (max-width: 750px) {
+    .clockDiv, .map, .tableWrapper {
+        display: none;
+    }
 }

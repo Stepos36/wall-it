@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MediaQuery from "react-responsive";
 import './style.css';
 import '../../App.css';
 import Navbar from "../Navbar";
@@ -24,42 +25,95 @@ class Content extends Component {
       <div className="app">
         <Header />
         <Router>
-            <Navbar />
-          <div className='row' id="BudgetCalcPage">
-            <div className='col-md-1 content'>
-            </div>
-            <div className='col-md-8 content'>
-              <Switch>
-                <Route exact path="/" render={(routeProps) => (
-                  <Home userId={this.props.userId} />
-                )} />
-                <Route exact path="/home" render={(routeProps) => (
-                  <Home userId={this.props.userId} />
-                )} />
-                <Route exact path="/profile" render={(routeProps) => (
-                  <Profile userId={this.props.userId} />
-                )} />
-                <Route exact path="/budget-calc" render={(routeProps) => (
-                  <BudgetCalcPage userId={this.props.userId} />
-                )} />
-                <Route exact path="/stocks" render={(routeProps) => (
-                  <Stocks userId={this.props.userId} />
-                )} />
-                <Route exact path="/bills" render={(routeProps) => (
-                  <Bills userId={this.props.userId} />
-                )} />
-                <Route exact path="/rates" render={(routeProps) => (
-                  <Rates userId={this.props.userId} />
-                )} />
-              </Switch>
-            </div>
-            <div className='col-md-3 rightSideNav content'>
-              <div className='col-md-12'>
-                <Article /></div>
-              <div className='col-md-12'>
-                <Watchlist userId={this.props.userId}/></div>
-            </div>
-          </div>
+          <MediaQuery query="(max-width: 750px)">
+            {(matches) => {
+              if (matches) {
+                return <div className='container'>
+                  <div className='row'>
+                    <Navbar />
+                    <div className='col-md-12'>
+                      <Switch>
+                        <Route exact path="/" render={(routeProps) => (
+                          <Home userId={this.props.userId} />
+                        )} />
+                        <Route exact path="/home" render={(routeProps) => (
+                          <Home userId={this.props.userId} />
+                        )} />
+                        <Route exact path="/profile" render={(routeProps) => (
+                          <Profile userId={this.props.userId} />
+                        )} />
+                        <Route exact path="/budget-calc" render={(routeProps) => (
+                          <BudgetCalcPage userId={this.props.userId} />
+                        )} />
+                        <Route exact path="/stocks" render={(routeProps) => (
+                          <Stocks userId={this.props.userId} />
+                        )} />
+                        <Route exact path="/bills" render={(routeProps) => (
+                          <Bills userId={this.props.userId} />
+                        )} />
+                        <Route exact path="/rates" render={(routeProps) => (
+                          <Rates userId={this.props.userId} />
+                        )} />
+                      </Switch>
+                    </div>
+                  </div>
+                  <div className='row'>
+                    <div className='col-xs-10 bottomNav'>
+                      <div className='row'>
+                        <div className='col-xs-10'>
+                          <Article />
+                        </div>
+                      </div>
+                      <div className='row'>
+                        <div className='col-xs-10'>
+                          <Watchlist userId={this.props.userId} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>;
+              } else {
+                return <div className='row'>
+                  <Navbar />
+                  <div className='col-md-1'>
+                  </div>
+                  <div className='col-md-8'>
+                    <Switch>
+                      <Route exact path="/" render={(routeProps) => (
+                        <Home userId={this.props.userId} />
+                      )} />
+                      <Route exact path="/home" render={(routeProps) => (
+                        <Home userId={this.props.userId} />
+                      )} />
+                      <Route exact path="/profile" render={(routeProps) => (
+                        <Profile userId={this.props.userId} />
+                      )} />
+                      <Route exact path="/budget-calc" render={(routeProps) => (
+                        <BudgetCalcPage userId={this.props.userId} />
+                      )} />
+                      <Route exact path="/stocks" render={(routeProps) => (
+                        <Stocks userId={this.props.userId} />
+                      )} />
+                      <Route exact path="/bills" render={(routeProps) => (
+                        <Bills userId={this.props.userId} />
+                      )} />
+                      <Route exact path="/rates" render={(routeProps) => (
+                        <Rates userId={this.props.userId} />
+                      )} />
+                    </Switch>
+                  </div>
+                  <div className='col-md-3 rightSideNav'>
+                    <div className='col-md-12 nopadding'>
+                      <Article />
+                    </div>
+                    <div className='col-md-12'>
+                      <Watchlist userId={this.props.userId} />
+                    </div>
+                  </div>
+                </div>;
+              }
+            }}
+          </MediaQuery>
         </Router>
         <Footer />
       </div>
@@ -68,3 +122,13 @@ class Content extends Component {
 }
 
 export default Content;
+
+
+
+
+
+
+
+
+
+

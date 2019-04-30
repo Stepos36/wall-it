@@ -99,7 +99,7 @@ export class Stocks extends Component {
       <div>
         <StockPage />
         <StockPanel userId={this.props.userId} />
-        <div className="container">
+        <div className="container shadow">
           <div className="jumbotron">
             <div className="row">
               <div className="stockHoldingHead container-fluid">
