@@ -34,16 +34,6 @@ class StockPanel extends Component {
   moreInfo(event) {
     event.preventDefault();
     let infoObj = {}
-<<<<<<< HEAD
-    let namePromise = axios.post("/tradingdata", { symbols: this.state.symbol })
-      .then(info => {
-        console.log(info)
-        infoObj.name = info.data.data[0].name
-        infoObj.symbol = info.data.data[0].symbol
-      })
-    let newsPromise = axios.get("https://stocknewsapi.com/api/v1?tickers=" + this.state.symbol + "&items=5&fallback=true&token=8mh1wqbeonbi6qxwwhvhpaibaji5grdrtbwe7rxu")
-      .then(response => {
-=======
     let namePromise = axios.post("/tradingdata", {symbols: this.state.symbol})
     .then(info => {
       infoObj.name = info.data.data[0].name
@@ -51,7 +41,6 @@ class StockPanel extends Component {
     })
     let newsPromise = axios.get("https://stocknewsapi.com/api/v1?tickers=" + this.state.symbol + "&items=5&fallback=true&token=kx8zq9u0n7gn3qgrtd5hev8rozl4f7nsjdjsplxm")
     .then(response => {
->>>>>>> 5575c05982269100f79974d5a63373bb2ae1fd2f
         infoObj.stories = response.data.data
     })
     Promise.all([namePromise, newsPromise]).then(() => {
