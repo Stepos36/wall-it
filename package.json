@@ -8,6 +8,7 @@
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
     "google-news-rss": "^0.4.1",
+    "if-env": "^1.0.4",
     "immutability-helper": "^3.0.0",
     "moment": "^2.24.0",
     "mysql": "^2.16.0",
@@ -21,10 +22,13 @@
     "xml2js": "^0.4.19"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
