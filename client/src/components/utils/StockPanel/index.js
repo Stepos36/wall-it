@@ -36,6 +36,7 @@ class StockPanel extends Component {
     let infoObj = {}
     let namePromise = axios.post("/tradingdata", { symbols: this.state.symbol })
       .then(info => {
+        console.log(info)
         infoObj.name = info.data.data[0].name
         infoObj.symbol = info.data.data[0].symbol
       })
