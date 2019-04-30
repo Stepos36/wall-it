@@ -24,3 +24,12 @@
     align-self: center;
     padding: 6px;
 }
+.widget {
+    margin-bottom: 10px
+}
+.buttonsMoreHide {
+    text-align: center
+}
+.stockExpand {
+    width: auto
+}

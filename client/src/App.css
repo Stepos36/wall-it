@@ -12,6 +12,12 @@ button {
     font-family: 'Roboto', sans-serif;
 }
 
+button:active {
+    background-color: #195f92; 
+    box-shadow: 0 1px #666;
+    transform: translateY(2px);
+  }
+
 .bottomNav {
     margin-left: 5%;
     margin-right: 5%;
@@ -22,6 +28,12 @@ button {
         filter: drop-shadow(5px 5px 5px #222);
         -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
         filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+}
+.lightshadow {
+    -webkit-filter: drop-shadow(2px 2px 2px rgb(65, 65, 65));
+    filter: drop-shadow(2px 2px 2px rgb(65, 65, 65));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 @media screen and (max-width: 750px) {
     .clockDiv, .map, .tableWrapper {

@@ -60,25 +60,32 @@ class Landing extends React.Component {
         })
     }
 
-    render() {
-        if (this.state.page == "") {
-            return (
-                <div className="background">
-                    <div className="container login-container text-center card card-header">
-                        <h2>Welcome to Wall-IT!</h2> <br></br> <h3>Please login or register to begin</h3>
-                        <div className="row">
-                            <div className="col-md-12 forms card-body">
-                                <div>
-                                    <button className="loginBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "login" })}>Log In </button>
-                                </div>
-                                <div>
-                                    <button className="regBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "register" })}>Register</button>
-                                </div>
+    firstpage() {
+        return (
+            <div className="background">
+                <div className="container login-container text-center card card-header">
+                    <h2>Welcome to Wall-IT!</h2> <br></br> <h3>Please login or register to begin</h3>
+                    <div className="row">
+                        <div className="col-md-12 forms card-body">
+                            <div>
+                                <button className="lightshadow loginBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "login" })}>Log In </button>
+                            </div>
+                            <div>
+                                <button className="lightshadow regBtn buttons btn-primary btn-lg" onClick={() => this.setState({ page: "register" })}>Register</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            );
+            </div>
+        )
+    }
+    goBack = (event) => {
+        return this.firstpage()
+    }
+
+    render() {
+        if (this.state.page == "") {
+           return this.firstpage()
         }
         else if (this.state.page == "login") {
             return (
@@ -104,7 +111,8 @@ class Landing extends React.Component {
                                     placeholder="Password"
                                 />
                             </div>
-                            <button className="subBtn buttons btn-primary btn-lg" onClick={this.handleLoginSubmit}>Submit</button>
+                            <button className="lightshadow subBtn buttons btn-primary btn-lg" onClick={this.goBack}>Back</button>
+                            <button className="lightshadow subBtn buttons btn-primary btn-lg" onClick={this.handleLoginSubmit}>Submit</button>
                         </form>
                     </div>
                 </div>
@@ -150,7 +158,8 @@ class Landing extends React.Component {
                                 />
                             </div>
                             <div>
-                                <button className="subBtn buttons btn-primary btn-lg" onClick={this.handleRegisterSubmit}>Submit</button>
+                                <button className="lightshadow subBtn buttons btn-primary btn-lg" onClick={this.goBack}>Back</button>
+                                <button className="lightshadow subBtn buttons btn-primary btn-lg" onClick={this.handleRegisterSubmit}>Submit</button>
                             </div>
                         </form>
                     </div>

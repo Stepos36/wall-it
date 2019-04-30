@@ -8,7 +8,7 @@ export class WatchListTableHeader extends Component {
           <th>Stock Symbol</th>
           <th>Current price</th>
           <th>Today’s Change</th>
-          <th><button onClick={this.props.render}>⟲</button></th>
+          <th><button className="lightshadow" onClick={this.props.render}>⟲</button></th>
         </tr>
       </thead>
     )

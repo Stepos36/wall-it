@@ -13,7 +13,8 @@ class StockPanel extends Component {
     stockExpand: false,
     expandedSymbol: "",
     expandedName: "",
-    expandedStories: []
+    expandedStories: [],
+    watchListBtn: 'Add To Watchlist'
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -48,7 +49,8 @@ class StockPanel extends Component {
         stockExpand: true,
         expandedSymbol: infoObj.symbol,
         expandedName: infoObj.name,
-        expandedStories: infoObj.stories
+        expandedStories: infoObj.stories,
+        watchListBtn: 'Add To Watchlist'
       })
     })
   }
@@ -65,6 +67,7 @@ class StockPanel extends Component {
     .then(response => {
       console.log(response)
     })
+    this.setState({watchListBtn: 'Stock Added to Watchlist'})
   }
 
   render() {
@@ -77,9 +80,9 @@ class StockPanel extends Component {
               <div className="col-sm-7">
                 <input type="text" className="form-control" name="symbol" value={this.state.symbol} onChange={this.handleInputChange}></input>
               </div>
-              <div className="col-sm-3">
-                <button onClick={this.moreInfo}>More Info</button>
-                <button onClick={this.hideInfo}>Hide Info</button>
+              <div className="col-sm-3 buttonsMoreHide">
+                <button className="lightshadow" onClick={this.moreInfo}>More Info</button>
+                <button className="lightshadow" onClick={this.hideInfo}>Hide Info</button>
               </div>
               </div>
               </form>
@@ -87,9 +90,9 @@ class StockPanel extends Component {
                 <div className="col-sm-12">
                   <div className="container">
                     <div className={this.state.stockExpand ? "" : "d-none"}>
-                      <div className="jumbotron text-center">
+                      <div className="jumbotron text-center shadow">
                         <h3 id="expandName">{this.state.expandedName}</h3>
-                        <button onClick={this.addWatchlist} id="watchBtn" className="float-right">Add to Watchlist</button>
+                        <button onClick={this.addWatchlist} id="watchBtn" className="lightshadow float-right">{this.state.watchListBtn}</button>
                         <ul className="list-group">
                         {this.state.expandedStories.map(story => (
                           <StockArticle url={story.news_url} text={story.text} key={story.text}/>
