@@ -65,7 +65,7 @@ export class Home extends Component {
     return (
       <div className="container">
         <div className="row text-center">
-          <div className='col-3'>
+          <div className='col-3 newYorkTime clockDiv'>
             <p>NEW YORK</p>
             <Analogclock
               timeZone={this.state.nyTime}
@@ -76,7 +76,7 @@ export class Home extends Component {
               />
             </div>
           </div>
-          <div className="col-3 sanFranTime">
+          <div className="col-3 sanFranTime clockDiv">
             <p>SAN FRANCISCO</p>
             <Analogclock
               timeZone={this.state.sanFranTime}
@@ -87,7 +87,7 @@ export class Home extends Component {
               />
             </div>
           </div>
-          <div className="col-3 ukTime">
+          <div className="col-3 ukTime clockDiv">
             <p>UNITED KINGDOM</p>
             <Analogclock
               timeZone={this.state.ukTime}
@@ -99,7 +99,7 @@ export class Home extends Component {
             </div>
           </div>
 
-          <div className="col-3 toykoTime">
+          <div className="col-3 toykoTime clockDiv">
             <p>TOYKO</p>
             <Analogclock
               timeZone={this.state.toykoTime}

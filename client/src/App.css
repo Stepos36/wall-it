@@ -3,10 +3,21 @@ html, body {
     overflow-x: hidden;
 }
 
-p, h1, h2, h3, h4, h5, h6, th, td{
+p, h1, h2, h3, h4, h5, h6, th, td {
     font-family: 'Roboto', sans-serif;
 }
 
-button{ 
+button {
     font-family: 'Roboto', sans-serif;
+}
+
+.bottomNav {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+@media screen and (max-width: 750px) {
+    .clockDiv, .map, .tableWrapper {
+        display: none;
+    }
 }
