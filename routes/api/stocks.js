@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const stocksController = require("../../controllers/stocksController");
+const stocksController = require("../../controllers/stockscontroller");
 
 router.route("/:id")
     .get(stocksController.getHoldings)
