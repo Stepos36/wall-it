@@ -65,7 +65,7 @@ export class Home extends Component {
     return (
       <div className="container">
         <div className="row text-center">
-          <div className='col-3'>
+          <div className='col-3 newYorkTime'>
             <p>NEW YORK</p>
             <Analogclock
               timeZone={this.state.nyTime}

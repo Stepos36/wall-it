@@ -1,7 +1,7 @@
 .rightSideNav {
     position: fixed;
     right:0;
-    top:12.5%;
+    top:13.1%;
     width:20%;
     height:90vh;
     overflow:auto;
@@ -9,4 +9,9 @@
 
 .app {
     background-color:#d1d1d1
+}
+
+#BudgetCalcPage{
+    background-color: #d1d1d1;
+    height: 100vh;
 }

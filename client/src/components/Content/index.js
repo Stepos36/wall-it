@@ -24,11 +24,11 @@ class Content extends Component {
       <div className="app">
         <Header />
         <Router>
-          <div className='row'>
             <Navbar />
-            <div className='col-md-1'>
+          <div className='row' id="BudgetCalcPage">
+            <div className='col-md-1 content'>
             </div>
-            <div className='col-md-8'>
+            <div className='col-md-8 content'>
               <Switch>
                 <Route exact path="/" render={(routeProps) => (
                   <Home userId={this.props.userId} />
@@ -53,7 +53,7 @@ class Content extends Component {
                 )} />
               </Switch>
             </div>
-            <div className='col-md-3 rightSideNav'>
+            <div className='col-md-3 rightSideNav content'>
               <div className='col-md-12'>
                 <Article /></div>
               <div className='col-md-12'>
