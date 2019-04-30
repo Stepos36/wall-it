@@ -14,12 +14,12 @@ class StockPanel extends Component {
     expandedSymbol: "",
     expandedName: "",
     expandedStories: [],
-    watchListBtn: 'Add To Watchlist'
+    watchListBtn: 'Add To Watchlist',
+    showHide : 'Show more'
     }
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.moreInfo = this.moreInfo.bind(this);
-    this.hideInfo = this.hideInfo.bind(this);
     this.addWatchlist = this.addWatchlist.bind(this);
   }
 
@@ -33,31 +33,34 @@ class StockPanel extends Component {
 };
 
   moreInfo(event) {
-    event.preventDefault();
-    let infoObj = {}
-    let namePromise = axios.post("/tradingdata", {symbols: this.state.symbol})
-    .then(info => {
-      infoObj.name = info.data.data[0].name
-      infoObj.symbol = info.data.data[0].symbol
-    })
-    let newsPromise = axios.get("https://stocknewsapi.com/api/v1?tickers=" + this.state.symbol + "&items=5&fallback=true&token=kx8zq9u0n7gn3qgrtd5hev8rozl4f7nsjdjsplxm")
-    .then(response => {
-        infoObj.stories = response.data.data
-    })
-    Promise.all([namePromise, newsPromise]).then(() => {
-      this.setState({
-        stockExpand: true,
-        expandedSymbol: infoObj.symbol,
-        expandedName: infoObj.name,
-        expandedStories: infoObj.stories,
-        watchListBtn: 'Add To Watchlist'
-      })
-    })
-  }
+    if (this.state.stockExpand) {
+      event.preventDefault();
+      this.setState({stockExpand: false, showHide: 'Show more'})
 
-  hideInfo(event) {
-    event.preventDefault();
-    this.setState({stockExpand: false})
+    }
+    else {
+      event.preventDefault();
+      let infoObj = {}
+      let namePromise = axios.post("/tradingdata", {symbols: this.state.symbol})
+      .then(info => {
+        infoObj.name = info.data.data[0].name
+        infoObj.symbol = info.data.data[0].symbol
+      })
+      let newsPromise = axios.get("https://stocknewsapi.com/api/v1?tickers=" + this.state.symbol + "&items=5&fallback=true&token=kx8zq9u0n7gn3qgrtd5hev8rozl4f7nsjdjsplxm")
+      .then(response => {
+          infoObj.stories = response.data.data
+      })
+      Promise.all([namePromise, newsPromise]).then(() => {
+        this.setState({
+          stockExpand: true,
+          expandedSymbol: infoObj.symbol,
+          expandedName: infoObj.name,
+          expandedStories: infoObj.stories,
+          watchListBtn: 'Add To Watchlist',
+          showHide: 'Hide'
+        })
+      })
+    }
   }
 
   addWatchlist(event) {
@@ -81,8 +84,7 @@ class StockPanel extends Component {
                 <input type="text" className="form-control" name="symbol" value={this.state.symbol} onChange={this.handleInputChange}></input>
               </div>
               <div className="col-sm-3 buttonsMoreHide">
-                <button className="lightshadow" onClick={this.moreInfo}>More Info</button>
-                <button className="lightshadow" onClick={this.hideInfo}>Hide Info</button>
+                <button className="lightshadow" onClick={this.moreInfo}>{this.state.showHide}</button>
               </div>
               </div>
               </form>

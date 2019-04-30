@@ -8,7 +8,6 @@ import Footer from "../Footer";
 import Article from "../Article";
 import Watchlist from "../Watchlist";
 import Home from "../Pages/Home";
-import Profile from "../Pages/Profile";
 import BudgetCalcPage from "../Pages/BudgetCalcPage";
 import Stocks from "../Pages/Stocks";
 import Rates from "../Pages/Rates";
@@ -37,9 +36,6 @@ class Content extends Component {
                         )} />
                         <Route exact path="/home" render={(routeProps) => (
                           <Home userId={this.props.userId} />
-                        )} />
-                        <Route exact path="/profile" render={(routeProps) => (
-                          <Profile userId={this.props.userId} />
                         )} />
                         <Route exact path="/budget-calc" render={(routeProps) => (
                           <BudgetCalcPage userId={this.props.userId} />
@@ -80,9 +76,6 @@ class Content extends Component {
                       )} />
                       <Route exact path="/home" render={(routeProps) => (
                         <Home userId={this.props.userId} />
-                      )} />
-                      <Route exact path="/profile" render={(routeProps) => (
-                        <Profile userId={this.props.userId} />
                       )} />
                       <Route exact path="/budget-calc" render={(routeProps) => (
                         <BudgetCalcPage userId={this.props.userId} />
