@@ -24,10 +24,10 @@ class Article extends Component {
         return (
             <div className="rightSideNav1">
                 {this.state.news.map(news => (
-                    <div>
-                        <h6 className="articleDate">{news.pubDate}</h6>
+                    <div className='newsContainer'>
+                        <h7 className="articleDate">{news.pubDate.substring(0,26)}</h7>
                         <a href={news.link} target="_blank"><h6 className="newsTitle">{news.title}</h6> </a>
-                        {/* <h6>{news.link}</h6> */}
+                        <hr/>
                     </div>
                 ))}
             </div>

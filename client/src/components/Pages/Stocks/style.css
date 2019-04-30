@@ -4,3 +4,9 @@
     align-items: center;
     align-self: center;
 }
+button {
+    margin: 2px
+}
+.container {
+    padding:0
+}

@@ -27,7 +27,7 @@ class StockPage extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("https://www.worldtradingdata.com/api/v1/stock?symbol=^DJI,^IXIC,^INX,^UKX,^NI225&api_token=7j9FnMBpalVytmiowz2gdPdq6lYk2PDNtJUvLTQjxBUqWxnp6Sp5Az3gS9g5")
+        axios.get("https://www.worldtradingdata.com/api/v1/stock?symbol=^DJI,^IXIC,^INX,^UKX,^NI225&api_token=Uq7VIpL1tmDL99KrHyxVfMf1RzevUQkY07MPdYP7iVwFmStWwmKLyegAnQoM")
         .then(result => {
             console.log(result)
             let zeroDiv = document.getElementById('zero');
@@ -92,34 +92,38 @@ class StockPage extends React.Component {
 
     render() {
         return (
-            <div className="jumbotron">
+            <div className="jumbotron indexTable shadow">
                 <div className="row">
-                    <div className="col-2">
-                        <div id="zero">
+                    <div className="col-2 stockIndex">
+                        <div id="zero" className="hvr-grow">
                         {this.state.zeroName} {this.state.zeroDiff > 0 ? "+" : ""}{this.state.zeroPercent}%<br />
                         {this.state.zeroTotal} / {this.state.zeroDiff}
                         </div>
                     </div>
-                    <div className="col-2">
-                        <div id="one">
+                    <div className="vl"/>
+                    <div className="col-2 stockIndex">
+                        <div id="one" className="hvr-grow">
                         {this.state.oneName} {this.state.oneDiff > 0 ? "+" : ""}{this.state.onePercent}%<br />
                         {this.state.oneTotal} / {this.state.oneDiff}
                         </div>
                     </div>
-                    <div className="col-2">
-                        <div id="two">
+                    <div className="vl"/>
+                    <div className="col-2 stockIndex">
+                        <div id="two" className="hvr-grow">
                         {this.state.twoName} {this.state.twoDiff > 0 ? "+" : ""}{this.state.twoPercent}%<br />
                         {this.state.twoTotal} / {this.state.twoDiff}
                         </div>
                     </div>
-                    <div className="col-2">
-                        <div id="three">
+                    <div className="vl"/>
+                    <div className="col-2 stockIndex">
+                        <div id="three" className="hvr-grow">
                         {this.state.threeName} {this.state.threeDiff > 0 ? "+" : ""}{this.state.threePercent}%<br />
                         {this.state.threeTotal} / {this.state.threeDiff}
                         </div>
                     </div>
-                    <div className="col-2">
-                        <div id="four">
+                    <div className="vl"/>
+                    <div className="col-2 stockIndex">
+                        <div id="four" className="hvr-grow">
                         {this.state.fourName} {this.state.fourDiff > 0 ? "+" : ""}{this.state.fourPercent}%<br />
                         {this.state.fourTotal} / {this.state.fourDiff}
                         </div>

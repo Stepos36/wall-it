@@ -103,7 +103,7 @@ class Content extends Component {
                     </Switch>
                   </div>
                   <div className='col-md-3 rightSideNav'>
-                    <div className='col-md-12'>
+                    <div className='col-md-12 nopadding'>
                       <Article />
                     </div>
                     <div className='col-md-12'>
