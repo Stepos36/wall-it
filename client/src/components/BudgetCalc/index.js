@@ -7,6 +7,8 @@ import update from "immutability-helper";
 import axios from "axios";
 import BudgetIncomeTableRow from './BudgetIncomeTableRow';
 import BudgetExpenseTableRow from './BudgetExpenseTableRow';
+import { PieChart } from '@culturehq/charts';
+import '@culturehq/charts/dist/style.css';
 
 class BudgetCalc extends Component {
     constructor() { 
@@ -16,7 +18,9 @@ class BudgetCalc extends Component {
         incomeRows: [{"type": "", "value": ""}],
         expenseRows: [{"type": "", "value": "", "paydate": ""}],
         userIncomes: [],
-        userExpenses: []
+        userExpenses: [],
+        sumIncomes: 0,
+        sumExpenses: 0,
         };
 
         this.updateIncomeValues = this.updateIncomeValues.bind(this);
@@ -28,6 +32,7 @@ class BudgetCalc extends Component {
         componentDidMount() {
         this.getUserIncomes()
         this.getUserExpenses()
+        console.log("Mounted!")
         }
 
         getUserIncomes() {
@@ -35,6 +40,7 @@ class BudgetCalc extends Component {
             .then(response => {
                 if (response.status === 204) {
                     console.log("204")
+                    console.log(response)
                 }
                 else {
                     let incomeArr = response.data
@@ -81,6 +87,11 @@ class BudgetCalc extends Component {
             axios.post("/api/budget/income/" + this.props.userId, {data: this.state.incomeRows})
             .then(response => {
                 console.log(response)
+                let incomeArr = response.data
+                    this.setState({
+                        userIncomes: incomeArr
+                    })
+                
             })
         }
 
@@ -89,6 +100,10 @@ class BudgetCalc extends Component {
             axios.post("/api/budget/expenses/" + this.props.userId, {data: this.state.expenseRows})
             .then(response => {
                 console.log(response)
+                let expenseArr = response.data
+                    this.setState({
+                        userExpenses: expenseArr
+                    })
             })
         }
 
@@ -116,6 +131,23 @@ class BudgetCalc extends Component {
             this.setState({
                 expenseRows: update(this.state.expenseRows, {[key]: {$set: value}})
             })
+        }
+
+        // difference() {
+            
+        //    }
+
+        calculateIncExpDiff() {
+            let totalIncome = 0;
+            let totalExpense = 0;
+            let netResult = 0;
+            this.state.incomeArr.forEach(item => {
+                totalIncome += item.value
+            });
+            this.state.expenseArr.forEach(item => {
+                totalExpense += item.value
+            });
+            this.setState({netResult: this.state.totalIncome - this.state.totalExpense })
         }
 
         render() {
@@ -158,24 +190,14 @@ class BudgetCalc extends Component {
 
                     <div className="container2 text-center">
                         <div className='row'>
-                            <div className='col-8'>
+                            <div className='col-8 jumbotron'>
                                 <div className="row col-12 text-center">
                                     <div className="incomeHead container-fluid">
                                         <p className="text-center">
                                         Your Monthly Net Income
                                         </p>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div className='col-4'>
-                                Render pie chart
-                            </div>
-                        </div>
-
-                        <div className="row text-center">
-                            <div className='col-8'>
-                                <table className="table" id="incomeTable">
+                                    <table className="table" id="incomeTable">
                                     <thead>
                                         <tr>
                                             <th scope="col">Description</th>
@@ -194,29 +216,22 @@ class BudgetCalc extends Component {
                                     ))}
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
+
                             <div className='col-4'>
-                                Pie chart
+                                {/* <PieChart data={this.expenseArr} /> */}
                             </div>
                         </div>
 
                         <div className="row text-center">
-                            <div className='col-8'>
+                            <div className='col-8 jumbotron'>
                                 <div className="expenseHead container-fluid">
                                     <p className="text-center">
                                     Your Monthly Expenses
                                     </p>
                                 </div>
-                            </div>
-
-                            <div className='col-4'>
-                                Pie chart
-                            </div>
-                        </div>
-
-                        <div className="row text-center">
-                            <div className="col-8">
-                            <table className="table" id="expenseTable">
+                                <table className="table" id="expenseTable">
                                 <thead>
                                     <tr>
                                         <th scope="col">Description</th>
@@ -237,12 +252,14 @@ class BudgetCalc extends Component {
                                 ))}
                                 </tbody>
                             </table>
+                            </div>
+
+                            <div className='col-4'>
+                                Pie chart
+                            </div>
                         </div>
-                        <div className='col-4'>
-                            Render Pie chart here
-                        </div>
-                        </div>
-                        </div>
+
+                    </div>
                     
                     
                 </div>  
