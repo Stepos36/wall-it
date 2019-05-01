@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const watchlistController = require("../../controllers/watchlistController");
+const watchlistController = require("../../controllers/watchlistcontroller");
 
 router.route("/:id")
     .get(watchlistController.getList)

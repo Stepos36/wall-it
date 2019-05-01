@@ -14,7 +14,7 @@ function WatchListTable(props) {
           {props.data.change_pct}%
           </td>
           <td>
-          <button onClick={() => props.remove(props.data.symbol)}>-</button>
+          <button className="lightshadow" onClick={() => props.remove(props.data.symbol)}>-</button>
           </td>
       </tr>
     )

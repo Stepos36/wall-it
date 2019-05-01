@@ -16,8 +16,23 @@ module.exports = {
     },
     addIncomeItems: function(req, res) {
         let user = req.params.id
-        let items = req.body
-        console.log(user, items)
+        let items = req.body.data
+        let newItemsArr = items.map(item => {
+            item.user_id = parseInt(user)
+            item.value = parseFloat(item.value)
+            return item
+        })
+        console.log(newItemsArr)
+        db.User_income.bulkCreate(newItemsArr)
+        .then(() => {
+            return db.User_income.findAll({
+                where: {
+                    user_id: user
+                }
+            }).then(results => {
+                res.json(results)
+            })
+        })
     },
     updateIncomeItems: function(req, res) {
 
@@ -35,7 +50,26 @@ module.exports = {
             else res.status(204).json({message: "No expense items found"})
         })
     },
-    addExpenseItems: function(req, res) {
+    addExpenseItems: function(req, res) {        
+        let user = req.params.id
+        let items = req.body.data
+        let newItemsArr = items.map(item => {
+            item.user_id = parseInt(user)
+            item.value = parseFloat(item.value)
+            item.paydate = parseInt(item.paydate)
+            return item
+        })
+        console.log(newItemsArr)
+        db.User_expense.bulkCreate(newItemsArr)
+        .then(() => {
+            return db.User_expense.findAll({
+                where: {
+                    user_id: user
+                }
+            }).then(results => {
+                res.json(results)
+            })
+        })
 
     },
     updateExpenseItems: function(req, res) {

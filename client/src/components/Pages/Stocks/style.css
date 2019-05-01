@@ -4,3 +4,10 @@
     align-items: center;
     align-self: center;
 }
+button {
+    margin: 2px
+}
+.stockPanel {
+    margin-bottom: 80px;
+    padding:0 !important
+}

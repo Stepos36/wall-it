@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './style.css'
 
 function WatchListTableWrapper(props) {
     return (
-      <table className="tableWrapper" {...props}/>
+      <table className="tableWrapper watchTable" {...props}/>
     )
   }
 

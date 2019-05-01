@@ -1,0 +1,14 @@
+.watchTable {
+    border: 3px solid #4d4d4d;
+    margin-top: 3px;
+}
+.watchTable td {
+    border: 2px solid #4d4d4d;
+}
+.watchTable th {
+    border: 2px solid #4d4d4d;
+    text-align: center
+}
+.watchTable tr {
+    line-height: 16px
+}

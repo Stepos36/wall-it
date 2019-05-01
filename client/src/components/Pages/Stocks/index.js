@@ -99,14 +99,14 @@ export class Stocks extends Component {
       <div>
         <StockPage />
         <StockPanel userId={this.props.userId} />
-        <div className="container">
+        <div className="container stockPanel shadow">
           <div className="jumbotron">
             <div className="row">
               <div className="stockHoldingHead container-fluid">
                 <p className="text-center">
                 Your Portfolio Holdings
                 <br />
-                <button onClick={() => this.openModal("add", "new")} id="addNew">Add New Stock Holding</button>
+                <button className="lightshadow" onClick={() => this.openModal("add", "new")} id="addNew">Add New Stock Holding</button>
                 </p>
               </div>
             </div>
@@ -149,7 +149,7 @@ export class Stocks extends Component {
         <AddStock holdingId={this.state.holdingId} handler={this.handleAdd} quantity={this.state.quantity} symbol={this.state.selectedSymbol} />
         :
         <ReduceStock holdingId={this.state.holdingId} handler={this.handleReduce} quantity={this.state.quantity} symbol={this.state.selectedSymbol}/>}
-        <button className="closeBtn" onClick={this.closeModal}>close</button>
+        <button className="closeBtn lightshadow" onClick={this.closeModal}>close</button>
         </div>
         </Modal>
       </div>

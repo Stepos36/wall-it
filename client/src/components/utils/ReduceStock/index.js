@@ -31,7 +31,7 @@ class ReduceStock extends Component {
       <input type="text" name="symbol" readOnly value={this.props.symbol}></input>
       <input type="number" name="quantity" value={this.state.quantity} onChange={this.handleInputChange} placeholder="Quantity"></input>
       <input type="number" name="price" value={this.state.price} onChange={this.handleInputChange} placeholder="Price"></input>
-      <button onClick={this.submitReduce}>Submit</button>
+      <button className="lightshadow" onClick={this.submitReduce}>Submit</button>
       </form>
       </div>
     );
