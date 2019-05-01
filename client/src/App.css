@@ -26,6 +26,9 @@ button:active {
     margin-left: 5%;
     margin-right: 5%;
 }
+.ReactModal__Overlay--after-open {
+    background-color: rgba(105, 105, 105, 0.7) !important
+}
 
 @media screen and (max-width: 768px) {
     .clockDiv, .map, .tableWrapper {
@@ -35,6 +38,7 @@ button:active {
     .contents {
         align-content: center
     }
+}
   
 .shadow {
         -webkit-filter: drop-shadow(5px 5px 5px #222);

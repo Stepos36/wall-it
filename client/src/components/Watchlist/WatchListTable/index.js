@@ -3,7 +3,7 @@ import './style.css'
 
 function WatchListTable(props) {
     return (
-      <tr className={props.data.change_pct > 0 ? 'redStock' : 'greenStock'}>
+      <tr className={props.data.change_pct > 0 ? 'greenStock' : 'redStock'}>
           <td>
           {props.data.symbol}
           </td>

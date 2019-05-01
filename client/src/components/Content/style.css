@@ -19,6 +19,9 @@
     padding:0
 }
 
-.smallPage {
-    margin-bottom: 100px
+.smallPage{
+    margin-bottom: 100px;
+}
+.smallPage .col-md-12 .container{
+    margin-top: 60px;
 }

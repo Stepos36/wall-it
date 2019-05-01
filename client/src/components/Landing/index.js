@@ -30,7 +30,7 @@ class Landing extends React.Component {
             password: password
         }).then(response => {
             if (response.status === 200) {
-                this.props.handler(response.data.id, true)
+                this.props.handler(response.data.id, true, response.data.first_name, response.data.last_name)
             }
             else if (response.status === 205) {
                 alert("Incorrect Username and/or Password")
@@ -54,7 +54,7 @@ class Landing extends React.Component {
             password: password
         }).then(response => {
             if (response.status === 200) {
-                this.props.handler(response.data.id, true)
+                this.props.handler(response.data.id, true, response.data.first_name, response.data.last_name)
             }
             else { alert("Unknown Error") }
         })

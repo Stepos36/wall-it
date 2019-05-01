@@ -63,9 +63,11 @@ export class Home extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container homeContent">
+        <h3>Home | {this.props.name} {this.props.lastname}</h3>
         <div className="row text-center">
-          <div className='col-3 newYorkTime clockDiv'>
+        <div className="nopadding jumbotron clockContainer shadow">
+        <div className='col-3 newYorkTime clockDiv'>
             <p>NEW YORK</p>
             <Analogclock
               timeZone={this.state.nyTime}
@@ -110,27 +112,29 @@ export class Home extends Component {
               />
             </div>
           </div>
+        </div>
+          
 
-          <div className='container contents'>
+          <div className='container contentBorder jumbotron shadow'>
             <div className='row contents'>
-              <div className='col-lg-4 col-md-6 col-sm-12 youtube'>
-                <YVideo />
+              <div style={{ height: 250 }} className='col-lg-4 col-md-6 col-sm-12'>
+                <Calculator />
               </div>
               <div className='col-lg-4 col-md-6 col-sm-12'>
                 <PieChart data={data} />
               </div>
-              <div style={{ height: 250 }} className='col-lg-4 col-md-6 col-sm-12'>
-                <Calculator />
+              <div className='col-lg-4 col-md-6 col-sm-12 youtube mt-auto'>
+                <YVideo />
               </div>
             </div>
             <div className='row contents2'>
-              <div className='col-lg-4 col-md-6 col-sm-12 calendar'>
-                <Calendar />
-              </div>
               <div className='col-lg-4 col-md-6 col-sm-12 map'>
                 <MapWidget />
               </div>
-              <div className='col-lg-4 col-md-6 col-sm-12'>
+              <div className='col-lg-4 col-md-6 col-sm-12 calendar'>
+                <Calendar />
+              </div>
+              <div className='col-lg-4 col-md-6 col-sm-12 converterCol'>
                 <CurrencyCalc />
               </div>
             </div>
