@@ -16,7 +16,7 @@ class BudgetCalcPage extends Component {
     return (
       <div className="budgetCalcContent">
         <h1>Budget Calculator and Tracker</h1>
-        <div id="BudgetCalcPage" className="jumbotron nopadding contentBorder shadow">
+        <div id="BudgetCalcPage" className="nopadding">
           <div className='col-lg-4 col-md-6 col-sm-12'>
               {/* <PieChart expenseData={expenseData} /> */}
           </div>
