@@ -196,7 +196,7 @@ class BudgetCalc extends Component {
                                     <button id="submit" onClick={this.pushIncome}>Submit</button>  
                                     <button id="addBtn" onClick={(event) => this.addIncomeRow(event)}>Add another income source</button>
                                 </form>
-                            </p>
+                            </div>
                         </div>
                     
                         <div className='col-4'>
@@ -210,13 +210,13 @@ class BudgetCalc extends Component {
                     <div className="row text-center lilPadding">
                         <div className="col-8 contentBorder">
                             <div className='col-12'>
-                                <p>Expenses</p>
+                                <h6>Expenses</h6>
                                 <form>
                                     {this.state.expenseRows.map((row, index) => <FormGroup valueHandler={this.updateExpenseValues} number={index} key={index}/>)}
                                     <button id="submit2" onClick={this.pushExpenses}>Submit</button>  
                                     <button id="addBtn2" onClick={(event) => this.addExpenseRow(event)}>Add another bill</button>
                                 </form>                            
-                            </p>
+                            </div>
                         </div>
                     
                         <div className='col-4'>
@@ -302,6 +302,7 @@ class BudgetCalc extends Component {
                     
                     
                 </div>  
+            </div>
             </div>
             )
         }
