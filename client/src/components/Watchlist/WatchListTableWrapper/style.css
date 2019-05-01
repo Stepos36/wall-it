@@ -10,5 +10,14 @@
     text-align: center
 }
 .watchTable tr {
-    line-height: 16px
+    line-height: 16px;
+    padding: 3px !important;
+}
+
+.watchListTable {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 210px;
+    margin-top: 5px;
+    border-radius:3px;
 }

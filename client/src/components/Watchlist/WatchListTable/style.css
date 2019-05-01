@@ -1,3 +1,11 @@
 td {
     margin: 0 3px;
 }
+
+.redStock {
+    background-color: rgba(197, 40, 40, 0.651)
+}
+
+.greenStock {
+    background-color: rgba(39, 218, 39, 0.651)
+}

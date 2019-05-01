@@ -63,7 +63,7 @@ export class Watchlist extends Component {
 
       render() {
         return (
-            <div className="row">
+            <div className="row watchListTable shadow-left">
             <WatchListTableWrapper>
                 <WatchListTableHeader render={this.renderWatchList}/>
                 <WatchListTableBodyWrapper>
