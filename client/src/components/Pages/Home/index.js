@@ -67,7 +67,7 @@ export class Home extends Component {
         <h3>Home | {this.props.name} {this.props.lastname}</h3>
         <div className="row text-center">
         <div className="nopadding jumbotron clockContainer shadow">
-        <div className='col-3 newYorkTime clockDiv'>
+        <div className='col-3 newYorkTime clockDiv hvr-push'>
             <p>NEW YORK</p>
             <Analogclock
               timeZone={this.state.nyTime}
@@ -78,7 +78,7 @@ export class Home extends Component {
               />
             </div>
           </div>
-          <div className="col-3 sanFranTime clockDiv">
+          <div className="col-3 sanFranTime clockDiv hvr-push">
             <p>SAN FRANCISCO</p>
             <Analogclock
               timeZone={this.state.sanFranTime}
@@ -89,7 +89,7 @@ export class Home extends Component {
               />
             </div>
           </div>
-          <div className="col-3 ukTime clockDiv">
+          <div className="col-3 ukTime clockDiv hvr-push">
             <p>UNITED KINGDOM</p>
             <Analogclock
               timeZone={this.state.ukTime}
@@ -101,7 +101,7 @@ export class Home extends Component {
             </div>
           </div>
 
-          <div className="col-3 toykoTime clockDiv">
+          <div className="col-3 toykoTime clockDiv hvr-push">
             <p>TOYKO</p>
             <Analogclock
               timeZone={this.state.toykoTime}
