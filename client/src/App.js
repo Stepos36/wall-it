@@ -6,13 +6,17 @@ import Content from "./components/Content";
 class App extends Component {
   state = {
     loggedIn: false,
-    userId: ""
+    userId: "",
+    name: "",
+    lastname: ""
   }
 
-  landingHandler = (id, boolean) => {
+  landingHandler = (id, boolean, name, lastname) => {
     this.setState({
       userId: id,
-      loggedIn: boolean
+      loggedIn: boolean,
+      name: name,
+      lastname: lastname
     })
   }
 
@@ -20,7 +24,7 @@ class App extends Component {
     return (
       <div>
         {this.state.loggedIn ? <Content 
-        userId={this.state.userId}/> : 
+        userId={this.state.userId} name={this.state.name} lastname={this.state.lastname}/> : 
         <Landing 
         handler={this.landingHandler}/>}
       </div>

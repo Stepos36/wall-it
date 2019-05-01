@@ -32,11 +32,7 @@
  
   
   .bm-burger-bars {
-<<<<<<< Updated upstream
-    background: #d1d1d1;
-=======
     background: white;
->>>>>>> Stashed changes
     /* border: .1px solid #fff;
     border-radius: 0px 4px 0px 4px  */
   }
@@ -101,7 +97,6 @@
       border-radius: 4px */
   }
 
-<<<<<<< Updated upstream
   .navbar {
     height: 75px;
     background-color: #0b304b;
@@ -117,10 +112,3 @@
     font-size:44px;
   }
   
-=======
-.navbar {
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
->>>>>>> Stashed changes
