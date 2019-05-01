@@ -20,7 +20,7 @@ class Content extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className="app smallPage">
         <Header />
         <Router>
           <Navbar />
@@ -29,7 +29,12 @@ class Content extends Component {
               if (matches) {
                 return <div className='container'>
                   <div className='row'>
+<<<<<<< Updated upstream
                     <div className='col-md-12'>
+=======
+                    <Navbar />
+                    <div className='col-md-12 pageContent'>
+>>>>>>> Stashed changes
                       <Switch>
                         <Route exact path="/" render={(routeProps) => (
                           <Home userId={this.props.userId} />
@@ -69,7 +74,11 @@ class Content extends Component {
                   <div className='col-md-1'>
                     <Navbar />
                   </div>
+<<<<<<< Updated upstream
                   <div className='col-md-8 content'>
+=======
+                  <div className='col-md-8 pageContent'>
+>>>>>>> Stashed changes
                     <Switch>
                       <Route exact path="/" render={(routeProps) => (
                         <Home userId={this.props.userId} />

@@ -15,6 +15,7 @@
 
   .bm-item:focus{
     outline:none;
+    border: none !important;
   }
  
   .bm-item:hover {
@@ -28,9 +29,14 @@
     left: 36px;
     top: 36px;
   }
+ 
   
   .bm-burger-bars {
+<<<<<<< Updated upstream
     background: #d1d1d1;
+=======
+    background: white;
+>>>>>>> Stashed changes
     /* border: .1px solid #fff;
     border-radius: 0px 4px 0px 4px  */
   }
@@ -85,16 +91,17 @@
 
   .nav-link:hover {
       color:rgb(0, 72, 105);
-      border: solid 1px;
-      border-radius:4px;
+      /* border: solid 1px;
+      border-radius:4px; */
   }
   
   .nav-link:active {
       color:rgb(3, 116, 168);
-      border: solid 1px;
-      border-radius: 4px
+      /* border: solid 1px;
+      border-radius: 4px */
   }
 
+<<<<<<< Updated upstream
   .navbar {
     height: 75px;
     background-color: #0b304b;
@@ -110,3 +117,10 @@
     font-size:44px;
   }
   
+=======
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+>>>>>>> Stashed changes

@@ -3,7 +3,7 @@ import './style.css'
 
 function WatchListTable(props) {
     return (
-      <tr>
+      <tr className={props.data.change_pct > 0 ? 'redStock' : 'greenStock'}>
           <td>
           {props.data.symbol}
           </td>
@@ -11,7 +11,7 @@ function WatchListTable(props) {
           ${props.data.price}
           </td>
           <td>
-          {props.data.change_pct}%
+          {props.data.change_pct > 0 ? "+" : ""}{props.data.change_pct}%
           </td>
           <td>
           <button className="lightshadow" onClick={() => props.remove(props.data.symbol)}>-</button>

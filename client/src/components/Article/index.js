@@ -22,7 +22,7 @@ class Article extends Component {
     
     render() {
         return (
-            <div className="rightSideNav1">
+            <div className="rightSideNav1 shadow-left">
                 {this.state.news.map(news => (
                     <div className='newsContainer'>
                         <h7 className="articleDate">{news.pubDate.substring(0,26)}</h7>
