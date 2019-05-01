@@ -8,6 +8,7 @@ import { PieChart } from '@culturehq/charts';
 import MapWidget from "./../../MapWidget"
 import YVideo from "./../../YouTube"
 import '@culturehq/charts/dist/style.css';
+import home from "./home.png"
 import './style.css';
 
 
@@ -63,7 +64,7 @@ export class Home extends Component {
 
   render() {
     return (
-      <div className="container homeContent">
+      <div className="container homeContent"> 
         <h3>Home | {this.props.name} {this.props.lastname}</h3>
         <div className="row text-center">
         <div className="nopadding jumbotron clockContainer shadow">

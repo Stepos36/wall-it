@@ -1,43 +1,58 @@
+/* body {
+    background: url(./home.png);
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
+} */
+
 .chq-charts--wrap {
     display: block !important;
     padding-left: 1rem
 }
+
 .calendar {
     margin-top: 5px;
     border-radius: 5px;
-    border: solid 2px rgb(45,45,45);
+    border: solid 2px rgb(45, 45, 45);
     padding: 0;
     max-height: 304px
 }
+
 .calendar button {
     color: black
 }
+
 .calendar .react-calendar__month-view__days__day--weekend {
     color: red
 }
+
 .calendar .react-calendar__month-view__days__day--neighboringMonth {
     color: gray
 }
+
 .react-calendar {
     width: 100%;
     border: none
 }
+
 .map {
     margin-top: 5px;
     border-radius: 5px;
-    border: solid 2px rgb(45,45,45);
+    border: solid 2px rgb(45, 45, 45);
     padding: 0;
     margin-right: 4px;
 }
+
 .react-calendar__navigation button {
-    min-width: 0;   
+    min-width: 0;
 }
+
 .contents, .contents2 {
     margin: 5px 0
 }
 
 .youtube {
-    width: 100% !; 
+    width: 100% !;
     margin-top: 5px;
     padding: 0;
     text-align: center
@@ -48,14 +63,17 @@
     display: flex;
     border: double #0b304b 4px
 }
+
 .clockDiv {
-    text-align:center;
+    text-align: center;
 }
+
 .converterCol {
     flex: 0 0 32.333333%;
     max-width: 32.333333%;
     padding: 0
 }
+
 .contentBorder {
     padding: 10px;
     border: double #0b304b 4px
