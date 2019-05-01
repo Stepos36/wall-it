@@ -27,6 +27,8 @@ class BudgetCalc extends Component {
         this.updateExpenseValues = this.updateExpenseValues.bind(this);
         this.pushIncome = this.pushIncome.bind(this);
         this.pushExpenses = this.pushExpenses.bind(this);
+        this.deleteIncomeRow = this.deleteIncomeRow.bind(this);
+        this.deleteExpenseRow = this.deleteExpenseRow.bind(this);
     };
 
         componentDidMount() {
@@ -107,15 +109,14 @@ class BudgetCalc extends Component {
             })
         }
 
-        deleteIncomeRow(type) {
-            axios.put("/api/budget/income/" +this.props.userId, {type:type}).then(response => {
+        deleteIncomeRow(id) {
+            axios.put("/api/budget/income/" +this.props.userId, {id:id}).then(response => {
                 this.getUserIncomes();
             })
-            
         }
 
-        deleteExpenseRow(type) {
-            axios.put("/api/budget/expenses/" +this.props.userId, {type:type}).then(response => {
+        deleteExpenseRow(id) {
+            axios.put("/api/budget/expenses/" +this.props.userId, {id:id}).then(response => {
                 this.getUserExpenses();
             })
             
@@ -210,6 +211,7 @@ class BudgetCalc extends Component {
                                         <BudgetIncomeTableRow 
                                         type={userIncome.type}
                                         value={userIncome.value}
+                                        remove={this.deleteIncomeRow}
                                         id={userIncome.id}
                                         key={userIncome.id}
                                         />
@@ -246,6 +248,7 @@ class BudgetCalc extends Component {
                                     type={userExpense.type}
                                     value={userExpense.value}
                                     paydate={userExpense.paydate}
+                                    remove={this.deleteExpenseRow}
                                     id={userExpense.id}
                                     key={userExpense.id}
                                     />

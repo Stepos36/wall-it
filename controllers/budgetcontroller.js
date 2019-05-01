@@ -35,7 +35,21 @@ module.exports = {
         })
     },
     updateIncomeItems: function(req, res) {
-
+        console.log(req.body)
+        let userId = req.params.id
+        db.User_income.destroy({
+            where: {
+                id: req.body.id
+            }
+            }).then(data => {
+                return db.User_income.findAll({
+                    where: {
+                        user_id: userId
+                    }
+                }).then(results => {
+                    res.json(results)
+                })
+            })
     },
     getExpenseItems: function(req, res) {
         db.User_expense.findAll({
@@ -73,6 +87,20 @@ module.exports = {
 
     },
     updateExpenseItems: function(req, res) {
-
+        console.log(req.body)
+        let userId = req.params.id
+        db.User_expense.destroy({
+            where: {
+                id: req.body.id
+            }
+            }).then(data => {
+                return db.User_expense.findAll({
+                    where: {
+                        user_id: userId
+                    }
+                }).then(results => {
+                    res.json(results)
+                })
+            })
     }
 }

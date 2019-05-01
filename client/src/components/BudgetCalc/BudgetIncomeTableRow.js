@@ -5,7 +5,7 @@ function BudgetIncomeTableRow(props) {
     <tr>
         <td>{props.type}</td>
         <td>{props.value}</td>
-        <button className="lightshadow" onClick={() => props.remove(props.type)}>-</button>
+        <button className="lightshadow" onClick={() => props.remove(props.id)}>-</button>
     </tr>
     );
 }
