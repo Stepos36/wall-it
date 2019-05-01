@@ -187,10 +187,10 @@ class BudgetCalc extends Component {
             <div>
                 <div className="container">
                 <div className="container shadow jumbotron contentBorder">
-                    <div className="row text-center"> 
-                        <div className='col-8'>
-                            <p className='col-12'>
-                                Incomes
+                    <div className="row text-center lilPadding"> 
+                        <div className='col-8 contentBorder'>
+                            <div className='col-12'>
+                                <h6>Incomes</h6>
                                 <form>
                                     {this.state.incomeRows.map((row, index) => <FormIncome valueHandler={this.updateIncomeValues} number={index} key={index}/>)}
                                     <button id="submit" onClick={this.pushIncome}>Submit</button>  
@@ -206,11 +206,11 @@ class BudgetCalc extends Component {
                         </div>
                     
                     </div>
-                    
-                    <div className="row text-center">
-                        <div className="col-8">
-                            <p className='col-12' id='expenseHead'>
-                                Expenses
+
+                    <div className="row text-center lilPadding">
+                        <div className="col-8 contentBorder">
+                            <div className='col-12'>
+                                <p>Expenses</p>
                                 <form>
                                     {this.state.expenseRows.map((row, index) => <FormGroup valueHandler={this.updateExpenseValues} number={index} key={index}/>)}
                                     <button id="submit2" onClick={this.pushExpenses}>Submit</button>  
@@ -228,8 +228,8 @@ class BudgetCalc extends Component {
 
 
                     <div className="container2 text-center">
-                        <div className='row'>
-                            <div className='col-8 jumbotron'>
+                        <div className='row lilPadding'>
+                            <div className='col-8 jumbotron contentBorder'>
                                 <div className="row col-12 text-center">
                                     <div className="incomeHead container-fluid">
                                         <p className="text-center">
@@ -264,8 +264,8 @@ class BudgetCalc extends Component {
                             </div>
                         </div>
 
-                        <div className="row text-center">
-                            <div className='col-8 jumbotron'>
+                        <div className="row text-center lilPadding">
+                            <div className='col-8 jumbotron contentBorder'>
                                 <div className="expenseHead container-fluid">
                                     <p className="text-center">
                                     Your Monthly Expenses
