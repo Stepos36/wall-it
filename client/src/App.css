@@ -4,6 +4,10 @@ html, body {
     background-color:#d1d1d1
 }
 
+.content {
+    padding: 80px;
+}
+
 p, h1, h2, h3, h4, h5, h6, th, td {
     font-family: 'Roboto', sans-serif;
 }
@@ -23,6 +27,15 @@ button:active {
     margin-right: 5%;
 }
 
+@media screen and (max-width: 768px) {
+    .clockDiv, .map, .tableWrapper {
+        display: none;
+    }
+
+    .contents {
+        align-content: center
+    }
+  
 .shadow {
         -webkit-filter: drop-shadow(5px 5px 5px #222);
         filter: drop-shadow(5px 5px 5px #222);
@@ -35,8 +48,10 @@ button:active {
     -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
+  
 @media screen and (max-width: 750px) {
     .clockDiv, .map, .tableWrapper {
         display: none;
     }
+
 }
