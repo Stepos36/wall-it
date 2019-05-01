@@ -97,6 +97,7 @@ export class Stocks extends Component {
   render() {
     return (
       <div className=" stocks">
+      <h1>Stocks</h1>
         <StockPage />
         <StockPanel userId={this.props.userId} />
         <div className="container stockPanel shadow">
