@@ -177,8 +177,7 @@ class BudgetCalc extends Component {
     render() {
         return (
             <div>
-
-                <div className="container shadow jumbotron contentBorder budgetCont">
+                <div className="container shadow jumbotron contentBorder">
                     <div className="row text-center"> 
                         <div className='col-8'>
                             <div className='col-12'>
