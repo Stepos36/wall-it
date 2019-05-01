@@ -3,6 +3,10 @@ html, body {
     overflow-x: hidden;
 }
 
+.content {
+    padding: 80px;
+}
+
 p, h1, h2, h3, h4, h5, h6, th, td {
     font-family: 'Roboto', sans-serif;
 }
@@ -16,8 +20,12 @@ button {
     margin-right: 5%;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
     .clockDiv, .map, .tableWrapper {
         display: none;
+    }
+
+    .contents {
+        align-content: center
     }
 }

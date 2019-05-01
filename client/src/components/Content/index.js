@@ -25,12 +25,12 @@ class Content extends Component {
       <div className="app">
         <Header />
         <Router>
+          <Navbar />
           <MediaQuery query="(max-width: 750px)">
             {(matches) => {
               if (matches) {
                 return <div className='container'>
                   <div className='row'>
-                    <Navbar />
                     <div className='col-md-12'>
                       <Switch>
                         <Route exact path="/" render={(routeProps) => (
@@ -74,10 +74,10 @@ class Content extends Component {
                 </div>;
               } else {
                 return <div className='row'>
-                  <Navbar />
                   <div className='col-md-1'>
+                    <Navbar />
                   </div>
-                  <div className='col-md-8'>
+                  <div className='col-md-8 content'>
                     <Switch>
                       <Route exact path="/" render={(routeProps) => (
                         <Home userId={this.props.userId} />

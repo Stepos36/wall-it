@@ -30,7 +30,7 @@
   }
   
   .bm-burger-bars {
-    background: #000000;
+    background: #d1d1d1;
     /* border: .1px solid #fff;
     border-radius: 0px 4px 0px 4px  */
   }
@@ -95,3 +95,18 @@
       border-radius: 4px
   }
 
+  .navbar {
+    height: 75px;
+    background-color: #0b304b;
+    color:white;
+    font-family: 'Staatliches', cursive;
+    font-size:44px;
+  }
+  
+  .navbar-brand {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    font-size:44px;
+  }
+  
