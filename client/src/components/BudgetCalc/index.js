@@ -186,6 +186,7 @@ class BudgetCalc extends Component {
             return (
             <div>
                 <div className="container">
+                <div className="container shadow jumbotron contentBorder">
                     <div className="row text-center"> 
                         <div className='col-8'>
                             <p className='col-12'>
