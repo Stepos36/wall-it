@@ -17,16 +17,13 @@
     font-weight: 800
 }
 
-.stockIndex {
-    display: flex !important;
-    box-sizing: content-box !important;
-}
 @media only screen and (max-width: 600px) {
     .vl {
         display: none
     }
     .stockIndex {
-        display: inline-block;
+        display: flex;
+        box-sizing: content-box !important;
     }
     .indexTable {
         text-align: center

@@ -63,5 +63,12 @@ button:active {
     .clockDiv, .map, .tableWrapper {
         display: none;
     }
-
+    .clockContainer {
+        display: none !important;
+        border: none !important
+    }
+    .calendar {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
