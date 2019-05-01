@@ -1,4 +1,16 @@
 button{
-    background-color: #0b304b
+    background-color: #0b304b;
+    -webkit-filter: drop-shadow(2px 2px 2px rgb(65, 65, 65));
+    filter: drop-shadow(2px 2px 2px rgb(65, 65, 65));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
+._2rRxbhZfd2m69aGyclMHup {
+    background-color: #e9ecef !important;
+    padding: 10px;
+    border: double #0b304b 4px
+}
+._2rRxbhZfd2m69aGyclMHup input{
+    background-color: #ffffff !important
+}

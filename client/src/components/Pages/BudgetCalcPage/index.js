@@ -14,7 +14,7 @@ import BudgetCalc from '../../BudgetCalc'
 class BudgetCalcPage extends Component {
   render() {
     return (
-      <div id="BudgetCalcPage">
+      <div id="BudgetCalcPage" className="jumbotron nopadding contentBorder shadow">
         <h1>Budget Calculator and Tracker</h1>
         <div className='col-lg-4 col-md-6 col-sm-12'>
             {/* <PieChart expenseData={expenseData} /> */}
