@@ -56,6 +56,8 @@ class BudgetCalc extends Component {
                     let incomeArr = response.data
                     this.setState({
                         userIncomes: incomeArr
+                    }, () => {
+                        this.calculateIncExpDiff()
                     })
                 }
             })
@@ -128,6 +130,8 @@ class BudgetCalc extends Component {
                 let incomeArr = response.data
                 this.setState({
                     userIncomes: incomeArr
+                }, () => {
+                    this.calculateIncExpDiff();
                 })
             })
         }
@@ -137,6 +141,8 @@ class BudgetCalc extends Component {
                 let expenseArr = response.data
                 this.setState({
                     userExpenses: expenseArr
+                }, () => {
+                    this.calculateIncExpDiff();
                 })
             })            
         }
@@ -163,7 +169,7 @@ class BudgetCalc extends Component {
             });
             this.state.userExpenses.forEach(item => {
                 totalExpense += parseFloat(item.value)
-                obj[item.type]=item.value
+                obj[item.type]=parseFloat(item.value)
             });
             netResult=totalIncome-totalExpense
             this.setState({
@@ -171,6 +177,8 @@ class BudgetCalc extends Component {
                 sumExpenses: totalExpense,
                 netResult: netResult,   
                 data: obj,         
+            }, () => {
+                console.log(this.state.data)
             })
         }
 
@@ -180,14 +188,14 @@ class BudgetCalc extends Component {
                 <div className="container">
                     <div className="row text-center"> 
                         <div className='col-8'>
-                            <div className='col-12'>
+                            <p className='col-12'>
                                 Incomes
                                 <form>
                                     {this.state.incomeRows.map((row, index) => <FormIncome valueHandler={this.updateIncomeValues} number={index} key={index}/>)}
                                     <button id="submit" onClick={this.pushIncome}>Submit</button>  
                                     <button id="addBtn" onClick={(event) => this.addIncomeRow(event)}>Add another income source</button>
                                 </form>
-                            </div>
+                            </p>
                         </div>
                     
                         <div className='col-4'>
@@ -200,14 +208,14 @@ class BudgetCalc extends Component {
                     
                     <div className="row text-center">
                         <div className="col-8">
-                            <div className='col-12'>
+                            <p className='col-12' id='expenseHead'>
                                 Expenses
                                 <form>
                                     {this.state.expenseRows.map((row, index) => <FormGroup valueHandler={this.updateExpenseValues} number={index} key={index}/>)}
                                     <button id="submit2" onClick={this.pushExpenses}>Submit</button>  
                                     <button id="addBtn2" onClick={(event) => this.addExpenseRow(event)}>Add another bill</button>
                                 </form>                            
-                            </div>
+                            </p>
                         </div>
                     
                         <div className='col-4'>
