@@ -111,15 +111,20 @@ class BudgetCalc extends Component {
 
         deleteIncomeRow(id) {
             axios.put("/api/budget/income/" +this.props.userId, {id:id}).then(response => {
-                this.getUserIncomes();
+                let incomeArr = response.data
+                this.setState({
+                    userIncomes: incomeArr
+                })
             })
         }
 
         deleteExpenseRow(id) {
             axios.put("/api/budget/expenses/" +this.props.userId, {id:id}).then(response => {
-                this.getUserExpenses();
-            })
-            
+                let expenseArr = response.data
+                this.setState({
+                    userExpenses: expenseArr
+                })
+            })            
         }
 
         updateIncomeValues(key, value) {
