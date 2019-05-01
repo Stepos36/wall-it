@@ -15,4 +15,7 @@ button:focus {
 .lilPadding {
     padding: 6px
 }
-.budgetCont {}
+#BudgetCalcPage .container {
+    margin-top: 5px !important;
+    margin-bottom: 70px
+}

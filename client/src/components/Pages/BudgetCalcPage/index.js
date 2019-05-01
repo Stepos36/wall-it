@@ -14,7 +14,7 @@ import BudgetCalc from '../../BudgetCalc'
 class BudgetCalcPage extends Component {
   render() {
     return (
-      <div className="budgetCalcContent">
+      <div className="budgetCalcContent budgetCont">
         <h1>Budget Calculator and Tracker</h1>
         <div id="BudgetCalcPage" className="nopadding">
           <div className='col-lg-4 col-md-6 col-sm-12'>
