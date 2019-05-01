@@ -20,4 +20,10 @@ button {
     min-width: 100%;
     min-height: 100%;
     z-index: 1;
+    margin-top: 30px
+}
+@media screen and (max-width: 768px) {
+    .stocks {
+        margin-top: 80px
+    }
 }

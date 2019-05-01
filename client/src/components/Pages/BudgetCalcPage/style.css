@@ -1,0 +1,8 @@
+.budgetCalcContent {
+    margin-top: 80px !important
+}
+@media screen and (max-width: 768px) {
+    .budgetCalcContent {
+        margin-top: 80px
+    }
+}

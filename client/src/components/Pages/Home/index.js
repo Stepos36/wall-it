@@ -65,7 +65,7 @@ export class Home extends Component {
   render() {
     return (
       <div className="container homeContent"> 
-        <h3>Home | {this.props.name} {this.props.lastname}</h3>
+        <h1>Home | {this.props.name} {this.props.lastname}</h1>
         <div className="row text-center">
         <div className="nopadding jumbotron clockContainer shadow">
         <div className='col-3 newYorkTime clockDiv hvr-push'>

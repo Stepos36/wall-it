@@ -79,6 +79,9 @@
     border: double #0b304b 4px
 }
 
+.homeContent {
+    margin-top: 30px
+}
 @media only screen and (max-width: 992px) {
     .calendar {
         margin-left: 5px;
