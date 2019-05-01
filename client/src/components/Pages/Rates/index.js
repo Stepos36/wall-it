@@ -56,20 +56,21 @@ export class Rates extends Component {
 
     return (
       <div>
-        <h1 className='text-center'>Mortgage Rates</h1>
+        <h1>Mortgage Rates</h1>
         <br></br>
         <div className='container'>
           <div className='row'>
             <div className='col-lg-6 col-md-6 col-sm-12'>
               <h3 className='text-center'>Rates</h3>
-              <Table columns={this.state.columns} data={this.state.data} />
+              <Table columns={this.state.columns} data={this.state.data} className="jumbotron nopadding contentBorder shadow"/>
             </div>
             <div className='col-lg-6 col-md-6 col-sm-12'>
               <h3 className='text-center'>Mortgage Calculator</h3>
-
+              <div className="shadow colorOverride"> 
               {this.state.updated ?
                 <MortgageCalculator interestRate={this.state.convertedRate} /> :
                 <p>Calculator Loading...</p>}
+              </div>
 
             </div>
           </div>
