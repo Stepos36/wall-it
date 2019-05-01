@@ -55,7 +55,7 @@ export class Rates extends Component {
   render() {
 
     return (
-      <div>
+      <div className="morgageContent">
         <h1>Mortgage Rates</h1>
         <br></br>
         <div className='container'>

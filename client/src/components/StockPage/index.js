@@ -27,7 +27,10 @@ class StockPage extends React.Component {
     }
 
     componentDidMount() {
-        axios.get("https://www.worldtradingdata.com/api/v1/stock?symbol=^DJI,^IXIC,^INX,^UKX,^NI225&api_token=7j9FnMBpalVytmiowz2gdPdq6lYk2PDNtJUvLTQjxBUqWxnp6Sp5Az3gS9g5")
+
+        let symbols = "^DJI,^IXIC,^INX,^UKX,^NI225"
+        axios.post("/tradingdata", {symbols: symbols})
+
         .then(result => {
             console.log(result)
             let zeroDiv = document.getElementById('zero');

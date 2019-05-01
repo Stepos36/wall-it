@@ -14,15 +14,17 @@ import BudgetCalc from '../../BudgetCalc'
 class BudgetCalcPage extends Component {
   render() {
     return (
-      <div id="BudgetCalcPage" className="jumbotron nopadding contentBorder shadow">
+      <div className="budgetCalcContent">
         <h1>Budget Calculator and Tracker</h1>
-        <div className='col-lg-4 col-md-6 col-sm-12'>
-            {/* <PieChart expenseData={expenseData} /> */}
-        </div>
-        <div className='col-md-12'>
-          <ul>
-            <BudgetCalc userId={this.props.userId}/>
-          </ul>
+        <div id="BudgetCalcPage" className="jumbotron nopadding contentBorder shadow">
+          <div className='col-lg-4 col-md-6 col-sm-12'>
+              {/* <PieChart expenseData={expenseData} /> */}
+          </div>
+          <div className='col-md-12'>
+            <ul>
+              <BudgetCalc userId={this.props.userId}/>
+            </ul>
+          </div>
         </div>
       </div>
     )
