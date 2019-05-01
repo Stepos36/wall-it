@@ -27,10 +27,8 @@ class StockPage extends React.Component {
     }
 
     componentDidMount() {
-
         let symbols = "^DJI,^IXIC,^INX,^UKX,^NI225"
         axios.post("/tradingdata", {symbols: symbols})
-
         .then(result => {
             console.log(result)
             let zeroDiv = document.getElementById('zero');

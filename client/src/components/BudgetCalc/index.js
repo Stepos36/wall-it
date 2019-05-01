@@ -177,7 +177,7 @@ class BudgetCalc extends Component {
         render() {
             return (
             <div>
-                <div className="container">
+                <div className="container shadow jumbotron contentBorder budgetCont">
                     <div className="row text-center"> 
                         <div className='col-8'>
                             <div className='col-12'>
@@ -219,14 +219,14 @@ class BudgetCalc extends Component {
 
 
                     <div className="container2 text-center">
-                        <div className='row'>
+                        <div className='row lilPadding'>
                             <div className='col-8 jumbotron'>
                                 <div className="row col-12 text-center">
                                     <div className="incomeHead container-fluid">
                                         <p className="text-center">
                                         Your Monthly Net Income
                                         </p>
-                                    </div>
+                                    </div >
                                     <table className="table" id="incomeTable">
                                     <thead>
                                         <tr>
@@ -255,7 +255,7 @@ class BudgetCalc extends Component {
                             </div>
                         </div>
 
-                        <div className="row text-center">
+                        <div className="row text-center lilPadding">
                             <div className='col-8 jumbotron'>
                                 <div className="expenseHead container-fluid">
                                     <p className="text-center">
