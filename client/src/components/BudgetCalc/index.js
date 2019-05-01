@@ -21,6 +21,8 @@ class BudgetCalc extends Component {
         userExpenses: [],
         sumIncomes: 0,
         sumExpenses: 0,
+        netResult: 0,
+        data: {},
         };
 
         this.updateIncomeValues = this.updateIncomeValues.bind(this);
@@ -29,12 +31,18 @@ class BudgetCalc extends Component {
         this.pushExpenses = this.pushExpenses.bind(this);
         this.deleteIncomeRow = this.deleteIncomeRow.bind(this);
         this.deleteExpenseRow = this.deleteExpenseRow.bind(this);
+        this.calculateIncExpDiff = this.calculateIncExpDiff.bind(this);
     };
 
-        componentDidMount() {
+        componentWillMount() {
         this.getUserIncomes()
         this.getUserExpenses()
         console.log("Mounted!")
+        }
+
+        componentDidMount() {
+            console.log(this.state)
+            // this.calculateIncExpDiff()
         }
 
         getUserIncomes() {
@@ -63,6 +71,8 @@ class BudgetCalc extends Component {
                     let expenseArr = response.data
                     this.setState({
                         userExpenses: expenseArr
+                    }, () => {
+                        this.calculateIncExpDiff()
                     })
                 }
             })
@@ -92,8 +102,10 @@ class BudgetCalc extends Component {
                 let incomeArr = response.data
                     this.setState({
                         userIncomes: incomeArr
+                    }, () => {
+                        this.calculateIncExpDiff();
                     })
-                
+
             })
         }
 
@@ -105,6 +117,8 @@ class BudgetCalc extends Component {
                 let expenseArr = response.data
                     this.setState({
                         userExpenses: expenseArr
+                    }, () => {
+                        this.calculateIncExpDiff(); 
                     })
             })
         }
@@ -139,21 +153,25 @@ class BudgetCalc extends Component {
             })
         }
 
-        // difference() {
-            
-        //    }
-
         calculateIncExpDiff() {
-            let totalIncome = 0;
-            let totalExpense = 0;
-            let netResult = 0;
-            this.state.incomeArr.forEach(item => {
-                totalIncome += item.value
+            var obj = {};
+            var totalIncome = 0;
+            var totalExpense = 0;
+            var netResult = 0;
+            this.state.userIncomes.forEach(item => {
+                totalIncome += parseFloat(item.value)
             });
-            this.state.expenseArr.forEach(item => {
-                totalExpense += item.value
+            this.state.userExpenses.forEach(item => {
+                totalExpense += parseFloat(item.value)
+                obj[item.type]=item.value
             });
-            this.setState({netResult: this.state.totalIncome - this.state.totalExpense })
+            netResult=totalIncome-totalExpense
+            this.setState({
+                sumIncomes: totalIncome,
+                sumExpenses: totalExpense,
+                netResult: netResult,   
+                data: obj,         
+            })
         }
 
         render() {
@@ -163,6 +181,7 @@ class BudgetCalc extends Component {
                     <div className="row text-center"> 
                         <div className='col-8'>
                             <div className='col-12'>
+                                Incomes
                                 <form>
                                     {this.state.incomeRows.map((row, index) => <FormIncome valueHandler={this.updateIncomeValues} number={index} key={index}/>)}
                                     <button id="submit" onClick={this.pushIncome}>Submit</button>  
@@ -172,7 +191,9 @@ class BudgetCalc extends Component {
                         </div>
                     
                         <div className='col-4'>
-                            Calculations here:
+                           Net Income:{this.state.sumIncomes} <br />
+                           Net Expenses: {this.state.sumExpenses} <br /><br />
+                           TOTAL DIFFERENCE: {this.state.netResult}
                         </div>
                     
                     </div>
@@ -180,6 +201,7 @@ class BudgetCalc extends Component {
                     <div className="row text-center">
                         <div className="col-8">
                             <div className='col-12'>
+                                Expenses
                                 <form>
                                     {this.state.expenseRows.map((row, index) => <FormGroup valueHandler={this.updateExpenseValues} number={index} key={index}/>)}
                                     <button id="submit2" onClick={this.pushExpenses}>Submit</button>  
@@ -189,9 +211,11 @@ class BudgetCalc extends Component {
                         </div>
                     
                         <div className='col-4'>
-                            Combine with above 
+                            <PieChart data={this.state.data} />
                         </div>
                     </div>
+
+                    <br /><hr /><br />
 
 
                     <div className="container2 text-center">
@@ -262,9 +286,7 @@ class BudgetCalc extends Component {
                             </table>
                             </div>
 
-                            <div className='col-4'>
-                                Pie chart
-                            </div>
+                            <div className='col-4'></div>
                         </div>
 
                     </div>

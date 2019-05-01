@@ -5,7 +5,7 @@ router.route("/")
     .post((req, res) => {
         let symbols = req.body.symbols
         let query = 'https://www.worldtradingdata.com/api/v1/stock?symbol='+symbols+
-        '&api_token=5P2F7KXjNRZqmLuyzEB35FtBoxe7Wzy4ByIsu4T16qjDWM4Gw0ncwkMnDVOu'
+        '&api_token=7j9FnMBpalVytmiowz2gdPdq6lYk2PDNtJUvLTQjxBUqWxnp6Sp5Az3gS9g5'
         axios.get(query)
         .then(result => {
             res.status(200).json(result.data)
