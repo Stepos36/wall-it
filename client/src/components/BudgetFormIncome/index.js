@@ -6,8 +6,8 @@ class FormIncome extends Component {
         super();
 
         this.state = {
-            type: "Salary",
-            value: "2000"
+            type: "Income Type",
+            value: "Monthly Net Amount"
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -28,11 +28,11 @@ class FormIncome extends Component {
         <div>
             <div className="row">
             <div className="col">
-                <label htmlFor="incomeType">Income Type</label>
+                {/* <label htmlFor="incomeType">Income Type</label> */}
                 <input type="incomeDesc" className="form-control" name="type" value={this.state.type} onChange={this.handleInputChange}></input>
             </div>
             <div className="col">
-                <label htmlFor="incomeAmt">Monthly Net Amount</label>
+                {/* <label htmlFor="incomeAmt">Monthly Net Amount</label> */}
                 <input type="netIncAmount" className="form-control" name="value" value={this.state.value} onChange={this.handleInputChange}></input>
             </div>
             </div>
