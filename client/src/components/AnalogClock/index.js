@@ -8,7 +8,7 @@ class Analogclock extends Component {
             <div>
                 <div className="anaClock">
                     <Clock
-                        size={100}
+                        size={90}
                         value={this.props.timeZone}
                     />
                 </div>
