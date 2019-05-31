@@ -39,13 +39,14 @@ input [type="text"] {
     transition: 0.3s;
 }
 
-h2, h3 {
+h2,
+h3 {
     -webkit-text-stroke: rgb(141, 141, 141) .1px;
     font-family: 'Roboto', sans-serif;
 }
 
 input {
-    background-color:rgb(231, 231, 231)
+    background-color: rgb(231, 231, 231)
 }
 
 input[type="text"]:focus {
@@ -73,4 +74,28 @@ input[type="password"]:focus {
 .user-info {
     padding: 5px;
     margin: 10px
+}
+
+@media (max-width:767px) {
+    .buttons {
+        max-width: 100%;
+    }
+}
+
+@media (max-width:420px) {
+    .login-container {
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 20px
+    }
+
+    .card {
+        width:75%;
+    }
 }

@@ -61,7 +61,8 @@
 .clockContainer {
     width: 100%;
     display: flex;
-    border: double #0b304b 4px
+    border: double #0b304b 4px;
+    padding: 0, auto;
 }
 
 .clockDiv {
@@ -82,11 +83,27 @@
 .homeContent {
     margin-top: 30px
 }
+
 @media only screen and (max-width: 992px) {
     .calendar {
         margin-left: 5px;
     }
     .homeContent {
         margin-top: 120px !important
+    }
+}
+
+@media(max-width:1190px) {
+    .UKShort, .NYShort, .SFShort, .TYOShort {
+        display:none;
+    }
+}
+
+@media(max-width:1189px) {
+    .UKFull, .NYFull, .SFFull, .TYOFull {
+        display:none;
+    }
+    .UKShort, .NYShort, .SFShort, .TYOShort {
+      display:inline-block  
     }
 }

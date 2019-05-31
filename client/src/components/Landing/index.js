@@ -64,7 +64,7 @@ class Landing extends React.Component {
         return (
             <div className="background">
                 <div className="container login-container text-center card card-header">
-                    <h2>Welcome to Wall-IT!</h2> <br></br> <h3>Please login or register to begin</h3>
+                    <h2>Welcome to Wall-IT!</h2> <br></br> <h3>Please login or register an account</h3>
                     <div className="row">
                         <div className="col-md-12 forms card-body">
                             <div>

@@ -67,9 +67,10 @@ export class Home extends Component {
       <div className="container homeContent"> 
         <h1>Home | {this.props.name} {this.props.lastname}</h1>
         <div className="row text-center">
-        <div className="nopadding jumbotron clockContainer shadow">
+        <div className="jumbotron clockContainer shadow">
         <div className='col-3 newYorkTime clockDiv hvr-push'>
-            <p>NEW YORK</p>
+            <p className="NYFull">NEW YORK</p>
+            <p className="NYShort">NY</p>
             <Analogclock
               timeZone={this.state.nyTime}
             />
@@ -80,7 +81,8 @@ export class Home extends Component {
             </div>
           </div>
           <div className="col-3 sanFranTime clockDiv hvr-push">
-            <p>SAN FRANCISCO</p>
+            <p className="SFFull">SAN FRANCISCO</p>
+            <p className="SFShort">SF</p>
             <Analogclock
               timeZone={this.state.sanFranTime}
             />
@@ -91,7 +93,8 @@ export class Home extends Component {
             </div>
           </div>
           <div className="col-3 ukTime clockDiv hvr-push">
-            <p>UNITED KINGDOM</p>
+            <p className="UKFull">UNITED KINGDOM</p>
+            <p className="UKShort">UK</p>
             <Analogclock
               timeZone={this.state.ukTime}
             />
@@ -103,7 +106,8 @@ export class Home extends Component {
           </div>
 
           <div className="col-3 toykoTime clockDiv hvr-push">
-            <p>TOYKO</p>
+            <p className="TYOFull">TOKYO</p>
+            <p className="TYOShort">TYO</p>
             <Analogclock
               timeZone={this.state.toykoTime}
             />
@@ -118,24 +122,24 @@ export class Home extends Component {
 
           <div className='container contentBorder jumbotron shadow'>
             <div className='row contents'>
-              <div style={{ height: 250 }} className='col-lg-4 col-md-6 col-sm-12'>
+              <div style={{ height: 250 }} className='col-lg-6 col-md-6 col-sm-12'>
                 <Calculator />
               </div>
-              <div className='col-lg-4 col-md-6 col-sm-12'>
+              <div className='col-lg-6 col-md-6 col-sm-12'>
                 <PieChart data={data} />
               </div>
-              <div className='col-lg-4 col-md-6 col-sm-12 youtube mt-auto'>
+              {/* <div className='col-lg-4 col-md-6 col-sm-12 youtube mt-auto'>
                 <YVideo />
-              </div>
+              </div> */}
             </div>
-            <div className='row contents2'>
-              <div className='col-lg-4 col-md-6 col-sm-12 map'>
+            <div className='row contents2 float-right'>
+              {/* <div className='col-lg-4 col-md-6 col-sm-12 map'>
                 <MapWidget />
-              </div>
-              <div className='col-lg-4 col-md-6 col-sm-12 calendar'>
+              </div> */}
+              <div className='col-lg-6 col-md-6 col-sm-12 calendar'>
                 <Calendar />
               </div>
-              <div className='col-lg-4 col-md-6 col-sm-12 converterCol'>
+              <div className='col-lg-6 col-md-6 col-sm-12 converterCol'>
                 <CurrencyCalc />
               </div>
             </div>
