@@ -47,6 +47,16 @@ export default props => {
                     Budget Tracker
                     </NavLink>
                 </li>
+                <li className="menu-item">
+                    <NavLink
+                        exact={true}
+                        to="/currency"
+                        className={'nav-link'}
+                        activeClassName='active'
+                    >
+                    Currency Page
+                    </NavLink>
+                </li>
             </ul>
         </Menu>
     );

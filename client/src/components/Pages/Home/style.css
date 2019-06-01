@@ -93,7 +93,7 @@
     }
 }
 
-@media(max-width:1190px) {
+@media(max-width:2560px) {
     .UKShort, .NYShort, .SFShort, .TYOShort {
         display:none;
     }
@@ -103,7 +103,20 @@
     .UKFull, .NYFull, .SFFull, .TYOFull {
         display:none;
     }
+
     .UKShort, .NYShort, .SFShort, .TYOShort {
       display:inline-block  
+    }
+}
+
+@media(max-width:768px) {
+    .clockContainer {
+        display:none;
+    }
+}
+
+@media(max-width:1116) {
+    .Converter {
+        padding: 0%, 0%;
     }
 }
