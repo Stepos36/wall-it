@@ -7,14 +7,12 @@
     overflow:auto;
 }
 
-.app {
-    /* background-color:#d1d1d1 */
-}
 
 #BudgetCalcPage{
     background-color: #d1d1d1;
     height: 100vh;
 }
+
 .nopadding {
     padding:0
 }
@@ -22,6 +20,8 @@
 .smallPage{
     margin-bottom: 100px;
 }
+
 .smallPage .col-md-12 .container{
     margin-top: 80px;
 }
+
