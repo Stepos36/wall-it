@@ -76,7 +76,7 @@ class Content extends Component {
                   <div className='col-md-8 content'>
                     <Switch>
                       <Route exact path="/" render={(routeProps) => (
-                        <Home userId={this.props.userId} />
+                        <Home userId={this.props.userId} name={this.props.name} lastname={this.props.lastname}/>
                       )} />
                       <Route exact path="/home" render={(routeProps) => (
                         <Home name={this.props.name} lastname={this.props.lastname} userId={this.props.userId} />

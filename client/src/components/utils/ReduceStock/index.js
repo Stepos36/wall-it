@@ -18,7 +18,7 @@ class ReduceStock extends Component {
   
   submitReduce = (event) => {
     event.preventDefault();
-    if (this.state.quantity > this.props.quantity) alert("Sold more than you owned? ERROR!")
+    if (parseInt(this.state.quantity) > parseInt(this.props.quantity)) alert("Sold more than you owned? ERROR!")
     else {
     this.props.handler(this.state.symbol, this.state.quantity, this.state.price)
     }

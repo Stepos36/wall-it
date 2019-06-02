@@ -5,6 +5,7 @@ import CurrencyCalc from './../../CurrencyCalc';
 import Calculator from './../../Calculator/Calculator';
 import Calendar from 'react-calendar'
 import { PieChart } from '@culturehq/charts';
+import BillTracker from "../../BillTracker";
 import MapWidget from "./../../MapWidget"
 import YVideo from "./../../YouTube"
 import '@culturehq/charts/dist/style.css';
@@ -122,25 +123,32 @@ export class Home extends Component {
 
           <div className='container contentBorder jumbotron shadow'>
             <div className='row contents'>
-              <div style={{ height: 250 }} className='col-lg-6 col-md-6 col-sm-12'>
-                <Calculator />
+              <div className='col-lg-4 col-md-4 col-sm-12'>
+                <BillTracker userId={this.props.userId} />
               </div>
-              <div className='col-lg-6 col-md-6 col-sm-12'>
-                <PieChart data={data} />
-              </div>
-              {/* <div className='col-lg-4 col-md-6 col-sm-12 youtube mt-auto'>
-                <YVideo />
-              </div> */}
-            </div>
-            <div className='row contents2 float-right'>
-              {/* <div className='col-lg-4 col-md-6 col-sm-12 map'>
-                <MapWidget />
-              </div> */}
-              <div className='col-lg-6 col-md-6 col-sm-12 calendar'>
-                <Calendar />
-              </div>
-              <div className='col-lg-6 col-md-6 col-sm-12 converterCol'>
-                <CurrencyCalc />
+              <div className='col-lg-8 col-md-8 col-sm-12'>
+                <div className='row contents'>
+                  <div style={{ height: 250 }} className='col-lg-6 col-md-6 col-sm-12'>
+                    <Calculator />
+                  </div>
+                  <div className='col-lg-6 col-md-6 col-sm-12'>
+                    <PieChart data={data} />
+                  </div>
+                  {/* <div className='col-lg-4 col-md-6 col-sm-12 youtube mt-auto'>
+                    <YVideo />
+                  </div> */}
+                </div>
+                <div className='row contents2 float-right'>
+                  {/* <div className='col-lg-4 col-md-6 col-sm-12 map'>
+                    <MapWidget />
+                  </div> */}
+                  <div className='col-lg-6 col-md-6 col-sm-12 calendar'>
+                    <Calendar />
+                  </div>
+                  <div className='col-lg-6 col-md-6 col-sm-12 converterCol'>
+                    <CurrencyCalc />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

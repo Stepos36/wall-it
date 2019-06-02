@@ -101,9 +101,9 @@ class CurrencyPage extends Component {
               <table className="table" id="holdingTable">
                 <thead>
                   <tr>
-                    <th scope="col">Currency</th>
+                    <th scope="col">Currency Pair</th>
                     <th scope="col">Quantity</th>
-                    <th scope="col">USD Value</th>
+                    <th scope="col">Cur</th>
                     <th scope="col">Add</th>
                     <th scope="col">Reduce</th>
                   </tr>
