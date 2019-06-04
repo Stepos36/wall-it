@@ -14,6 +14,25 @@ button {
     padding: 0 !important
 }
 
+.buySell {
+    font-weight: bold;
+}
+
+.symbolDropMenu {
+    cursor: pointer;
+    font-weight: bold;
+    outline: 1px solid black;
+    padding: 4px;
+    box-shadow: 0 1px #666;
+}
+
+.symbolDropMenu:hover {
+    outline:2px solid #0091ea;
+    padding:2px;
+    color: #0091ea;
+    box-shadow: 0 1px rgb(70, 69, 69);
+}
+
 .stocks {
     /* background: url(./stocks.png) !important; */
     background-size: cover;
@@ -22,6 +41,7 @@ button {
     z-index: 1;
     margin-top: 30px
 }
+
 @media screen and (max-width: 768px) {
     .stocks {
         margin-top: 80px
