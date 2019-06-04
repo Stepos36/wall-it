@@ -41,7 +41,6 @@ class BillTracker extends Component {
                 return parseFloat(a.daysUntil) - parseFloat(b.daysUntil);
             });
             this.setState({bills: billsArr})
-            console.log(billsArr)
             }
         })
     }

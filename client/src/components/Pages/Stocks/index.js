@@ -4,6 +4,7 @@ import StockPanel from "./../../utils/StockPanel";
 import TableRow from "./../../utils/TableRow";
 import AddStock from "./../../utils/AddStock";
 import ReduceStock from "./../../utils/ReduceStock";
+import DetailRow from "./../../utils/DetailRow";
 import Modal from 'react-modal';
 import axios from "axios";
 import './style.css'
@@ -27,6 +28,10 @@ export class Stocks extends Component {
 
     this.state = {
       modalIsOpen: false,
+      detailsExpanded: false,
+      expandedSymbol: "",
+      buyDetails: [],
+      sellDetails: [],
       transactionType: "",
       holdingId: "",
       quantity: "",
@@ -39,6 +44,8 @@ export class Stocks extends Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleReduce = this.handleReduce.bind(this);
     this.rerenderTable = this.rerenderTable.bind(this);
+    this.expandDetails = this.expandDetails.bind(this);
+    this.reduceDetails = this.reduceDetails.bind(this);
   }
 
   openModal(type, id, quantity, symbol) {
@@ -87,6 +94,22 @@ export class Stocks extends Component {
     })
   }
 
+  expandDetails(index, symbol) {
+    this.setState({
+      detailsExpanded: true,
+      expandedSymbol: symbol,
+      buyDetails: this.state.stocks[index].Stock_buys,
+      sellDetails: this.state.stocks[index].Stock_sells
+    })
+  }
+
+  reduceDetails() {
+    console.log("click")
+    this.setState({
+      detailsExpanded: false
+    })
+  }
+
   componentDidMount() {
     axios.get("/api/stocks/" + this.props.userId).then((response) => {
       this.setState({ stocks: response.data })
@@ -102,6 +125,60 @@ export class Stocks extends Component {
         <StockPanel userId={this.props.userId} />
         <div className="container stockPanel shadow">
           <div className="jumbotron">
+            <div className="row">
+              {this.state.detailsExpanded ?
+                <div className="container-fluid">
+                <p className="text-center">Transaction details for {this.state.expandedSymbol}</p>
+                <div className="row">
+                <div className="col-md-6">
+                Buys
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.buyDetails.map(transaction => (
+                      <DetailRow
+                      date={transaction.createdAt}
+                      quantity={transaction.quantity}
+                      price={transaction.price}
+                      key={transaction.id}
+                      />
+                    ))}
+                  </tbody>
+                </table>
+                </div>
+                <div className="col-md-6">
+                Sells
+                <table className="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                      </tr>                        
+                    </thead>
+                    <tbody>
+                      {this.state.sellDetails.map(transaction => (
+                        <DetailRow 
+                        date={transaction.createdAt}
+                        quantity={transaction.quantity}
+                        price={transaction.price}
+                        key={transaction.id}
+                        />
+                      ))}
+                    </tbody>
+                </table>
+                </div>
+                </div>
+                <button onClick={this.reduceDetails}>Hide Details</button>
+              </div> 
+              : <div /> }
+            </div>
             <div className="row">
               <div className="stockHoldingHead container-fluid">
                 <p className="text-center">
@@ -123,15 +200,17 @@ export class Stocks extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {this.state.stocks.map(stock => (
+                  {this.state.stocks.map( (stock, index) => (
                     <TableRow
                       symbol={stock.symbol}
+                      index={index}
                       quantity={stock.quantity}
                       cashflow={stock.cashflow}
                       id={stock.id}
                       key={stock.id}
                       addStock={this.openModal}
                       reduceStock={this.openModal}
+                      expandDetails={this.expandDetails}
                     />
                   ))}
                 </tbody>
