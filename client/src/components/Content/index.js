@@ -11,6 +11,7 @@ import Home from "../Pages/Home";
 import BudgetCalcPage from "../Pages/BudgetCalcPage";
 import Stocks from "../Pages/Stocks";
 import Rates from "../Pages/Rates";
+import Currency from "../Pages/Currency";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class Content extends Component {
@@ -24,7 +25,7 @@ class Content extends Component {
         <Header />
         <Router>
           <Navbar />
-          <MediaQuery query="(max-width: 750px)">
+          <MediaQuery query="(max-width: 950px)">
             {(matches) => {
               if (matches) {
                 return <div className='container'>
@@ -45,6 +46,9 @@ class Content extends Component {
                         )} />
                         <Route exact path="/rates" render={(routeProps) => (
                           <Rates userId={this.props.userId} />
+                        )} />
+                        <Route exact path="/currency" render={(routeProps) => (
+                          <Currency userId={this.props.userId} />
                         )} />
                       </Switch>
                     </div>
@@ -72,7 +76,7 @@ class Content extends Component {
                   <div className='col-md-8 content'>
                     <Switch>
                       <Route exact path="/" render={(routeProps) => (
-                        <Home userId={this.props.userId} />
+                        <Home userId={this.props.userId} name={this.props.name} lastname={this.props.lastname}/>
                       )} />
                       <Route exact path="/home" render={(routeProps) => (
                         <Home name={this.props.name} lastname={this.props.lastname} userId={this.props.userId} />
@@ -85,6 +89,9 @@ class Content extends Component {
                       )} />
                       <Route exact path="/rates" render={(routeProps) => (
                         <Rates userId={this.props.userId} />
+                      )} />
+                      <Route exact path="/currency" render={(routeProps) => (
+                        <Currency userId={this.props.userId} />
                       )} />
                     </Switch>
                   </div>
