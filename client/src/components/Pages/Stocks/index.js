@@ -131,7 +131,7 @@ export class Stocks extends Component {
                 <p className="text-center">Transaction details for {this.state.expandedSymbol}</p>
                 <div className="row">
                 <div className="col-md-6">
-                Buys
+                <h6 className="buySell">Buys</h6>
                 <table className="table">
                   <thead>
                     <tr>
@@ -153,7 +153,7 @@ export class Stocks extends Component {
                 </table>
                 </div>
                 <div className="col-md-6">
-                Sells
+                <h6 className="buySell">Sells</h6>
                 <table className="table">
                     <thead>
                       <tr>
