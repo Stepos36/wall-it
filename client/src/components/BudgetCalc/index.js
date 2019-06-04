@@ -184,18 +184,48 @@ class BudgetCalc extends Component {
 
         render() {
             return (
-            <div>
                 <div className="container">
                 <div className="container shadow jumbotron contentBorder">
                     <div className="row text-center lilPadding"> 
                         <div className='col-8 contentBorder'>
                             <div className='col-12'>
-                                <h6>Incomes</h6>
+                                <p>
+                                {/* <h6>Incomes</h6> */}
+                                <div className="incomeHead container-fluid">
+                                        <p className="text-center">
+                                        Your Monthly Net Income
+                                        </p>
+                                    </div>
+                                    <table className="table" id="incomeTable">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                        {this.state.userIncomes.map((userIncome, key) => (
+                                            <BudgetIncomeTableRow 
+                                            type={userIncome.type}
+                                            value={userIncome.value}
+                                            remove={this.deleteIncomeRow}
+                                            id={userIncome.id}
+                                            key={userIncome.id}
+                                            />
+                                        ))}
+                                        </tbody>
+                                    </table>
+                <hr />
                                 <form>
                                     {this.state.incomeRows.map((row, index) => <FormIncome valueHandler={this.updateIncomeValues} number={index} key={index}/>)}
                                     <button id="submit" onClick={this.pushIncome}>Submit</button>  
-                                    <button id="addBtn" onClick={(event) => this.addIncomeRow(event)}>Add another income source</button>
+                                    {/* <button id="addBtn" onClick={(event) => this.addIncomeRow(event)}>Add another income source</button> */}
                                 </form>
+<<<<<<< HEAD
+=======
+                                </p>
+>>>>>>> 98d7473ebd1a7faf94511007cb267feaaa9f77a6
                             </div>
                         </div>
                     
@@ -210,12 +240,51 @@ class BudgetCalc extends Component {
                     <div className="row text-center lilPadding">
                         <div className="col-8 contentBorder">
                             <div className='col-12'>
+<<<<<<< HEAD
                                 <h6>Expenses</h6>
                                 <form>
                                     {this.state.expenseRows.map((row, index) => <FormGroup valueHandler={this.updateExpenseValues} number={index} key={index}/>)}
                                     <button id="submit2" onClick={this.pushExpenses}>Submit</button>  
                                     <button id="addBtn2" onClick={(event) => this.addExpenseRow(event)}>Add another bill</button>
                                 </form>                            
+=======
+                                <p>
+                                {/* <h6>Expenses</h6> */}
+                                <div className="expenseHead container-fluid">
+                                    <p className="text-center">
+                                    Your Monthly Expenses
+                                    </p>
+                                </div>
+                                <table className="table" id="expenseTable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Amount</th>
+                                            <th scope="col">Pay Date</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tbody>
+                                    {this.state.userExpenses.map((userExpense,key) => (
+                                        <BudgetExpenseTableRow 
+                                        type={userExpense.type}
+                                        value={userExpense.value}
+                                        paydate={userExpense.paydate}
+                                        remove={this.deleteExpenseRow}
+                                        id={userExpense.id}
+                                        key={userExpense.id}
+                                        />
+                                    ))}
+                                    </tbody>
+                                </table>
+                    <hr />
+                                <form>
+                                    {this.state.expenseRows.map((row, index) => <FormGroup valueHandler={this.updateExpenseValues} number={index} key={index}/>)}
+                                    <button id="submit2" onClick={this.pushExpenses}>Submit</button>  
+                                    {/* <button id="addBtn2" onClick={(event) => this.addExpenseRow(event)}>Add another bill</button> */}
+                                </form>
+                                </p>
+>>>>>>> 98d7473ebd1a7faf94511007cb267feaaa9f77a6
                             </div>
                         </div>
                     
@@ -223,6 +292,7 @@ class BudgetCalc extends Component {
                             <PieChart data={this.state.data} />
                         </div>
                     </div>
+                </div>
 
                     <br /><hr /><br />
 
@@ -301,9 +371,13 @@ class BudgetCalc extends Component {
                     </div>
                     
                     
+<<<<<<< HEAD
                 </div>  
             </div>
             </div>
+=======
+                </div>
+>>>>>>> 98d7473ebd1a7faf94511007cb267feaaa9f77a6
             )
         }
         

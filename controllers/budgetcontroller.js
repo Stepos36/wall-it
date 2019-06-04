@@ -7,7 +7,6 @@ module.exports = {
                 user_id: req.params.id
             }
         }).then(listData => {
-            console.log(listData)
             if (listData[0]) {
                 res.json(listData)
             }
@@ -22,7 +21,6 @@ module.exports = {
             item.value = parseFloat(item.value)
             return item
         })
-        console.log(newItemsArr)
         db.User_income.bulkCreate(newItemsArr)
         .then(() => {
             return db.User_income.findAll({
@@ -57,11 +55,12 @@ module.exports = {
                 user_id: req.params.id
             }
         }).then(listData => {
-            console.log(listData)
             if (listData[0]) {
                 res.json(listData)
             }
-            else res.status(204).json({message: "No expense items found"})
+            else {
+                res.status(204).json({message: "No expense items found"})
+        }
         })
     },
     addExpenseItems: function(req, res) {        
@@ -73,7 +72,6 @@ module.exports = {
             item.paydate = parseInt(item.paydate)
             return item
         })
-        console.log(newItemsArr)
         db.User_expense.bulkCreate(newItemsArr)
         .then(() => {
             return db.User_expense.findAll({
@@ -87,7 +85,6 @@ module.exports = {
 
     },
     updateExpenseItems: function(req, res) {
-        console.log(req.body)
         let userId = req.params.id
         db.User_expense.destroy({
             where: {

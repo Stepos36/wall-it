@@ -1,0 +1,29 @@
+#addNew {
+    width: 40%;
+    display: inline-block;
+    align-items: center;
+    align-self: center;
+}
+
+button {
+    margin: 2px
+}
+
+.stockPanel {
+    margin-bottom: 80px;
+    padding: 0 !important
+}
+
+.stocks {
+    /* background: url(./stocks.png) !important; */
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    margin-top: 30px
+}
+@media screen and (max-width: 768px) {
+    .stocks {
+        margin-top: 80px
+    }
+}

@@ -5,6 +5,7 @@ import CurrencyCalc from './../../CurrencyCalc';
 import Calculator from './../../Calculator/Calculator';
 import Calendar from 'react-calendar'
 import { PieChart } from '@culturehq/charts';
+import BillTracker from "../../BillTracker";
 import MapWidget from "./../../MapWidget"
 import YVideo from "./../../YouTube"
 import '@culturehq/charts/dist/style.css';
@@ -67,9 +68,10 @@ export class Home extends Component {
       <div className="container homeContent"> 
         <h1>Home | {this.props.name} {this.props.lastname}</h1>
         <div className="row text-center">
-        <div className="nopadding jumbotron clockContainer shadow">
+        <div className="jumbotron clockContainer shadow">
         <div className='col-3 newYorkTime clockDiv hvr-push'>
-            <p>NEW YORK</p>
+            <p className="NYFull">NEW YORK</p>
+            <p className="NYShort">NY</p>
             <Analogclock
               timeZone={this.state.nyTime}
             />
@@ -80,7 +82,8 @@ export class Home extends Component {
             </div>
           </div>
           <div className="col-3 sanFranTime clockDiv hvr-push">
-            <p>SAN FRANCISCO</p>
+            <p className="SFFull">SAN FRANCISCO</p>
+            <p className="SFShort">SF</p>
             <Analogclock
               timeZone={this.state.sanFranTime}
             />
@@ -91,7 +94,8 @@ export class Home extends Component {
             </div>
           </div>
           <div className="col-3 ukTime clockDiv hvr-push">
-            <p>UNITED KINGDOM</p>
+            <p className="UKFull">UNITED KINGDOM</p>
+            <p className="UKShort">UK</p>
             <Analogclock
               timeZone={this.state.ukTime}
             />
@@ -103,7 +107,8 @@ export class Home extends Component {
           </div>
 
           <div className="col-3 toykoTime clockDiv hvr-push">
-            <p>TOYKO</p>
+            <p className="TYOFull">TOKYO</p>
+            <p className="TYOShort">TYO</p>
             <Analogclock
               timeZone={this.state.toykoTime}
             />
@@ -118,25 +123,32 @@ export class Home extends Component {
 
           <div className='container contentBorder jumbotron shadow'>
             <div className='row contents'>
-              <div style={{ height: 250 }} className='col-lg-4 col-md-6 col-sm-12'>
-                <Calculator />
+              <div className='col-lg-4 col-md-4 col-sm-12'>
+                <BillTracker userId={this.props.userId} />
               </div>
-              <div className='col-lg-4 col-md-6 col-sm-12'>
-                <PieChart data={data} />
-              </div>
-              <div className='col-lg-4 col-md-6 col-sm-12 youtube mt-auto'>
-                <YVideo />
-              </div>
-            </div>
-            <div className='row contents2'>
-              <div className='col-lg-4 col-md-6 col-sm-12 map'>
-                <MapWidget />
-              </div>
-              <div className='col-lg-4 col-md-6 col-sm-12 calendar'>
-                <Calendar />
-              </div>
-              <div className='col-lg-4 col-md-6 col-sm-12 converterCol'>
-                <CurrencyCalc />
+              <div className='col-lg-8 col-md-8 col-sm-12'>
+                <div className='row contents'>
+                  <div style={{ height: 250 }} className='col-lg-6 col-md-6 col-sm-12'>
+                    <Calculator />
+                  </div>
+                  <div className='col-lg-6 col-md-6 col-sm-12'>
+                    <PieChart data={data} />
+                  </div>
+                  {/* <div className='col-lg-4 col-md-6 col-sm-12 youtube mt-auto'>
+                    <YVideo />
+                  </div> */}
+                </div>
+                <div className='row contents2 float-right'>
+                  {/* <div className='col-lg-4 col-md-6 col-sm-12 map'>
+                    <MapWidget />
+                  </div> */}
+                  <div className='col-lg-6 col-md-6 col-sm-12 calendar'>
+                    <Calendar />
+                  </div>
+                  <div className='col-lg-6 col-md-6 col-sm-12 converterCol'>
+                    <CurrencyCalc />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
