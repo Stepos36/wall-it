@@ -5,4 +5,8 @@
     .budgetCalcContent {
         margin-top: 80px
     }
+
+    .rightSideNav1 {
+        display:none;
+    }
 }

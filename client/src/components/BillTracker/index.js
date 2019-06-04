@@ -48,7 +48,7 @@ class BillTracker extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container upcomingBills">
                 <div><h4>Upcoming Bills</h4></div>
                 {this.state.bills.map(bill => (
                     <BillDisplay 
