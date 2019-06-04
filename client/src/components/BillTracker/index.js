@@ -28,15 +28,18 @@ class BillTracker extends Component {
                     let month = date.getMonth()
                     let year = date.getFullYear()
                     let newMonth = month + 1;
-                    let newYear = year
+                    let newYear = year;
                     if (month === 11) newYear += 1
                     let oneDay = 24*60*60*1000; 
                     let firstDate = new Date(year,month,dateNum);
-                    let secondDate = new Date(newMonth,newYear,billsArr[i].paydate);
+                    let secondDate = new Date(newYear,newMonth,billsArr[i].paydate);
                     let diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
                     billsArr[i].daysUntil = diffDays
                 }
             }
+            billsArr.sort(function(a, b) {
+                return parseFloat(a.daysUntil) - parseFloat(b.daysUntil);
+            });
             this.setState({bills: billsArr})
             console.log(billsArr)
             }

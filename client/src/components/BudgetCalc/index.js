@@ -222,10 +222,7 @@ class BudgetCalc extends Component {
                                     <button id="submit" onClick={this.pushIncome}>Submit</button>  
                                     {/* <button id="addBtn" onClick={(event) => this.addIncomeRow(event)}>Add another income source</button> */}
                                 </form>
-<<<<<<< HEAD
-=======
                                 </p>
->>>>>>> 98d7473ebd1a7faf94511007cb267feaaa9f77a6
                             </div>
                         </div>
                     
@@ -240,14 +237,6 @@ class BudgetCalc extends Component {
                     <div className="row text-center lilPadding">
                         <div className="col-8 contentBorder">
                             <div className='col-12'>
-<<<<<<< HEAD
-                                <h6>Expenses</h6>
-                                <form>
-                                    {this.state.expenseRows.map((row, index) => <FormGroup valueHandler={this.updateExpenseValues} number={index} key={index}/>)}
-                                    <button id="submit2" onClick={this.pushExpenses}>Submit</button>  
-                                    <button id="addBtn2" onClick={(event) => this.addExpenseRow(event)}>Add another bill</button>
-                                </form>                            
-=======
                                 <p>
                                 {/* <h6>Expenses</h6> */}
                                 <div className="expenseHead container-fluid">
@@ -284,7 +273,6 @@ class BudgetCalc extends Component {
                                     {/* <button id="addBtn2" onClick={(event) => this.addExpenseRow(event)}>Add another bill</button> */}
                                 </form>
                                 </p>
->>>>>>> 98d7473ebd1a7faf94511007cb267feaaa9f77a6
                             </div>
                         </div>
                     
@@ -371,13 +359,7 @@ class BudgetCalc extends Component {
                     </div>
                     
                     
-<<<<<<< HEAD
-                </div>  
-            </div>
-            </div>
-=======
                 </div>
->>>>>>> 98d7473ebd1a7faf94511007cb267feaaa9f77a6
             )
         }
         
