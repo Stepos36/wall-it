@@ -3,7 +3,7 @@ import React from "react";
 function TableRow(props) {
   return (
     <tr>
-        <td>{props.symbol}</td>
+        <td><span onClick={() => props.expandDetails(props.index, props.symbol)}>{props.symbol}</span></td>
         <td>{props.quantity}</td>
         <td>{props.cashflow}</td>
         <td><button className="lightshadow" onClick={() => {props.addStock("add", `${props.id}`, `${props.quantity}`, `${props.symbol}`)}}>Purchased More Shares</button></td>
