@@ -13,9 +13,7 @@ class Article extends Component {
     };
 
     componentDidMount() {
-        console.log("Did mount!");
         axios.get("/api/news/").then((response) => {
-            console.log(response.data)
             this.setState({news: response.data})
         }) 
       }

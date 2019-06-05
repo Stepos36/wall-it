@@ -25,11 +25,9 @@ export class Watchlist extends Component {
       
       renderWatchList() {
         axios.get("/api/watchlist/" + this.props.userId).then((response) => {
-          console.log(response)
           if (response.status === 204) {console.log("204")}
           else {
           this.setState({watchlist: response.data})
-          console.log(response)
           this.getMarketData()
           }
         })
@@ -47,7 +45,6 @@ export class Watchlist extends Component {
           let querySymbols = symbols.join()
           axios.post("/tradingdata", {symbols: querySymbols})
             .then(response => {
-              console.log(response)
               this.setState({stockChanges: response.data.data})
             })
         }

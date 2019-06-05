@@ -6,32 +6,51 @@ import Calculator from './../../Calculator/Calculator';
 import Calendar from 'react-calendar'
 import { PieChart } from '@culturehq/charts';
 import BillTracker from "../../BillTracker";
-import MapWidget from "./../../MapWidget"
-import YVideo from "./../../YouTube"
+import axios from "axios";
 import '@culturehq/charts/dist/style.css';
 import home from "./home.png"
 import './style.css';
+import Axios from 'axios';
 
 
 // ec5dc0b233f795269cb5245730d5817320950022
 
-const getRandomDatum = () => Math.floor(Math.random() * 100);
+// const getRandomDatum = () => Math.floor(Math.random() * 100);
 
 //random mock data - will be replaced by personalized stock data  pulled from database
-const data = {
-  EUR: getRandomDatum(),
-  AAPL: getRandomDatum(),
-  BP: getRandomDatum(),
-  TSLA: getRandomDatum(),
-  BTC: getRandomDatum()
-};
+// const data = {
+//   EUR: getRandomDatum(),
+//   AAPL: getRandomDatum(),
+//   BP: getRandomDatum(),
+//   TSLA: getRandomDatum(),
+//   BTC: getRandomDatum()
+// };
 
 export class Home extends Component {
   state = {
     nyTime: '',
     sanFranTime: '',
     ukTime: '',
-    toykoTime: ''
+    toykoTime: '',
+    data: {}
+  }
+
+  componentWillMount() {
+    axios.get("/api/stocks/" + this.props.userId).then(response => {
+      let respData = response.data
+      let dataObj = {}
+      for (let i = 0; i < respData.length; i++) {
+        let costTotal = 0
+        let numBuys = respData[i].Stock_buys.length
+        for (let j = 0; j < respData[i].Stock_buys.length; j++) {
+          costTotal += parseFloat(respData[i].Stock_buys[j].price)
+        }
+        let avgBuyPrice = costTotal/numBuys
+        let stockValue = respData[i].quantity * avgBuyPrice
+        dataObj[respData[i].symbol] = stockValue
+      }
+      this.setState({data: dataObj})
+    })
   }
 
   componentDidMount() {
@@ -132,7 +151,7 @@ export class Home extends Component {
                     <Calculator />
                   </div>
                   <div className='col-lg-6 col-md-6 col-sm-12'>
-                    <PieChart data={data} />
+                    <PieChart data={this.state.data} />
                   </div>
                   {/* <div className='col-lg-4 col-md-6 col-sm-12 youtube mt-auto'>
                     <YVideo />

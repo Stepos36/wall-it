@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 class AddCurrency extends Component {
     state = {
-        symbol: this.props.symbol || "",
+        purchased: "",
+        sold: "",
         quantity: "",
         price: ""
     }
@@ -26,9 +27,10 @@ class AddCurrency extends Component {
             <div>
                 {this.props.holdingId === "new" ?
                     <form>
-                        <input type="text" name="symbol" value={this.state.symbol} onChange={this.handleInputChange} placeholder="Symbol"></input>
+                        <input type="text" name="purchased" value={this.state.purchased} onChange={this.handleInputChange} placeholder="Currency Purchased"></input>
+                        <input type="text" name="sold" value={this.state.sold} onChange={this.handleInputChange} placeholder="Currency Sold"></input>
                         <input type="number" name="quantity" value={this.state.quantity} onChange={this.handleInputChange} placeholder="Quantity"></input>
-                        <input type="number" name="price" step="0.01" value={this.state.price} onChange={this.handleInputChange} placeholder="Price"></input>
+                        <input type="number" name="price" step="0.01" value={this.state.price} onChange={this.handleInputChange} placeholder="Price (In Sold Currency Units)"></input>
                         <button className="lightshadow" onClick={this.submitAdd}>Submit</button>
                     </form>
                     :
