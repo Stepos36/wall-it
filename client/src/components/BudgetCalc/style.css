@@ -19,3 +19,9 @@ button:focus {
     margin-top: 5px !important;
     margin-bottom: 70px
 }
+.chq-charts--noselect text {
+    pointer-events: all;
+}
+.chq-charts--noselect text:hover {
+    font-size: 1.5%;
+}
