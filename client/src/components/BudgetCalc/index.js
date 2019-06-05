@@ -220,16 +220,15 @@ class BudgetCalc extends Component {
                                 <form>
                                     {this.state.incomeRows.map((row, index) => <FormIncome valueHandler={this.updateIncomeValues} number={index} key={index}/>)}
                                     <button id="submit" onClick={this.pushIncome}>Submit</button>  
-                                    {/* <button id="addBtn" onClick={(event) => this.addIncomeRow(event)}>Add another income source</button> */}
                                 </form>
                                 </p>
                             </div>
                         </div>
                     
                         <div className='col-4'>
-                           Net Income:{this.state.sumIncomes} <br />
-                           Net Expenses: {this.state.sumExpenses} <br /><br />
-                           TOTAL DIFFERENCE: {this.state.netResult}
+                           <b>Net Income:</b> {this.state.sumIncomes} <br />
+                           <b>Net Expenses:</b> {this.state.sumExpenses} <br /><br />
+                           <b>TOTAL DIFFERENCE:</b> {this.state.netResult}
                         </div>
                     
                     </div>
@@ -270,7 +269,6 @@ class BudgetCalc extends Component {
                                 <form>
                                     {this.state.expenseRows.map((row, index) => <FormGroup valueHandler={this.updateExpenseValues} number={index} key={index}/>)}
                                     <button id="submit2" onClick={this.pushExpenses}>Submit</button>  
-                                    {/* <button id="addBtn2" onClick={(event) => this.addExpenseRow(event)}>Add another bill</button> */}
                                 </form>
                                 </p>
                             </div>
@@ -283,81 +281,6 @@ class BudgetCalc extends Component {
                 </div>
 
                     <br /><hr /><br />
-
-
-                    <div className="container2 text-center">
-                        <div className='row lilPadding'>
-                            <div className='col-8 jumbotron contentBorder'>
-                                <div className="row col-12 text-center">
-                                    <div className="incomeHead container-fluid">
-                                        <p className="text-center">
-                                        Your Monthly Net Income
-                                        </p>
-                                    </div>
-                                    <table className="table" id="incomeTable">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Amount</th>
-                                        </tr>
-                                    </thead>
-                                    
-                                    <tbody>
-                                    {this.state.userIncomes.map((userIncome, key) => (
-                                        <BudgetIncomeTableRow 
-                                        type={userIncome.type}
-                                        value={userIncome.value}
-                                        remove={this.deleteIncomeRow}
-                                        id={userIncome.id}
-                                        key={userIncome.id}
-                                        />
-                                    ))}
-                                    </tbody>
-                                </table>
-                                </div>
-                            </div>
-
-                            <div className='col-4'>
-                                {/* <PieChart data={this.expenseArr} /> */}
-                            </div>
-                        </div>
-
-                        <div className="row text-center lilPadding">
-                            <div className='col-8 jumbotron contentBorder'>
-                                <div className="expenseHead container-fluid">
-                                    <p className="text-center">
-                                    Your Monthly Expenses
-                                    </p>
-                                </div>
-                                <table className="table" id="expenseTable">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Description</th>
-                                        <th scope="col">Amount</th>
-                                        <th scope="col">Pay Date</th>
-                                    </tr>
-                                </thead>
-                                
-                                <tbody>
-                                {this.state.userExpenses.map((userExpense,key) => (
-                                    <BudgetExpenseTableRow 
-                                    type={userExpense.type}
-                                    value={userExpense.value}
-                                    paydate={userExpense.paydate}
-                                    remove={this.deleteExpenseRow}
-                                    id={userExpense.id}
-                                    key={userExpense.id}
-                                    />
-                                ))}
-                                </tbody>
-                            </table>
-                            </div>
-
-                            <div className='col-4'></div>
-                        </div>
-
-                    </div>
-                    
                     
                 </div>
             )
