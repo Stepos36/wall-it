@@ -43,6 +43,7 @@ export class Stocks extends Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleReduce = this.handleReduce.bind(this);
+    this.removeHolding = this.removeHolding.bind(this);
     this.rerenderTable = this.rerenderTable.bind(this);
     this.expandDetails = this.expandDetails.bind(this);
     this.reduceDetails = this.reduceDetails.bind(this);
@@ -81,6 +82,13 @@ export class Stocks extends Component {
     }).then(response => {
       this.setState({ modalIsOpen: false });
       this.rerenderTable();
+    })
+  }
+
+  removeHolding(id) {
+    axios.delete("/api/stocks/" + id)
+    .then(response => {
+      this.rerenderTable()
     })
   }
 
@@ -124,14 +132,15 @@ export class Stocks extends Component {
         <StockPage />
         <StockPanel userId={this.props.userId} />
         <div className="container stockPanel shadow">
-          <div className="jumbotron">
+          <div className="jumbotron" id="tableTron">
             <div className="row">
               {this.state.detailsExpanded ?
                 <div className="container-fluid">
-                <p className="text-center">Transaction details for {this.state.expandedSymbol}</p>
+                <h4 className="text-center buySell">Transaction details for {this.state.expandedSymbol}</h4>
+                <br />
                 <div className="row">
                 <div className="col-md-6">
-                <h6 className="buySell">Buys</h6>
+                <h6 className="buySell text-center">Buys</h6>
                 <table className="table">
                   <thead>
                     <tr>
@@ -153,7 +162,7 @@ export class Stocks extends Component {
                 </table>
                 </div>
                 <div className="col-md-6">
-                <h6 className="buySell">Sells</h6>
+                <h6 className="buySell text-center">Sells</h6>
                 <table className="table">
                     <thead>
                       <tr>
@@ -175,17 +184,19 @@ export class Stocks extends Component {
                 </table>
                 </div>
                 </div>
-                <button onClick={this.reduceDetails}>Hide Details</button>
+                <hr />
+                <button className="lightshadow" onClick={this.reduceDetails}>Hide Details</button>
+                <br /> <br />
               </div> 
               : <div /> }
             </div>
             <div className="row">
               <div className="stockHoldingHead container-fluid">
-                <p className="text-center">
+                <h4 className="buySell text-center">
                   Your Portfolio Holdings
+                </h4>
                 <br />
-                  <button className="lightshadow" onClick={() => this.openModal("add", "new")} id="addNew">Add New Stock Holding</button>
-                </p>
+                <p className="text-center"><button className="lightshadow" onClick={() => this.openModal("add", "new")} id="addNew">Add New Stock Holding</button></p>
               </div>
             </div>
             <div className="row">
@@ -197,6 +208,7 @@ export class Stocks extends Component {
                     <th scope="col">Cashflow</th>
                     <th scope="col">Add</th>
                     <th scope="col">Reduce</th>
+                    <th scope="col">Remove</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -211,6 +223,7 @@ export class Stocks extends Component {
                       addStock={this.openModal}
                       reduceStock={this.openModal}
                       expandDetails={this.expandDetails}
+                      remove={this.removeHolding}
                     />
                   ))}
                 </tbody>

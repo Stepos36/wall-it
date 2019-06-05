@@ -8,6 +8,7 @@ function TableRow(props) {
         <td>{props.cashflow}</td>
         <td><button className="lightshadow" onClick={() => {props.addStock("add", `${props.id}`, `${props.quantity}`, `${props.symbol}`)}}>Purchased More Shares</button></td>
         <td><button className="lightshadow" onClick={() => {props.reduceStock("reduce", `${props.id}`, `${props.quantity}`, `${props.symbol}`)}}>Sold Shares</button></td>
+        <td><button className="lightshadow" onClick={() => props.remove(props.id)}>-</button></td>
     </tr>
     );
 }

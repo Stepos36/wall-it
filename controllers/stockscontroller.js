@@ -35,5 +35,13 @@ module.exports = {
             price: price,
             stock_holding_id: ""
         }).then(data => {res.json(data)})
+    },
+    deleteHolding: function(req, res) {
+        let id = req.params.id;
+        db.Stock_holding.destroy({
+            where: {
+                id: id
+            }
+        }).then(data => {res.json(data)})
     }
 }

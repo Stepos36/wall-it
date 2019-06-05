@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import BillDisplay from "./BillDisplay"
+import "./style.css";
+import BillDisplay from "./BillDisplay";
 
 class BillTracker extends Component {
     constructor() {
@@ -49,13 +50,18 @@ class BillTracker extends Component {
         return (
             <div className="container upcomingBills">
                 <div><h4>Upcoming Bills</h4></div>
-                {this.state.bills.map(bill => (
-                    <BillDisplay 
-                    name={bill.type}
-                    value={bill.value}
-                    paydate={bill.paydate}
-                    daysUntil={bill.daysUntil}/>
-                ))}
+                <br />
+                <table className="table">
+                    <tbody>
+                        {this.state.bills.map(bill => (
+                            <BillDisplay 
+                            name={bill.type}
+                            value={bill.value}
+                            paydate={bill.paydate}
+                            daysUntil={bill.daysUntil}/>
+                        ))}
+                    </tbody>
+                </table>
             </div>
         )
     }

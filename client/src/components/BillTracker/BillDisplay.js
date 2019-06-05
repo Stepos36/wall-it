@@ -2,9 +2,11 @@ import React from 'react';
 
 function BillDisplay(props) {
     return (
-        <div>
-           <h6> ${props.value} {props.name} due in {props.daysUntil} days. </h6>
-        </div>
+        <tr>
+           <td>${props.value}</td>
+           <td>{props.name}</td>
+           <td>Due in {props.daysUntil} days.</td>
+        </tr>
     )
 }
 
