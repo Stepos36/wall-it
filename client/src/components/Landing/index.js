@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./style.css";
+import Particles from 'react-particles-js'
 
 class Landing extends React.Component {
 
@@ -63,6 +64,66 @@ class Landing extends React.Component {
     firstpage() {
         return (
             <div className="background">
+                <Particles params={{
+                    particles: {
+                        number: {
+                            value: 80,
+                            density: {
+                              enable: true,
+                              value_area: 800
+                            }
+                          },
+                          size: {
+                            value: 7.891476416322726,
+                            random: true,
+                            anim: {
+                              enable: false,
+                              speed: 40,
+                              size_min: 0.1,
+                              sync: false
+                            }
+                          } 
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                          onhover: {
+                            enable: true,
+                            mode: "repulse"
+                          },
+                          onclick: {
+                            enable: true,
+                            mode: "push"
+                          },
+                          resize: true
+                        },
+                        modes: {
+                          grab: {
+                            distance: 400,
+                            line_linked: {
+                              opacity: 1
+                            }
+                          },
+                          bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                          },
+                          repulse: {
+                            distance: 200,
+                            duration: 0.4
+                          },
+                          push: {
+                            particles_nb: 4
+                          },
+                          remove: {
+                            particles_nb: 2
+                          }
+                        }
+                      }
+                }}/>
                 <div className="container login-container text-center card card-header">
                     <h2>Welcome to Wall-IT!</h2> <br></br> <h3>Please login or register an account</h3>
                     <div className="row">
@@ -80,7 +141,7 @@ class Landing extends React.Component {
         )
     }
     goBack = (event) => {
-        return this.firstpage()
+        return  this.firstpage()
     }
 
     render() {
@@ -90,6 +151,66 @@ class Landing extends React.Component {
         else if (this.state.page == "login") {
             return (
                 <div className="background">
+                    <Particles params={{
+                    particles: {
+                        number: {
+                            value: 80,
+                            density: {
+                              enable: true,
+                              value_area: 800
+                            }
+                          },
+                          size: {
+                            value: 7.891476416322726,
+                            random: true,
+                            anim: {
+                              enable: false,
+                              speed: 40,
+                              size_min: 0.1,
+                              sync: false
+                            }
+                          } 
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                          onhover: {
+                            enable: true,
+                            mode: "repulse"
+                          },
+                          onclick: {
+                            enable: true,
+                            mode: "push"
+                          },
+                          resize: true
+                        },
+                        modes: {
+                          grab: {
+                            distance: 400,
+                            line_linked: {
+                              opacity: 1
+                            }
+                          },
+                          bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                          },
+                          repulse: {
+                            distance: 200,
+                            duration: 0.4
+                          },
+                          push: {
+                            particles_nb: 4
+                          },
+                          remove: {
+                            particles_nb: 2
+                          }
+                        }
+                      }
+                }}/>
                     <div className="container login-container text-center card card-header">
                         <div><h3>Please login to your account to continue</h3></div>
                         <form className="form">
@@ -121,6 +242,66 @@ class Landing extends React.Component {
         else if (this.state.page == "register") {
             return (
                 <div className="background">
+                    <Particles params={{
+                    particles: {
+                        number: {
+                            value: 80,
+                            density: {
+                              enable: true,
+                              value_area: 800
+                            }
+                          },
+                          size: {
+                            value: 7.891476416322726,
+                            random: true,
+                            anim: {
+                              enable: false,
+                              speed: 40,
+                              size_min: 0.1,
+                              sync: false
+                            }
+                          } 
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                          onhover: {
+                            enable: true,
+                            mode: "repulse"
+                          },
+                          onclick: {
+                            enable: true,
+                            mode: "push"
+                          },
+                          resize: true
+                        },
+                        modes: {
+                          grab: {
+                            distance: 400,
+                            line_linked: {
+                              opacity: 1
+                            }
+                          },
+                          bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                          },
+                          repulse: {
+                            distance: 200,
+                            duration: 0.4
+                          },
+                          push: {
+                            particles_nb: 4
+                          },
+                          remove: {
+                            particles_nb: 2
+                          }
+                        }
+                      }
+                }}/>
                     <div className="container login-container text-center card card-header">
                         <div><h3>Please fill out all fields to register to Wall-IT</h3></div>
                         <form className="form">
