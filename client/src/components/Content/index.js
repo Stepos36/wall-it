@@ -15,9 +15,6 @@ import Currency from "../Pages/Currency";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class Content extends Component {
-  componentDidMount() {
-    console.log(this.props.userId)
-  }
 
   render() {
     return (
