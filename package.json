@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
     "google-news-rss": "^0.4.1",
